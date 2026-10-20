@@ -1,0 +1,41 @@
+name: AI 뉴스 (매일 06:30)
+
+on:
+  schedule:
+    - cron: "30 21 * * *"   # 매일 06:30 KST (UTC 21:30). GitHub 대기열 때문에 늦게 올 수 있음
+  workflow_dispatch:         # Actions 탭이나 `gh workflow run ai-news.yml`로 수동 실행
+
+permissions:
+  contents: write
+
+concurrency:
+  group: digest-commit       # 두 에이전트가 동시에 커밋하다 충돌하지 않도록 순서대로 실행
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 뉴스 정리 후 Slack 전송
+        run: python -m agents.ai_news
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          PAGES_BASE_URL: ${{ vars.PAGES_BASE_URL }}
+          MONTHLY_BUDGET: ${{ vars.MONTHLY_BUDGET }}
+      - name: 리포트와 기록 저장
+        run: |
+          git config user.name "digest-bot"
+          git config user.email "digest-bot@users.noreply.github.com"
+          git add docs data
+          git diff --cached --quiet && exit 0
+          git commit -m "AI 뉴스 $(TZ=Asia/Seoul date +%F)"
+          git pull --rebase
+          git push

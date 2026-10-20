@@ -1,0 +1,16 @@
+{
+ "headline": "화면 확인용 샘플입니다. 실제 실행에서는 Claude가 검색해 이 자리를 채웁니다.",
+ "items": [
+  {"title": "샘플: 어떤 모델이 오늘부터 이미지 입력을 지원", "summary": "기존에 텍스트만 받던 모델이 이미지 입력을 받기 시작했다는 가상의 소식입니다. 레이아웃 확인용입니다.",
+   "why": "멀티모달 기능이 기본 사양이 되어 간다는 신호", "apply": "검출 단계에서 라벨링 보조 도구로 시험해 볼 수 있음",
+   "category": "모델", "importance": 3, "source": "Example Blog", "date": "2026-10-19",
+   "url": "https://example.org/sample-1", "quote": "now accepts image inputs"},
+  {"title": "샘플: 업계 인물의 짧은 발언", "summary": "유명 연구자가 개발 도구에 대해 의견을 남겼다는 가상의 소식입니다.",
+   "why": "", "apply": "직접 연관 낮음", "category": "인물", "importance": 2, "source": "Example News", "date": "2026-10-19",
+   "url": "https://example.org/sample-2", "quote": ""},
+  {"title": "샘플: 국내 AI 정책 발표", "summary": "정부가 AI 관련 지원 사업을 발표했다는 가상의 소식입니다.",
+   "why": "연구 과제 공모와 연결될 수 있음", "apply": "", "category": "국내", "importance": 1,
+   "source": "예시 매체", "date": "2026-10-18", "url": "https://example.org/sample-3", "quote": ""},
+  {"title": "형식 오류 항목 (걸러져야 정상)", "summary": "url이 잘못됨", "importance": 2, "url": "not-a-url"}
+ ]
+}

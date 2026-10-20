@@ -1,0 +1,44 @@
+name: 로봇+AI 레이더 (수·토 07:00)
+
+on:
+  schedule:
+    - cron: "0 22 * * 2,5"    # 수·토 07:00 KST (UTC 화·금 22:00). GitHub 대기열 때문에 늦게 올 수 있음
+  workflow_dispatch:         # Actions 탭이나 `gh workflow run robot-radar.yml`로 수동 실행
+
+permissions:
+  contents: write
+
+concurrency:
+  group: digest-commit       # 두 에이전트가 동시에 커밋하다 충돌하지 않도록 순서대로 실행
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 레이더 정리 후 Slack 전송
+        run: python -m agents.robot_radar
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL_RADAR: ${{ secrets.SLACK_WEBHOOK_URL_RADAR }}
+          PAGES_BASE_URL: ${{ vars.PAGES_BASE_URL }}
+          MONTHLY_BUDGET: ${{ vars.MONTHLY_BUDGET }}
+          LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
+          LINEAR_TEAM_KEY: ${{ vars.LINEAR_TEAM_KEY }}
+      - name: 리포트와 기록 저장
+        run: |
+          git config user.name "digest-bot"
+          git config user.email "digest-bot@users.noreply.github.com"
+          git add docs data
+          git diff --cached --quiet && exit 0
+          git commit -m "로봇 레이더 $(TZ=Asia/Seoul date +%F)"
+          git pull --rebase
+          git push

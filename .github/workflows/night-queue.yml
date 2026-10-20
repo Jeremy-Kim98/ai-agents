@@ -1,0 +1,41 @@
+name: 야간 작업 큐 (00:30, 04:00)
+
+on:
+  schedule:
+    - cron: "30 15 * * *"   # 00:30 KST
+    - cron: "0 19 * * *"    # 04:00 KST (자정 넘어 추가한 이슈도 아침 전에 처리)
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: "특정 이슈만 처리 (예: RES-12). 비우면 '야간작업' 라벨 붙은 이슈 전체"
+        required: false
+        default: ""
+
+permissions:
+  contents: read             # 저장소에 아무것도 쓰지 않음 (작업 내용은 Linear에만 남음)
+
+concurrency:
+  group: night-queue
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Linear 이슈 처리 (로그에는 이슈 번호만 남김)
+        run: python -m agents.night_queue ${ISSUE:+--issue "$ISSUE"}
+        env:
+          ISSUE: ${{ inputs.issue }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
+          LINEAR_TEAM_KEY: ${{ vars.LINEAR_TEAM_KEY }}
+          LINEAR_REVIEW_STATE: ${{ vars.LINEAR_REVIEW_STATE }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL_NIGHT: ${{ secrets.SLACK_WEBHOOK_URL_NIGHT }}
