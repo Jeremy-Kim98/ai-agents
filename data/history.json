@@ -1,1 +1,21 @@
-{}
+{
+ "ai-news": [
+  {
+   "date": "2026-10-21",
+   "titles": [
+    "해커, AI 에이전트로 100곳 넘는 기업 웹사이트 침입",
+    "Altman, 직원들에게 'AI 종착점 3가지' 시나리오 제시",
+    "Anthropic, Claude가 64시간 자율 설계한 전갈 독소 결합 단백질 실험 결과 공개",
+    "Elice, 코스닥 상장 첫날 30% 넘게 급락",
+    "Stanford, 언어 사전학습 없는 T2I 모델 Halcyon 공개"
+   ],
+   "urls": [
+    "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-october-20-2026/",
+    "https://aiweekly.co/ai-news-today",
+    "https://blockchain.news/news/anthropic-claude-scorpion-neurotoxin-binders",
+    "https://www.cnbc.com/2026/10/19/stock-market-today-live-updates.html",
+    "https://aiweekly.co/ai-news-today/edition/2026-10-20"
+   ]
+  }
+ ]
+}
