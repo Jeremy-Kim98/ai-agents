@@ -17,5 +17,24 @@
     "https://aiweekly.co/ai-news-today/edition/2026-10-20"
    ]
   }
+ ],
+ "robot-radar": [
+  {
+   "date": "2026-10-21",
+   "titles": [
+    "ROS 2용 데이터 수집 패키지 DC 0.2 공개 (Jazzy·Lyrical·Rolling 지원)",
+    "원격조작 데이터 수집 가이드 갱신: 에피소드 품질 체크리스트 추가",
+    "Altman, OpenAI가 휴머노이드를 만들 것이라고 확인… 2027년 데모 예고",
+    "Agility Robotics, AGCO와 Digit 휴머노이드 상용 계약… 2027년 미국 공장 파일럿",
+    "삼성전자, 24시간 가동용 이족 휴머노이드 테스트… CES 2027 공개 검토"
+   ],
+   "urls": [
+    "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-october-12th-2026/58909",
+    "https://roboskin.ai/robot-teleoperation",
+    "https://aiweekly.co/alerts/altman-confirms-openai-will-build-humanoid-demo-in-2027",
+    "https://unite.ai/agility-robotics-signs-agco-deal-to-pilot-digit-humanoid-robots",
+    "https://koreajoongangdaily.com/business/samsungs-next-hire-a-robot-that-never-clocks-out/12928887"
+   ]
+  }
  ]
 }

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>로봇+AI 레이더 2026-10-21</title>
+<meta property="og:title" content="로봇+AI 레이더 2026-10-21">
+<meta property="og:description" content="이번 4일은 OpenAI·삼성·Agility 등 휴머노이드 사업 소식이 중심이었고, 연구 파이프라인에 쓸 만한 것은 ROS 2 데이터 수집 도구(DC 0.2)와 원격조작 데이터 품질 점검 가이드 정도였다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:#F8FAFB; --ink:#1D2B3A; --pencil:#2F5D8C; --graphite:#5E6873;
+  --rule:#DCE3E9; --marker:#FFE36E; --ok:#2E7D4F; --grid:rgba(47,93,140,.07); color-scheme:light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#121A22; --ink:#E4EAF0; --pencil:#8DB6E2; --graphite:#9AA6B2;
+          --rule:#2A3644; --marker:#6B5A12; --ok:#7CC79A; --grid:rgba(141,182,226,.06); color-scheme:dark; }
+}
+* { box-sizing:border-box; }
+html {
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px; min-height:100%;
+}
+body {
+  margin:0; color:var(--ink); background:transparent;
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:16px; line-height:1.7; word-break:keep-all; overflow-wrap:anywhere;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+main { max-width:42rem; margin:0 auto; padding:2.75rem 1.25rem 4rem; }
+.kind { color:var(--pencil); font-weight:600; margin:0; }
+h1 { font-family:"Gowun Batang",serif; font-size:2.4rem; line-height:1.2; margin:.15rem 0 0; }
+.verdict { border-left:3px solid var(--pencil); padding:.1rem 0 .1rem 1rem; margin:1.6rem 0 2.4rem; font-size:1.05rem; }
+h3.group { font-size:.95rem; color:var(--graphite); font-weight:600; margin:2.2rem 0 .2rem; }
+article { padding:1.3rem 0; border-top:1px solid var(--rule); }
+article h2 { font-size:1.12rem; line-height:1.5; margin:0 0 .35rem; }
+article h2 a { color:inherit; text-decoration-color:var(--pencil); text-underline-offset:4px; }
+article.hot h2 a { background:linear-gradient(transparent 58%,var(--marker) 58%); }
+.src { font-size:.85rem; color:var(--graphite); margin:0 0 .5rem; }
+p { margin:.35rem 0; }
+.why { color:var(--graphite); }
+.apply { margin-top:.75rem; padding:.6rem .85rem; border:1px dashed var(--pencil); border-radius:4px; }
+.apply strong { color:var(--pencil); }
+blockquote { margin:.7rem 0 0; padding:0 0 0 .9rem; border-left:2px solid var(--rule); font-size:.92rem; }
+blockquote small { display:block; color:var(--graphite); font-size:.8rem; }
+blockquote small.ok { color:var(--ok); }
+.empty { color:var(--graphite); }
+footer { margin-top:2.75rem; font-size:.85rem; color:var(--graphite); }
+footer p { margin:.15rem 0; }
+a { color:var(--pencil); }
+a:focus-visible { outline:2px solid var(--pencil); outline-offset:2px; }
+h2.series { font-family:"Gowun Batang",serif; font-size:1.5rem; margin:2.6rem 0 0; }
+h3.month { font-size:.9rem; color:var(--graphite); font-weight:600; margin:1.2rem 0 .2rem; }
+ul.archive { list-style:none; padding:0; margin:0; }
+ul.archive li { padding:.5rem 0; border-top:1px solid var(--rule); }
+</style>
+</head>
+<body><main>
+<p class="kind">로봇+AI 레이더</p><h1>10월 21일 수요일</h1><p class="verdict">이번 4일은 OpenAI·삼성·Agility 등 휴머노이드 사업 소식이 중심이었고, 연구 파이프라인에 쓸 만한 것은 ROS 2 데이터 수집 도구(DC 0.2)와 원격조작 데이터 품질 점검 가이드 정도였다.</p><article>
+<h2><a href="https://discourse.openrobotics.org/t/ros-news-for-the-week-of-october-12th-2026/58909" target="_blank" rel="noopener">ROS 2용 데이터 수집 패키지 DC 0.2 공개 (Jazzy·Lyrical·Rolling 지원)</a></h2>
+<p class="src">오픈소스 / Open Robotics Discourse (ROS News) / 2026-10-17</p>
+<p>ROS News 10월 12일 주간판에 &#x27;DC 0.2: Data Collection for ROS 2&#x27;가 소개되었고, Jazzy, Lyrical, Rolling 배포판을 지원한다. 같은 호에 Isaac ROS 5.0 with Pixi와 10월 21일 Gazebo 커뮤니티 미팅(대규모 멀티로봇 시뮬레이션) 일정도 실려 있다. 날짜(10-17)는 검색 결과의 &#x27;4일 전&#x27; 표기에서 추정한 값이다.</p>
+<p class="why">ROS 2 최신 LTS인 Lyrical까지 지원하는 데이터 수집 도구가 나오면 실로봇 시연 로그를 표준 방식으로 기록하기 쉬워진다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>시연 데이터 수집: VR·원격조작 중 ROS 2 토픽을 기록하는 단계에 DC를 시험해 볼 만하다. 다만 LeRobot 등 학습용 포맷으로 변환하는 경로가 있는지는 별도 확인이 필요하다.</div>
+<blockquote>“DC 0.2: Data Collection for ROS 2 on Jazzy, Lyrical and Rolling”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://roboskin.ai/robot-teleoperation" target="_blank" rel="noopener">원격조작 데이터 수집 가이드 갱신: 에피소드 품질 체크리스트 추가</a></h2>
+<p class="src">오픈소스 / RoboSkin.ai / 2026-10-18</p>
+<p>RoboSkin.ai가 UMI와 GELLO를 비교하는 원격조작 데이터 수집 가이드를 10월 18일 갱신하며 에피소드 품질 체크리스트를 추가했다. 행동 라벨, 동기화, 분할, 라이선스 점검 항목을 다룬다.</p>
+<p class="why">신규 기술이 아니라 2차 정리 자료지만, 시연 데이터의 품질 검증 항목을 한곳에 정리해 준다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>시연 데이터 수집: 수집 파이프라인에 넣을 에피소드 단위 필터링 기준(타임스탬프 동기화, 라벨 일관성)을 만들 때 참고할 수 있다. 연구 근거로 인용하기보다 체크리스트 초안으로 쓰는 것이 적절하다.</div>
+<blockquote>“added an episode-quality checklist and direct routes to the existing UMI/GELLO comparison”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://aiweekly.co/alerts/altman-confirms-openai-will-build-humanoid-demo-in-2027" target="_blank" rel="noopener">Altman, OpenAI가 휴머노이드를 만들 것이라고 확인… 2027년 데모 예고</a></h2>
+<p class="src">로봇모델 / AI Weekly / 2026-10-18</p>
+<p>Sam Altman이 팟캐스트에서 OpenAI가 휴머노이드와 다른 폼팩터를 모두 만들 것이라고 밝혔고, 데모는 2027년에 가능하다고 말했다. 그는 핵심 난제가 몸체 설계가 아니라 주변을 이해하고 지시를 해석해 기계를 제어하는 AI 시스템이라고 했다. 1차 출처를 확인하지 못해 언론 보도에 의존한 정보다.</p>
+<p class="why">대형 AI 기업이 로봇 파운데이션 모델 경쟁에 하드웨어까지 수직 통합하며 진입한다는 신호다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>직접 연관 낮음. 다만 로봇용 AI의 병목을 &#x27;신체가 아니라 모델과 데이터&#x27;로 보는 시각은 시연 데이터가 필요한 과제의 구분 논의에 배경으로 쓸 수 있다.</div>
+<blockquote>“We will definitely do a humanoid. We will do other form factors as well. Both.”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://unite.ai/agility-robotics-signs-agco-deal-to-pilot-digit-humanoid-robots" target="_blank" rel="noopener">Agility Robotics, AGCO와 Digit 휴머노이드 상용 계약… 2027년 미국 공장 파일럿</a></h2>
+<p class="src">로봇모델 / Unite.AI / 2026-10-20</p>
+<p>AGCO와 Agility Robotics가 10월 20일 공동 보도자료로 상용 계약 체결을 발표했다고 Unite.AI가 전했다. 파일럿은 2027년 캔자스주 Hesston 생산시설에서 시작될 예정이다. 1차 출처를 확인하지 못해 언론 보도에 의존한 정보다.</p>
+<p class="why">휴머노이드의 실제 제조 현장 배치가 파일럿 계약 단계로 구체화되고 있음을 보여 준다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>직접 연관 낮음. 반복·위험 작업용 휴머노이드의 현장 과제 사례로, 시연이 필요한 과제와 자율 학습 가능한 과제를 나누는 기준을 세울 때 참고 정도다.</div>
+<blockquote>“AGCO and Agility Robotics have signed a commercial agreement to bring Digit humanoid robots”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://koreajoongangdaily.com/business/samsungs-next-hire-a-robot-that-never-clocks-out/12928887" target="_blank" rel="noopener">삼성전자, 24시간 가동용 이족 휴머노이드 테스트… CES 2027 공개 검토</a></h2>
+<p class="src">로봇모델 / Korea JoongAng Daily / 2026-10-20</p>
+<p>중앙데일리에 따르면 삼성전자가 공장·물류용 이족 휴머노이드를 테스트 중이며 CES 2027 데뷔가 검토되고 있다. 같은 기사에서 UBTech Walker S2의 자동 배터리 교체(약 3분)도 언급된다. 1차 출처를 확인하지 못해 언론 보도에 의존한 정보다.</p>
+<p class="why">국내 대기업의 휴머노이드 개발이 가시화되는 소식이지만, 기사에서 모델·학습 방식 같은 기술 세부는 확인하지 못했다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>직접 연관 낮음. 국내 휴머노이드 개발 동향 파악용이며, 시연 수집이나 시뮬레이션 파이프라인에 바로 쓸 정보는 없다.</div>
+<blockquote>“Samsung Electronics is testing a bipedal humanoid for round-the-clock factory and logistics work”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article><footer><p>이번 실행 비용 약 $0.48, 이번 달 누적 약 $1.96</p><p><a href="../index.html">지난 리포트 모아보기</a></p></footer>
+</main></body></html>
