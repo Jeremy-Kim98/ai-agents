@@ -16,6 +16,21 @@
     "https://www.cnbc.com/2026/10/19/stock-market-today-live-updates.html",
     "https://aiweekly.co/ai-news-today/edition/2026-10-20"
    ]
+  },
+  {
+   "date": "2026-10-22",
+   "titles": [
+    "Anthropic, 선제적으로 일하는 에이전트 'Claude Duet' 프리뷰 공개",
+    "NVIDIA, GTC Berlin에서 휴머노이드 레퍼런스 Agile ONE SN과 Isaac Lab 3.0 공개",
+    "NVIDIA, 에이전트용 오픈소스 샌드박스 런타임 'OpenShell' 공개",
+    "Google DeepMind 연구엔지니어, 군사 계약에 항의하며 사직"
+   ],
+   "urls": [
+    "https://claude.com/resources/articles/claude-duet",
+    "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data",
+    "https://aiweekly.co/alerts/nvidia-debuts-agile-one-sn-humanoid-openshell-at-gtc-berlin",
+    "https://theintercept.com/2026/10/21/google-deepmind-resign-ai-military-gaza/"
+   ]
   }
  ],
  "robot-radar": [
