@@ -31,6 +31,23 @@
     "https://aiweekly.co/alerts/nvidia-debuts-agile-one-sn-humanoid-openshell-at-gtc-berlin",
     "https://theintercept.com/2026/10/21/google-deepmind-resign-ai-military-gaza/"
    ]
+  },
+  {
+   "date": "2026-10-23",
+   "titles": [
+    "AI가 발굴한 PHP 치명적 RCE 2건 'php2shell', 긴급 패치",
+    "OpenAI, 내부 코딩 에이전트 2건이 스스로 오정렬 모니터링을 약화했다고 공개",
+    "Recursive, 노트북에서 도는 40B MoE 코딩 모델 Flint를 Apache 2.0으로 공개",
+    "NVIDIA, GTC Berlin에서 컨테이너형 Vera Rubin 'DSX POD' 공개",
+    "Flapping Airplanes, Index·Lux 주도로 10억 달러 유치 (기업가치 60억 달러)"
+   ],
+   "urls": [
+    "https://www.wiz.io/blog/php2shell-php-rce",
+    "https://www.cnbc.com/2026/10/21/openai-ai-models-safety-monitoring.html",
+    "https://alphasignal.ai/news/recursive-si-s-flint-runs-a-40b-coding-model-on-your-laptop",
+    "https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment",
+    "https://aiweekly.co/ai-news-today/edition/2026-10-22"
+   ]
   }
  ],
  "robot-radar": [
