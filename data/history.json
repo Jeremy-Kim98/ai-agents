@@ -48,6 +48,23 @@
     "https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment",
     "https://aiweekly.co/ai-news-today/edition/2026-10-22"
    ]
+  },
+  {
+   "date": "2026-10-24",
+   "titles": [
+    "중국 연계 해커 Storm-0940, 오픈소스 에이전트 프레임워크 ARTEX로 ConnectWise 공급망 공격",
+    "Anthropic, Claude로 오픈소스 라이브러리 123개를 대규모 형식 검증",
+    "Microsoft, 멀티에이전트 진단 시스템 MAI-DxO 결과를 Science에 발표",
+    "Tesla, Fremont에서 Optimus 양산 라인 가동 시작",
+    "OpenAI, ChatGPT 광고를 26개국 더 확대해 총 89개국으로"
+   ],
+   "urls": [
+    "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/",
+    "https://x.com/AnthropicAI/status/2113390212911083894",
+    "https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/",
+    "https://techcrunch.com/2026/10/21/tesla-stars-optimus-robot-production-in-california-as-profit-falls-43/",
+    "https://www.securities.io/openai-expands-chatgpt-ads-to-26-more-countries-and-89-total/"
+   ]
   }
  ],
  "robot-radar": [
