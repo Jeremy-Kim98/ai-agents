@@ -84,6 +84,23 @@
     "https://unite.ai/agility-robotics-signs-agco-deal-to-pilot-digit-humanoid-robots",
     "https://koreajoongangdaily.com/business/samsungs-next-hire-a-robot-that-never-clocks-out/12928887"
    ]
+  },
+  {
+   "date": "2026-10-24",
+   "titles": [
+    "Isaac Sim 6.2 GA 공개: Isaac Lab 3.0 GA 대응, 원격조작·시스템 식별 보강",
+    "Bear Robotics, 시연 기반 휴머노이드 조작 학습 플랫폼 KINO-2 공개",
+    "Eka Robotics, 시뮬레이션 RL 기반 비전-힘-행동 모델로 1.5억 달러 Series A",
+    "힘 인지 VLA(FR-VLA)·델타 행동 VLA(VLDA) 등 10/19자 VLA 프리프린트 정리",
+    "OpenAMRobot 2.0: ROS 2 기반 오픈소스 양팔 모바일 매니퓰레이터와 시뮬레이터"
+   ],
+   "urls": [
+    "https://forums.developer.nvidia.com/t/isaac-sim-6-2-general-availability/386512",
+    "https://www.konsulteer.com/article/bear-robotics-launches-kino-2-with-nvidia-to-advance-humanoid-robot-manipulation",
+    "https://www.humanoidsdaily.com/news/eka-robotics-150-million-series-a-vision-force-action",
+    "https://roboskin.ai/robot-vla-models",
+    "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-october-19th-2026/59114"
+   ]
   }
  ]
 }

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>로봇+AI 레이더 2026-10-24</title>
+<meta property="og:title" content="로봇+AI 레이더 2026-10-24">
+<meta property="og:description" content="시뮬레이션 기반 조작 학습 툴체인(Isaac Sim 6.2)과 시연→배포 상용 플랫폼(KINO-2), 힘 정보를 쓰는 VLA 연구가 함께 나온 주간">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:#F8FAFB; --ink:#1D2B3A; --pencil:#2F5D8C; --graphite:#5E6873;
+  --rule:#DCE3E9; --marker:#FFE36E; --ok:#2E7D4F; --grid:rgba(47,93,140,.07); color-scheme:light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#121A22; --ink:#E4EAF0; --pencil:#8DB6E2; --graphite:#9AA6B2;
+          --rule:#2A3644; --marker:#6B5A12; --ok:#7CC79A; --grid:rgba(141,182,226,.06); color-scheme:dark; }
+}
+* { box-sizing:border-box; }
+html {
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px; min-height:100%;
+}
+body {
+  margin:0; color:var(--ink); background:transparent;
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:16px; line-height:1.7; word-break:keep-all; overflow-wrap:anywhere;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+main { max-width:42rem; margin:0 auto; padding:2.75rem 1.25rem 4rem; }
+.kind { color:var(--pencil); font-weight:600; margin:0; }
+h1 { font-family:"Gowun Batang",serif; font-size:2.4rem; line-height:1.2; margin:.15rem 0 0; }
+.verdict { border-left:3px solid var(--pencil); padding:.1rem 0 .1rem 1rem; margin:1.6rem 0 2.4rem; font-size:1.05rem; }
+h3.group { font-size:.95rem; color:var(--graphite); font-weight:600; margin:2.2rem 0 .2rem; }
+article { padding:1.3rem 0; border-top:1px solid var(--rule); }
+article h2 { font-size:1.12rem; line-height:1.5; margin:0 0 .35rem; }
+article h2 a { color:inherit; text-decoration-color:var(--pencil); text-underline-offset:4px; }
+article.hot h2 a { background:linear-gradient(transparent 58%,var(--marker) 58%); }
+.src { font-size:.85rem; color:var(--graphite); margin:0 0 .5rem; }
+p { margin:.35rem 0; }
+.why { color:var(--graphite); }
+.apply { margin-top:.75rem; padding:.6rem .85rem; border:1px dashed var(--pencil); border-radius:4px; }
+.apply strong { color:var(--pencil); }
+blockquote { margin:.7rem 0 0; padding:0 0 0 .9rem; border-left:2px solid var(--rule); font-size:.92rem; }
+blockquote small { display:block; color:var(--graphite); font-size:.8rem; }
+blockquote small.ok { color:var(--ok); }
+.empty { color:var(--graphite); }
+footer { margin-top:2.75rem; font-size:.85rem; color:var(--graphite); }
+footer p { margin:.15rem 0; }
+a { color:var(--pencil); }
+a:focus-visible { outline:2px solid var(--pencil); outline-offset:2px; }
+h2.series { font-family:"Gowun Batang",serif; font-size:1.5rem; margin:2.6rem 0 0; }
+h3.month { font-size:.9rem; color:var(--graphite); font-weight:600; margin:1.2rem 0 .2rem; }
+ul.archive { list-style:none; padding:0; margin:0; }
+ul.archive li { padding:.5rem 0; border-top:1px solid var(--rule); }
+</style>
+</head>
+<body><main>
+<p class="kind">로봇+AI 레이더</p><h1>10월 24일 토요일</h1><p class="verdict">시뮬레이션 기반 조작 학습 툴체인(Isaac Sim 6.2)과 시연→배포 상용 플랫폼(KINO-2), 힘 정보를 쓰는 VLA 연구가 함께 나온 주간</p><h3 class="group">꼭 볼 것</h3>
+<article class="hot">
+<h2><a href="https://forums.developer.nvidia.com/t/isaac-sim-6-2-general-availability/386512" target="_blank" rel="noopener">Isaac Sim 6.2 GA 공개: Isaac Lab 3.0 GA 대응, 원격조작·시스템 식별 보강</a></h2>
+<p class="src">시뮬레이션 / NVIDIA Developer Forums / 2026-10-22</p>
+<p>Isaac Sim 6.2가 Isaac Lab 3.0 GA를 지원하는 버그 수정 중심 릴리스로 공개됐다. 시스템 식별 검증 리플레이, Robotiq 2F-85/Hand-E 그리퍼의 원격조작 장면·프로파일, Newton 1.6.1과 MuJoCo/MuJoCo Warp 3.12.0 업데이트가 포함된다.</p>
+<p class="why">sim-to-real 간극을 줄이는 파라미터 튜닝 검증과 시연 수집용 원격조작 구성이 한 릴리스에 묶여 나왔다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>가상환경 구축 단계에서 시스템 식별 리플레이로 시뮬 물리 파라미터를 검증하고, 새 그리퍼 원격조작 프로파일을 시연 데이터 수집 환경의 기본 템플릿으로 쓸 수 있다. 업그레이드 전에 Cortex, 센서 API, Newton 텐서 뷰 변경 사항은 확인해야 한다.</div>
+</article>
+<article class="hot">
+<h2><a href="https://www.konsulteer.com/article/bear-robotics-launches-kino-2-with-nvidia-to-advance-humanoid-robot-manipulation" target="_blank" rel="noopener">Bear Robotics, 시연 기반 휴머노이드 조작 학습 플랫폼 KINO-2 공개</a></h2>
+<p class="src">로봇모델 / Konsult (konsulteer.com) / 2026-10-22</p>
+<p>Bear Robotics가 NVIDIA GTC Berlin에서 KR1 휴머노이드용 학습 플랫폼 KINO-2를 발표했다. Isaac OS, Jetson AGX Thor, Isaac GR00T 모델을 통합했고, 최적화로 GR00T 추론 시간을 약 500ms에서 60ms로 줄였다고 보고했다.</p>
+<p class="why">시연 수집→학습→로봇 평가→고객 파일럿으로 이어지는 폐루프를 상용 수준에서 제시했고, 엣지 추론 지연 수치도 함께 공개했다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>시연 데이터 수집과 배포·추론 단계의 참고 사례다. 시연이 필요한 과제를 GR00T 계열로 학습한 뒤 Thor에서 60ms대 추론이 가능한지 비교 기준으로 삼을 수 있다. 다만 회사 보고 수치이며 2차 출처다.</div>
+<blockquote>“reducing GR00T inference time from approximately 500 milliseconds to 60 milliseconds”<small class="">사이트 접근 제한으로 자동 확인을 못 했습니다. 링크에서 직접 확인하세요</small></blockquote>
+</article>
+<h3 class="group">그 밖에</h3>
+<article>
+<h2><a href="https://www.humanoidsdaily.com/news/eka-robotics-150-million-series-a-vision-force-action" target="_blank" rel="noopener">Eka Robotics, 시뮬레이션 RL 기반 비전-힘-행동 모델로 1.5억 달러 Series A</a></h2>
+<p class="src">로봇모델 / Humanoids Daily / 2026-10-20</p>
+<p>Eka Robotics가 a16z와 F-Prime 주도로 1.5억 달러 Series A를 유치했고, TechCrunch는 기업가치를 14.5억 달러로 보도했다. 접촉 힘을 시각 정보와 함께 쓰는 비전-힘-행동 모델을 시뮬레이션 강화학습으로 학습한다.</p>
+<p class="why">사람 시연 없이 시뮬레이션 RL만으로 접촉이 많은 조작을 학습하는 접근이 투자 규모로 검증받고 있다는 신호다. 다만 성능 수치는 회사 보고이고 실험실 수준 과제 기준이다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>사람/로봇 역할 분담 기준에 참고할 만하다. 접촉 힘이 핵심인 삽입·피킹 과제는 시뮬 RL로 자가 학습시키고, 힘 피드백 없는 장기 과제는 시연으로 채우는 가설을 세울 수 있다. 시뮬레이터의 접촉 모델 충실도가 전제 조건이다.</div>
+<blockquote>“Its vision-force-action model learns manipulation through reinforcement learning in simulation”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://roboskin.ai/robot-vla-models" target="_blank" rel="noopener">힘 인지 VLA(FR-VLA)·델타 행동 VLA(VLDA) 등 10/19자 VLA 프리프린트 정리</a></h2>
+<p class="src">로봇모델 / roboskin.ai / 2026-10-19</p>
+<p>VLA 논문 큐레이션 사이트가 10월 19일자 프리프린트 두 편을 추가했다. FR-VLA는 언어·시각 문맥으로 힘 정보를 언제 행동에 반영할지 추정하고, VLDA는 과제와 관련된 상태 변화(Delta)를 표현해 행동을 정제한다.</p>
+<p class="why">힘 신호를 상태에 단순히 붙이는 대신 필요할 때만 주의를 거는 설계와 추론 시 미래 영상 필요 여부 논의가, VLA의 접촉 과제 한계를 다루는 흐름을 보여준다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>시연 수집 시 힘/토크 채널을 함께 기록할지 결정하는 근거로 쓸 수 있다. 접촉이 중요한 과제는 힘 기록이 포함된 시연이 필요하다는 분류 기준을 세우는 데 참고할 만하다. 이 항목은 논문 원문을 직접 확인하지 못한 2차 요약이다.</div>
+<blockquote>“FR-VLA force admission: force-aware VLA versus direct conditioning”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://discourse.openrobotics.org/t/ros-news-for-the-week-of-october-19th-2026/59114" target="_blank" rel="noopener">OpenAMRobot 2.0: ROS 2 기반 오픈소스 양팔 모바일 매니퓰레이터와 시뮬레이터</a></h2>
+<p class="src">오픈소스 / Open Robotics Discourse / 2026-10-24</p>
+<p>ROS Discourse 주간 소식에 OpenAMRobot 2.0이 올라왔다. 양팔 모바일 매니퓰레이터이며 로봇의 전체 시뮬레이터가 이미 동작하고, 12월에 베를린에서 해커톤도 계획 중이다. 같은 호에 ROSCon Global 2026 녹화 공개와 Conduit iOS 앱 소식도 있다.</p>
+<p class="why">하드웨어와 시뮬레이터가 함께 공개되는 오픈소스 매니퓰레이션 플랫폼이라 시뮬 환경과 시연 수집 환경을 함께 맞추기 좋다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>직접 연관 낮음. 다만 양팔 이동 조작 실험을 위한 저비용 testbed 후보로 볼 수 있다. rc.1은 11월 20일 예정이라 지금은 성숙도 확인이 필요하다.</div>
+<blockquote>“OpenAMRobot 2.0: open-source dual-arm mobile manipulator on ROS 2, rc.1 on 20 November”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article><footer><p>이번 실행 비용 약 $0.58, 이번 달 누적 약 $4.24</p><p><a href="../index.html">지난 리포트 모아보기</a></p></footer>
+</main></body></html>
