@@ -70,6 +70,17 @@
    "date": "2026-10-25",
    "titles": [],
    "urls": []
+  },
+  {
+   "date": "2026-10-26",
+   "titles": [
+    "Moonshot, 2.8T 파라미터 Kimi K3.1 Pro 공개… 가중치는 11월 4일까지 공개 예정",
+    "LiteLLM 악성 1.107.0 릴리스, 5월에 유출된 마스터 키가 원인"
+   ],
+   "urls": [
+    "https://www.unite.ai/moonshot-ai-releases-kimi-k3-1-pro-first-model-in-new-k3-1-series/",
+    "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html"
+   ]
   }
  ],
  "robot-radar": [
