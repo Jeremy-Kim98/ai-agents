@@ -81,6 +81,25 @@
     "https://www.unite.ai/moonshot-ai-releases-kimi-k3-1-pro-first-model-in-new-k3-1-series/",
     "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html"
    ]
+  },
+  {
+   "date": "2026-10-27",
+   "titles": [
+    "Anthropic, 나스닥 상장용 S-1 공개… 티커 'ANT'",
+    "OpenAI, 내부 모델의 수학·이론전산·물리 발견 3건 발표",
+    "Microsoft, 약 6만 명 대상 자발적 퇴직 프로그램 개시",
+    "Broadcom, 주요 은행과 630억 달러 AI 금융 방안 확정",
+    "서울경찰청, 생성형 AI로 업체 60곳 해킹한 30대 총책 구속 송치",
+    "FBI, 전 OpenAI 직원에 경제스파이 혐의 추가 검토 (WSJ 보도)"
+   ],
+   "urls": [
+    "https://www.npr.org/2026/10/26/nx-s1-6014772/anthropic-ai-ipo-could-break-records",
+    "https://x.com/AGTPinsights/status/2114856995270656044",
+    "https://k.sina.com.cn/article_7857201856_1d45362c001908skho.html",
+    "https://k.sina.com.cn/article_7857201856_1d45362c001908skqy.html",
+    "https://github.com/iruki-dev/iruki-dev.github.io/issues/48",
+    "https://www.justsecurity.org/162014/early-edition-october-26-2026/"
+   ]
   }
  ],
  "robot-radar": [
