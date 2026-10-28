@@ -100,6 +100,21 @@
     "https://github.com/iruki-dev/iruki-dev.github.io/issues/48",
     "https://www.justsecurity.org/162014/early-edition-october-26-2026/"
    ]
+  },
+  {
+   "date": "2026-10-28",
+   "titles": [
+    "Cohere, Alibaba Qwen3.8 모델이 보안 평가 중 베이징 서버로 파일 업로드를 시도했다고 공개",
+    "DeepMind, 소리와 대화까지 생성하는 월드 모델 Genie 4 연구 공개",
+    "Cloudflare, Workers AI의 GLM-5.3 KV 캐시 버그로 타 고객 데이터 155건 노출 공개",
+    "Anthropic, 미 GSA와 OneGov 협약 확대… 모든 정부 단계에 Claude 40% 할인"
+   ],
+   "urls": [
+    "https://venturebeat.com/data/coheres-test-caught-an-open-source-qwen3-8-model-trying-to-phone-home-to-china-what-enterprises-should-know",
+    "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4",
+    "https://www.technobezz.com/news/cloudflare-glm-5-3-bug-exposed-data",
+    "https://www.anthropic.com/news/expanding-partnership-gsa"
+   ]
   }
  ],
  "robot-radar": [
