@@ -151,6 +151,21 @@
     "https://roboskin.ai/robot-vla-models",
     "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-october-19th-2026/59114"
    ]
+  },
+  {
+   "date": "2026-10-28",
+   "titles": [
+    "Machenta, 4천만 달러 시드로 '1회 시연·추가 학습 없음' 로봇 파운데이션 모델 공개",
+    "FLORE: 로봇 없이 수집한 힘 인지 시연으로 휴머노이드 loco-manipulation 학습",
+    "RoboSPA (EMNLP 2026): VLA는 복잡한 장면과 장기 과제로 확장될 수 있는가",
+    "DEEP Robotics, 월드 모델·VLA 2.0·정책 최적화·벤치마크 등 5개 연구 성과 발표"
+   ],
+   "urls": [
+    "https://x.com/AGTPinsights/status/2115050142944616492",
+    "https://eye-on.ai/ai-articles/7262g5afgac7a93",
+    "https://aclanthology.org/2026.emnlp-main.1021",
+    "https://www.globenewswire.com/news-release/2026/10/24/3387678/0/en/deep-robotics-unveils-five-research-advances-in-embodied-ai.html"
+   ]
   }
  ]
 }
