@@ -124,6 +124,23 @@
    "urls": [
     "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-october-28-2026/"
    ]
+  },
+  {
+   "date": "2026-10-30",
+   "titles": [
+    "Google, 사이버보안 특화 Gemini 4 Carbon 공개",
+    "OpenAI, 미 중간선거 대비 '선거 운영 센터' 가동",
+    "Anthropic, 신약 개발 초기 성과 공개하고 Mithril Medicine 인수",
+    "Anthropic, 법률 특화 'Claude for Legal artifacts' 출시",
+    "AMD, Meta에 10억 달러 투자… Helios 랙 도입, Muse 모델 Day-0 지원"
+   ],
+   "urls": [
+    "https://www.constellationr.com/insights/news/google-rolls-out-gemini-4-carbon",
+    "https://cisoseries.com/cybersecurity-news-october-29-2026/",
+    "https://qazinform.com/news/anthropic-reports-early-progress-in-using-claude-to-accelerate-drug-development-5f0907/amp",
+    "https://www.abajournal.com/news/article/anthropic-raises-the-bar-with-claude-for-legal-artifacts-law-specific-interactive-tools",
+    "https://smbtech.au/news/amd-deepens-meta-partnership-with-helios-rackscale-deployment-and-1-billion-equity-investment/"
+   ]
   }
  ],
  "robot-radar": [
