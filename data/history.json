@@ -150,6 +150,23 @@
    "urls": [
     "https://sfstandard.com/2026/10/30/tesla-optimus-robot-waitlist"
    ]
+  },
+  {
+   "date": "2026-11-01",
+   "titles": [
+    "OpenAI, 투자 유치 목표를 300억→200억 달러로 하향",
+    "Alphabet 사상 최악의 하루… 한 주 내내 AI 투자 부담에 기술주 급락",
+    "'EMBRACE' 취약점: Cursor·Copilot·Codex·VS Code·Claude Desktop의 내장 브라우저 뚫려",
+    "Meta, 현금흐름·지출·수익화 문제로 신용 경고받아",
+    "Mistral, 오픈웨이트 'Large 4' 가중치 전체 공개"
+   ],
+   "urls": [
+    "https://www.cnbc.com/2026/10/31/openai-funding-target-cut-10-billion.html",
+    "https://cnbc.com/2026/10/30/amazon-intel-earnings-big-tech-ai-spending-concerns.html",
+    "https://forever.security/blog/embrace-hacking-5-ai-assistants-embedded-browsers-technical",
+    "https://fortune.com/2026/10/31/ai-boom-bust-openai-fundraising-target-meta-credit-warning-cash-flow-capex",
+    "https://www.online-tech-tips.com/mistral-releases-large-4-open-weight-frontier-ai-model/"
+   ]
   }
  ],
  "robot-radar": [
