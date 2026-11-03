@@ -180,6 +180,17 @@
     "https://www.manilatimes.net/2026/11/02/business/foreign-business/us-looking-at-report-nvidia-ceo-target-of-china-spying/2459032",
     "https://mixed-news.com/en/openai-gpt-6-chatgpt-less-flattering-shorter-free-go"
    ]
+  },
+  {
+   "date": "2026-11-03",
+   "titles": [
+    "VicOne, AI 보조 연구로 Google·NVIDIA·Meta 로봇 SW에서 제로데이 28건 발견",
+    "SemiAnalysis, 에이전트 벤치마크 GDPx 공개… 1위 Claude Opus 5.5도 12%"
+   ],
+   "urls": [
+    "https://www.therobotreport.com/28-zero-day-findings-in-less-than-two-days-what-ai-speed-discovery-means-for-robotics/",
+    "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities"
+   ]
   }
  ],
  "robot-radar": [
