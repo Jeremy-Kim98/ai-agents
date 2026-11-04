@@ -272,6 +272,17 @@
    "urls": [
     "https://roboticsandautomationnews.com/2026/10/30/humanoid-expands-collaboration-with-nvidia-to-power-its-next-generation-of-humanoid-robots/106493"
    ]
+  },
+  {
+   "date": "2026-11-04",
+   "titles": [
+    "RISE: 이동·조작 데이터를 따로 모아 다단계 휴머노이드 과제를 수행",
+    "Meta, Fourier와 협력해 가정용 휴머노이드 프로토타입 'Max' 개발 보도"
+   ],
+   "urls": [
+    "https://techxplore.com/news/2026-11-humanoid-ai-task-sequences.html",
+    "https://www.engadget.com/2303434/meta-reportedly-built-a-humanoid-robot-prototype-that-can-do-household-chores/"
+   ]
   }
  ]
 }
