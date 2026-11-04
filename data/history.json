@@ -191,6 +191,27 @@
     "https://www.therobotreport.com/28-zero-day-findings-in-less-than-two-days-what-ai-speed-discovery-means-for-robotics/",
     "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities"
    ]
+  },
+  {
+   "date": "2026-11-04",
+   "titles": [
+    "한국 2027년 예산안, 주권 AI 모델에 4.7조 원 배정",
+    "Oracle, AI 인프라 확충 위해 200억 달러 주식·채권 발행",
+    "Anthropic, 자기개선 AI가 가까울 수 있다고 경고",
+    "Google, 안드로이드 TV 박스 130만 대 XCPE 봇넷 해체",
+    "Meta, 코치의 미성년 선수 성적 접촉 AI 영상 신고에도 방치하다 보도 후 삭제",
+    "Marvell, Lumentum을 1,150억 달러 전액 주식 거래로 인수 합의",
+    "OpenAI, 아부다비 정부·주요 산업에 AI 도입 협약"
+   ],
+   "urls": [
+    "https://www.cnbc.com/2026/11/02/south-korea-ai-spending-budget.html",
+    "https://www.business-standard.com/world-news/oracle-raises-20-billion-through-stock-and-bond-sales-to-fund-ai-push-126110300303_1.html",
+    "https://enoumen.substack.com/p/anthropic-warns-self-improving-ai",
+    "https://cloud.google.com/blog/topics/threat-intelligence/shutting-the-door-on-the-xcpe-botnet/",
+    "https://futurism.com/artificial-intelligence/meta-facebook-ai-coaches-inappropriately-touching-young-athletes",
+    "https://www.bizn.org/news",
+    "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-november-3-2026/"
+   ]
   }
  ],
  "robot-radar": [
