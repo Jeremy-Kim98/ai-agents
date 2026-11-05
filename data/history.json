@@ -212,6 +212,19 @@
     "https://www.bizn.org/news",
     "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-november-3-2026/"
    ]
+  },
+  {
+   "date": "2026-11-05",
+   "titles": [
+    "Meta, 병렬 코딩 에이전트 스타트업 Conductor 인수",
+    "Ai2, 장문맥 상태 추적 벤치마크 StateBench 공개",
+    "Snowflake, 에이전트용 Business Ontology와 Cortex AI Gateway 확장 발표"
+   ],
+   "urls": [
+    "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/",
+    "https://allenai.org/blog/statebench",
+    "https://aiweekly.co/alerts/snowflake-expedition-2026-opens-business-ontology-and-cortex-ai-gateway-for"
+   ]
   }
  ],
  "robot-radar": [
