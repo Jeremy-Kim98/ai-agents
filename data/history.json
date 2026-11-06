@@ -225,6 +225,23 @@
     "https://allenai.org/blog/statebench",
     "https://aiweekly.co/alerts/snowflake-expedition-2026-opens-business-ontology-and-cortex-ai-gateway-for"
    ]
+  },
+  {
+   "date": "2026-11-06",
+   "titles": [
+    "OpenAI, Images 2.6 공개… GIF 생성과 편집 제어 강화",
+    "OpenAI, 에이전트 병렬 코딩용 소스 관리 스타트업 Pierre 인수 합의",
+    "OpenAI, AI 에이전트로 리눅스 보안 취약점 948건 발견했다고 보고",
+    "Anthropic, Claude에 'Personal Finance' 도구 추가",
+    "xAI의 Grok Bot, 사용자 대신 업체에 전화를 거는 기능 추가"
+   ],
+   "urls": [
+    "https://openai.com/index/introducing-images-2-6/",
+    "https://finance.yahoo.com/technology/ai/articles/openai-acquire-pierre-expand-codex-170249678.html",
+    "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-november-5-2026/",
+    "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/",
+    "https://www.theaimarketers.ai/news-110526/"
+   ]
   }
  ],
  "robot-radar": [
