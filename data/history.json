@@ -328,6 +328,21 @@
     "https://techxplore.com/news/2026-11-humanoid-ai-task-sequences.html",
     "https://www.engadget.com/2303434/meta-reportedly-built-a-humanoid-robot-prototype-that-can-do-household-chores/"
    ]
+  },
+  {
+   "date": "2026-11-07",
+   "titles": [
+    "LeRobot v0.7.0: 상호작용형 롤아웃, 원격 정책 서버, 데이터 스트리밍",
+    "MuJoCo 4.0.0 릴리스: 배치 API, 새 적분기, Bazel 빌드",
+    "Intrinsic Core 공개: ROS 호환 오픈소스 실시간 제어·모션 플래닝",
+    "Jetson Thor에서 TensorRT 11.2.1은 미지원: Ultralytics YOLO26 배포 가이드 주의점"
+   ],
+   "urls": [
+    "https://huggingface.co/blog/lerobot/lerobot-release-v070",
+    "https://github.com/google-deepmind/mujoco/releases",
+    "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-november-2nd-2026/59601",
+    "https://docs.ultralytics.com/guides/nvidia-jetson"
+   ]
   }
  ]
 }

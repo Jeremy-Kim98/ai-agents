@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>로봇+AI 레이더 2026-11-07</title>
+<meta property="og:title" content="로봇+AI 레이더 2026-11-07">
+<meta property="og:description" content="이번 주는 모델 발표보다 도구 쪽 소식이 중심이었다. LeRobot v0.7.0이 원격 추론과 데이터 스트리밍을 넣었고, MuJoCo 4.0이 병렬 시뮬레이션 API를 내놓았으며, ROS 2 쪽에서는 Intrinsic Core가 공개됐다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:#F8FAFB; --ink:#1D2B3A; --pencil:#2F5D8C; --graphite:#5E6873;
+  --rule:#DCE3E9; --marker:#FFE36E; --ok:#2E7D4F; --grid:rgba(47,93,140,.07); color-scheme:light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#121A22; --ink:#E4EAF0; --pencil:#8DB6E2; --graphite:#9AA6B2;
+          --rule:#2A3644; --marker:#6B5A12; --ok:#7CC79A; --grid:rgba(141,182,226,.06); color-scheme:dark; }
+}
+* { box-sizing:border-box; }
+html {
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px; min-height:100%;
+}
+body {
+  margin:0; color:var(--ink); background:transparent;
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:16px; line-height:1.7; word-break:keep-all; overflow-wrap:anywhere;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+main { max-width:42rem; margin:0 auto; padding:2.75rem 1.25rem 4rem; }
+.kind { color:var(--pencil); font-weight:600; margin:0; }
+h1 { font-family:"Gowun Batang",serif; font-size:2.4rem; line-height:1.2; margin:.15rem 0 0; }
+.verdict { border-left:3px solid var(--pencil); padding:.1rem 0 .1rem 1rem; margin:1.6rem 0 2.4rem; font-size:1.05rem; }
+h3.group { font-size:.95rem; color:var(--graphite); font-weight:600; margin:2.2rem 0 .2rem; }
+article { padding:1.3rem 0; border-top:1px solid var(--rule); }
+article h2 { font-size:1.12rem; line-height:1.5; margin:0 0 .35rem; }
+article h2 a { color:inherit; text-decoration-color:var(--pencil); text-underline-offset:4px; }
+article.hot h2 a { background:linear-gradient(transparent 58%,var(--marker) 58%); }
+.src { font-size:.85rem; color:var(--graphite); margin:0 0 .5rem; }
+p { margin:.35rem 0; }
+.why { color:var(--graphite); }
+.apply { margin-top:.75rem; padding:.6rem .85rem; border:1px dashed var(--pencil); border-radius:4px; }
+.apply strong { color:var(--pencil); }
+blockquote { margin:.7rem 0 0; padding:0 0 0 .9rem; border-left:2px solid var(--rule); font-size:.92rem; }
+blockquote small { display:block; color:var(--graphite); font-size:.8rem; }
+blockquote small.ok { color:var(--ok); }
+.empty { color:var(--graphite); }
+footer { margin-top:2.75rem; font-size:.85rem; color:var(--graphite); }
+footer p { margin:.15rem 0; }
+a { color:var(--pencil); }
+a:focus-visible { outline:2px solid var(--pencil); outline-offset:2px; }
+h2.series { font-family:"Gowun Batang",serif; font-size:1.5rem; margin:2.6rem 0 0; }
+h3.month { font-size:.9rem; color:var(--graphite); font-weight:600; margin:1.2rem 0 .2rem; }
+ul.archive { list-style:none; padding:0; margin:0; }
+ul.archive li { padding:.5rem 0; border-top:1px solid var(--rule); }
+</style>
+</head>
+<body><main>
+<p class="kind">로봇+AI 레이더</p><h1>11월 7일 토요일</h1><p class="verdict">이번 주는 모델 발표보다 도구 쪽 소식이 중심이었다. LeRobot v0.7.0이 원격 추론과 데이터 스트리밍을 넣었고, MuJoCo 4.0이 병렬 시뮬레이션 API를 내놓았으며, ROS 2 쪽에서는 Intrinsic Core가 공개됐다.</p><h3 class="group">꼭 볼 것</h3>
+<article class="hot">
+<h2><a href="https://huggingface.co/blog/lerobot/lerobot-release-v070" target="_blank" rel="noopener">LeRobot v0.7.0: 상호작용형 롤아웃, 원격 정책 서버, 데이터 스트리밍</a></h2>
+<p class="src">오픈소스 / Hugging Face Blog (릴리스 날짜는 PyPI 기준) / 2026-11-05</p>
+<p>v0.7.0은 실행 중인 로봇의 서브태스크를 바꾸거나 질문을 던지고 새 목표를 줄 수 있는 언어 기반 인터랙티브 롤아웃을 도입했다. 데이터셋을 다운로드 없이 Hub, Storage Bucket, LanceDB에서 바로 학습에 쓸 수 있고, Unitree G1에는 NVIDIA SONIC 전신 제어기가 붙었으며, 모든 시뮬레이터가 코어 하나로 돌아간다고 한다.</p>
+<p class="why">데이터 규모(Hub에 약 300TB)와 추론 구조(원격 GPU 정책 서버)를 모두 손봐서, 시연 데이터 수집부터 정책 배포까지를 한 오픈소스 스택으로 이을 수 있게 됐다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>시연 데이터 수집·배포에 직접 쓸 수 있다. 수집한 시연을 LeRobot 포맷으로 두고 스트리밍 학습을 하면 저장 부담이 줄고, lerobot-policy-server로 엣지 로봇과 GPU 서버를 분리해 시뮬레이션과 실기 정책을 같은 방식으로 평가할 수 있다. 롤아웃 중 사람이 서브태스크를 바꿔 주는 기능은 &#x27;어디서 사람이 개입해야 하는가&#x27;를 로깅하는 실험에도 쓸 만하다.</div>
+<blockquote>“Policies can now run on a remote GPU with lerobot-policy-server”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article class="hot">
+<h2><a href="https://github.com/google-deepmind/mujoco/releases" target="_blank" rel="noopener">MuJoCo 4.0.0 릴리스: 배치 API, 새 적분기, Bazel 빌드</a></h2>
+<p class="src">시뮬레이션 / GitHub (google-deepmind/mujoco Releases) / 2026-11-06</p>
+<p>mujoco.batch는 한 모델의 시뮬레이션 여러 개를 자체 스레드 풀에서 돌리며, 스레드 수와 상관없이 결과가 일반 루프와 비트 단위로 같다고 한다. 이 밖에 암시적 감쇠·강성을 함께 푸는 discrete 적분기, 컴파일 시 프레임 스케일 속성, Bazel 빌드 지원이 들어갔고, 릴리스 후 mujoco/mujoco-core/mujoco-studio 분리 패키지와 OpenUSD 휠 문서도 올라왔다.</p>
+<p class="why">스레드 수와 무관하게 결과가 재현되는 병렬 롤아웃은 CPU 기반 대규모 정책 평가와 데이터 생성에서 재현성 문제를 줄여 준다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>가상환경 구축과 과제 학습에 쓸 수 있다. 접촉이 많은 조작 과제로 &#x27;로봇이 스스로 학습 가능한가&#x27;를 가르는 사전 실험을 돌릴 때 batch API로 시드별 대량 롤아웃을 만들 수 있다. 다만 GPU 시뮬레이터(Isaac Lab, Genesis)와의 속도 비교는 확인하지 못했으니 직접 벤치마크가 필요하다.</div>
+</article>
+<h3 class="group">그 밖에</h3>
+<article>
+<h2><a href="https://discourse.openrobotics.org/t/ros-news-for-the-week-of-november-2nd-2026/59601" target="_blank" rel="noopener">Intrinsic Core 공개: ROS 호환 오픈소스 실시간 제어·모션 플래닝</a></h2>
+<p class="src">오픈소스 / Open Robotics Discourse (ROS News for the Week of November 2nd, 2026) / 2026-11-02</p>
+<p>ROS 커뮤니티 주간 뉴스와 ROS General 게시판에 Intrinsic Core 공개 공지가 올라왔다(게시 11/2). 제목 외의 본문 세부 사항은 확인하지 못했다.</p>
+<p class="why">ROS 2 생태계에 오픈소스 실시간 제어·모션 플래닝 스택이 들어오면 시뮬레이션에서 실기까지 같은 제어 계층을 쓸 선택지가 넓어진다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>배포·추론 단계에서 검토할 가치가 있다. 학습한 정책을 실기에 올릴 때 하위 제어·플래닝 계층의 후보로 볼 수 있지만, 지원 로봇이나 라이선스는 원 공지에서 직접 확인해야 한다.</div>
+<blockquote>“Intrinsic Core released: Open-source, ROS-compatible real-time control, motion planning and more”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://docs.ultralytics.com/guides/nvidia-jetson" target="_blank" rel="noopener">Jetson Thor에서 TensorRT 11.2.1은 미지원: Ultralytics YOLO26 배포 가이드 주의점</a></h2>
+<p class="src">엣지AI / Ultralytics Docs / 2026-11-02</p>
+<p>Ultralytics의 YOLO26 Jetson 가이드는 TensorRT 11.2.1이 Thor를 포함한 JetPack을 지원하지 않는다고 적고 있다. Jetson 내보내기에는 JetPack 버전에 맞는 TensorRT 10.x 런타임을 쓰는 네이티브 설치를 권한다. 뉴스가 아니라 문서 페이지이고, 날짜는 검색 결과의 &#x27;5일 전&#x27; 표기로 추정했다.</p>
+<p class="why">TensorRT 최신 버전과 Jetson 지원 사이에 틈이 있어, 엣지 배포 파이프라인의 버전 고정이 실질적인 문제임을 보여 준다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>배포·추론 단계의 체크리스트로 쓸 수 있다. Jetson Thor/Orin에서 검출기(YOLO26 등)를 TensorRT로 내보낼 때 JetPack별 TensorRT 버전을 먼저 고정해야 한다.</div>
+</article><footer><p>이번 실행 비용 약 $0.73, 이번 달 누적 약 $4.94</p><p><a href="../index.html">지난 리포트 모아보기</a></p></footer>
+</main></body></html>
