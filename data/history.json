@@ -242,6 +242,21 @@
     "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/",
     "https://www.theaimarketers.ai/news-110526/"
    ]
+  },
+  {
+   "date": "2026-11-07",
+   "titles": [
+    "AI 규제 우려에 나스닥 5%대 급락, 시총 2조 달러 증발",
+    "OpenAI, 보안 특화 모델 GPT-6 Cyber 공개… 제한된 고객에게 우선 제공",
+    "METR, Anthropic의 AI R&D 속도가 이전보다 약 2배 빨라졌다고 추정",
+    "Google, Gemini Omni 1.2 Flash 정식 출시… 클립 15초, 가격 30% 인하"
+   ],
+   "urls": [
+    "https://www.npr.org/2026/11/05/nx-s1-6031987/stock-markets-ai-midterm-elections",
+    "https://openai.com/index/introducing-gpt-6-cyber/",
+    "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-friday-november-6-2026/",
+    "https://samonai.substack.com/p/ai-brief-november-6-2026"
+   ]
   }
  ],
  "robot-radar": [
