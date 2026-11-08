@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI 뉴스 2026-11-08</title>
+<meta property="og:title" content="AI 뉴스 2026-11-08">
+<meta property="og:description" content="DeepMind의 AI 에이전트가 레거시 RSA-1024 약점을 찾아냈고, Meta·NVIDIA는 에이전트와 월드모델 쪽 업데이트를 이어갔다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:#F8FAFB; --ink:#1D2B3A; --pencil:#2F5D8C; --graphite:#5E6873;
+  --rule:#DCE3E9; --marker:#FFE36E; --ok:#2E7D4F; --grid:rgba(47,93,140,.07); color-scheme:light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#121A22; --ink:#E4EAF0; --pencil:#8DB6E2; --graphite:#9AA6B2;
+          --rule:#2A3644; --marker:#6B5A12; --ok:#7CC79A; --grid:rgba(141,182,226,.06); color-scheme:dark; }
+}
+* { box-sizing:border-box; }
+html {
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px; min-height:100%;
+}
+body {
+  margin:0; color:var(--ink); background:transparent;
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:16px; line-height:1.7; word-break:keep-all; overflow-wrap:anywhere;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+main { max-width:42rem; margin:0 auto; padding:2.75rem 1.25rem 4rem; }
+.kind { color:var(--pencil); font-weight:600; margin:0; }
+h1 { font-family:"Gowun Batang",serif; font-size:2.4rem; line-height:1.2; margin:.15rem 0 0; }
+.verdict { border-left:3px solid var(--pencil); padding:.1rem 0 .1rem 1rem; margin:1.6rem 0 2.4rem; font-size:1.05rem; }
+h3.group { font-size:.95rem; color:var(--graphite); font-weight:600; margin:2.2rem 0 .2rem; }
+article { padding:1.3rem 0; border-top:1px solid var(--rule); }
+article h2 { font-size:1.12rem; line-height:1.5; margin:0 0 .35rem; }
+article h2 a { color:inherit; text-decoration-color:var(--pencil); text-underline-offset:4px; }
+article.hot h2 a { background:linear-gradient(transparent 58%,var(--marker) 58%); }
+.src { font-size:.85rem; color:var(--graphite); margin:0 0 .5rem; }
+p { margin:.35rem 0; }
+.why { color:var(--graphite); }
+.apply { margin-top:.75rem; padding:.6rem .85rem; border:1px dashed var(--pencil); border-radius:4px; }
+.apply strong { color:var(--pencil); }
+blockquote { margin:.7rem 0 0; padding:0 0 0 .9rem; border-left:2px solid var(--rule); font-size:.92rem; }
+blockquote small { display:block; color:var(--graphite); font-size:.8rem; }
+blockquote small.ok { color:var(--ok); }
+.empty { color:var(--graphite); }
+footer { margin-top:2.75rem; font-size:.85rem; color:var(--graphite); }
+footer p { margin:.15rem 0; }
+a { color:var(--pencil); }
+a:focus-visible { outline:2px solid var(--pencil); outline-offset:2px; }
+h2.series { font-family:"Gowun Batang",serif; font-size:1.5rem; margin:2.6rem 0 0; }
+h3.month { font-size:.9rem; color:var(--graphite); font-weight:600; margin:1.2rem 0 .2rem; }
+ul.archive { list-style:none; padding:0; margin:0; }
+ul.archive li { padding:.5rem 0; border-top:1px solid var(--rule); }
+</style>
+</head>
+<body><main>
+<p class="kind">AI 뉴스</p><h1>11월 8일 일요일</h1><p class="verdict">DeepMind의 AI 에이전트가 레거시 RSA-1024 약점을 찾아냈고, Meta·NVIDIA는 에이전트와 월드모델 쪽 업데이트를 이어갔다.</p><h3 class="group">꼭 볼 것</h3>
+<article class="hot">
+<h2><a href="https://officechai.com/ai/google-deepmind-says-it-has-used-ai-agents-to-break-legacy-rsa-1024-encryption-faster-than-anyone-thought-possible/" target="_blank" rel="noopener">DeepMind, AI 에이전트로 레거시 RSA-1024의 약점 두 가지 발견</a></h2>
+<p class="src">보안 / OfficeChai / 2026-11-07</p>
+<p>사람이 감독하는 AI 에이전트가 1024비트 RSA의 서명 위조와 배치 인수분해에서 새 약점을 찾았다고 DeepMind가 11월 6일(현지) 공개했다. 배치 인수분해는 키 하나를 추가할 때 드는 평균 비용을 약 30배 줄이는 알고리즘이고, 2048비트 이상의 현행 키는 영향이 없다고 한다.</p>
+<p class="why">AI 에이전트가 암호 분석 같은 오래된 문제에서 사람이 놓친 틈을 찾기 시작했다는 신호다.</p>
+<blockquote>“cutting the average cost of factoring each additional 1024-bit key by about 30x”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<h3 class="group">그 밖에</h3>
+<article>
+<h2><a href="https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation" target="_blank" rel="noopener">NVIDIA, Cosmos 3 월드모델 오픈 체크포인트 4종 추가</a></h2>
+<p class="src">오픈소스 / Hugging Face Blog (NVIDIA) / 2026-11-06</p>
+<p>Cosmos 3 Nano(16B)를 후속 학습한 체크포인트 4종이 공개됐다. 다중 뷰 주행 데이터 생성, 카메라·LiDAR 시뮬레이션, 시뮬레이터 제어 기반 영상 생성, 양손 로봇 액션 기반 영상 예측을 다룬다. 라이선스는 OpenMDW 1.1로 상업적 사용도 허용한다.</p>
+<p class="why">로봇 쪽에서 쓸 수 있는 액션 조건부 월드모델 가중치가 오픈으로 풀렸다.</p>
+<blockquote>“Predict video from robot or camera actions.”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/" target="_blank" rel="noopener">Meta, Muse 에이전트에 &#x27;Spaces&#x27; 추가… 음성 대화·아바타 이어 한 주 두 번째 기능</a></h2>
+<p class="src">빅테크 / TechCrunch / 2026-11-07</p>
+<p>Spaces는 주제별로 나뉜 맞춤 대화 공간이다. 사이드바에 놓이고 외부 앱과 연동돼 정보가 백그라운드에서 갱신된다. 저커버그가 금요일 X에 직접 소개했고, 하루 전에는 실시간 음성·아바타 기능(미국 한정)이 나왔다.</p>
+<p class="why">Meta가 Muse를 개인 에이전트 플랫폼으로 빠르게 확장하고 있다.</p>
+<blockquote>“Spaces are basically breakout conversations that revolve around a particular topic”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://deepgains.substack.com/p/morning-brief-saturday-november-7-350" target="_blank" rel="noopener">Anthropic, Claude가 세션 사이에 &#x27;꿈꾸듯&#x27; 에이전트 메모리를 정리하는 방식 공개</a></h2>
+<p class="src">모델 / Deep Gains / 2026-11-07</p>
+<p>Anthropic이 Claude가 세션 사이에 에이전트 메모리를 정리하는 &#x27;dreaming&#x27; 방식을 설명했다고 당일 뉴스 요약에 올라왔다. 세부 내용은 1차 출처로 확인하지 못했다.</p>
+<p class="why">장기 에이전트의 메모리 관리 방식에 대한 힌트다.</p>
+<blockquote>“Anthropic also showed how Claude organises agent memory by dreaming between sessions.”<small class="">사이트 접근 제한으로 자동 확인을 못 했습니다. 링크에서 직접 확인하세요</small></blockquote>
+</article><footer><p>이번 실행 비용 약 $0.63, 이번 달 누적 약 $5.57</p><p><a href="../index.html">지난 리포트 모아보기</a></p></footer>
+</main></body></html>

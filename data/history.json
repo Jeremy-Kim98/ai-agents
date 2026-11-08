@@ -257,6 +257,21 @@
     "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-friday-november-6-2026/",
     "https://samonai.substack.com/p/ai-brief-november-6-2026"
    ]
+  },
+  {
+   "date": "2026-11-08",
+   "titles": [
+    "DeepMind, AI 에이전트로 레거시 RSA-1024의 약점 두 가지 발견",
+    "NVIDIA, Cosmos 3 월드모델 오픈 체크포인트 4종 추가",
+    "Meta, Muse 에이전트에 'Spaces' 추가… 음성 대화·아바타 이어 한 주 두 번째 기능",
+    "Anthropic, Claude가 세션 사이에 '꿈꾸듯' 에이전트 메모리를 정리하는 방식 공개"
+   ],
+   "urls": [
+    "https://officechai.com/ai/google-deepmind-says-it-has-used-ai-agents-to-break-legacy-rsa-1024-encryption-faster-than-anyone-thought-possible/",
+    "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
+    "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+    "https://deepgains.substack.com/p/morning-brief-saturday-november-7-350"
+   ]
   }
  ],
  "robot-radar": [
