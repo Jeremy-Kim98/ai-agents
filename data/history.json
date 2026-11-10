@@ -1,23 +1,6 @@
 {
  "ai-news": [
   {
-   "date": "2026-10-21",
-   "titles": [
-    "해커, AI 에이전트로 100곳 넘는 기업 웹사이트 침입",
-    "Altman, 직원들에게 'AI 종착점 3가지' 시나리오 제시",
-    "Anthropic, Claude가 64시간 자율 설계한 전갈 독소 결합 단백질 실험 결과 공개",
-    "Elice, 코스닥 상장 첫날 30% 넘게 급락",
-    "Stanford, 언어 사전학습 없는 T2I 모델 Halcyon 공개"
-   ],
-   "urls": [
-    "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-october-20-2026/",
-    "https://aiweekly.co/ai-news-today",
-    "https://blockchain.news/news/anthropic-claude-scorpion-neurotoxin-binders",
-    "https://www.cnbc.com/2026/10/19/stock-market-today-live-updates.html",
-    "https://aiweekly.co/ai-news-today/edition/2026-10-20"
-   ]
-  },
-  {
    "date": "2026-10-22",
    "titles": [
     "Anthropic, 선제적으로 일하는 에이전트 'Claude Duet' 프리뷰 공개",
@@ -280,6 +263,21 @@
    ],
    "urls": [
     "https://dev.to/hiroki-ii-ai/ai-daily-digest-november-9-2026-mistral-opens-le-chonk-weights-grok-api-watermarks-by-default-2gdm"
+   ]
+  },
+  {
+   "date": "2026-11-10",
+   "titles": [
+    "Anthropic, Claude Fable 5.2·Mythos 5.2 출시… 페르마 정리 30시간 만에 형식화",
+    "Mythos 5.2, 이전 모델보다 취약점 더 많이 찾고 재현·수정도 향상",
+    "Adobe·Disney 다년 AI 제휴… Disney IP 기반 맞춤 Firefly 모델 구축",
+    "미시시피 당국, SpaceXAI 사우스heaven 데이터센터 무허가 착공에 제재 추진"
+   ],
+   "urls": [
+    "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "https://the-decoder.com/claude-fable-5-2-and-mythos-5-2-cement-anthropics-ai-lead-just-before-its-ipo/",
+    "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+    "https://www.govtech.com/artificial-intelligence/mississippi-spacexai-started-data-center-without-permit"
    ]
   }
  ],
