@@ -1,21 +1,6 @@
 {
  "ai-news": [
   {
-   "date": "2026-10-22",
-   "titles": [
-    "Anthropic, 선제적으로 일하는 에이전트 'Claude Duet' 프리뷰 공개",
-    "NVIDIA, GTC Berlin에서 휴머노이드 레퍼런스 Agile ONE SN과 Isaac Lab 3.0 공개",
-    "NVIDIA, 에이전트용 오픈소스 샌드박스 런타임 'OpenShell' 공개",
-    "Google DeepMind 연구엔지니어, 군사 계약에 항의하며 사직"
-   ],
-   "urls": [
-    "https://claude.com/resources/articles/claude-duet",
-    "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data",
-    "https://aiweekly.co/alerts/nvidia-debuts-agile-one-sn-humanoid-openshell-at-gtc-berlin",
-    "https://theintercept.com/2026/10/21/google-deepmind-resign-ai-military-gaza/"
-   ]
-  },
-  {
    "date": "2026-10-23",
    "titles": [
     "AI가 발굴한 PHP 치명적 RCE 2건 'php2shell', 긴급 패치",
@@ -278,6 +263,21 @@
     "https://the-decoder.com/claude-fable-5-2-and-mythos-5-2-cement-anthropics-ai-lead-just-before-its-ipo/",
     "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
     "https://www.govtech.com/artificial-intelligence/mississippi-spacexai-started-data-center-without-permit"
+   ]
+  },
+  {
+   "date": "2026-11-11",
+   "titles": [
+    "Google, Gemini 4 Carbon 정식 출시",
+    "NVIDIA 이사회, 젠슨 황 관련 보도에 독립 조사 착수… 로펌 선임",
+    "Anthropic, IPO 공모가 밴드 $70~78 제시… 기업가치 최대 약 1.4조 달러",
+    "NVIDIA, CoRL에서 로봇의 시뮬레이션 기반 정밀 작업 연습 사례 공개"
+   ],
+   "urls": [
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+    "https://www.globenewswire.com/news-release/2026/11/10/3400124/0/en/statement-from-the-independent-members-of-the-nvidia-board.html",
+    "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
+    "https://nvidianews.nvidia.com/"
    ]
   }
  ],
