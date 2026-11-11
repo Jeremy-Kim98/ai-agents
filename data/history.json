@@ -365,6 +365,23 @@
     "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-november-2nd-2026/59601",
     "https://docs.ultralytics.com/guides/nvidia-jetson"
    ]
+  },
+  {
+   "date": "2026-11-11",
+   "titles": [
+    "Isaac Lab 3.0: Newton 물리엔진 통합과 강화학습 후처리 라이브러리",
+    "NVIDIA GR00T 2: 오픈 월드 액션 모델 공개",
+    "AlphaNIST: Isaac Lab에서 NIST 조립 과제 20개를 단일 정책으로 학습",
+    "Gemini Robotics 2.5: 최신 VLA와 시뮬레이션 엔진으로 쓴 Gemini 4 Argon",
+    "Embodied AI의 양팔 이동 로봇 AIR: 원격조작으로 배우고 약 한 달 내 자율 전환 주장"
+   ],
+   "urls": [
+    "https://www.therobotreport.com/nvidia-launches-gr00t-2-isaac-lab-3-0-corl/",
+    "https://cryptobriefing.com/nvidia-gr00t-2-isaac-lab-3-corl/",
+    "https://cellcog.ai/blog/nvidia-groot-2-isaac-lab-3-corl/",
+    "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+    "https://interestingengineering.com/ai-robotics/wheeled-humanoid-robot-for-factory-tasks"
+   ]
   }
  ]
 }

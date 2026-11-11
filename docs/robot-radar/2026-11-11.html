@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>로봇+AI 레이더 2026-11-11</title>
+<meta property="og:title" content="로봇+AI 레이더 2026-11-11">
+<meta property="og:description" content="NVIDIA가 CoRL에서 Isaac Lab 3.0·GR00T 2로 시뮬레이션 기반 학습 스택을 갱신했고, Google DeepMind는 Gemini Robotics 2.5를 내놓아 로봇 파운데이션 모델 경쟁이 시뮬레이션 학습과 현장 시연 양쪽에서 이어졌다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:#F8FAFB; --ink:#1D2B3A; --pencil:#2F5D8C; --graphite:#5E6873;
+  --rule:#DCE3E9; --marker:#FFE36E; --ok:#2E7D4F; --grid:rgba(47,93,140,.07); color-scheme:light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#121A22; --ink:#E4EAF0; --pencil:#8DB6E2; --graphite:#9AA6B2;
+          --rule:#2A3644; --marker:#6B5A12; --ok:#7CC79A; --grid:rgba(141,182,226,.06); color-scheme:dark; }
+}
+* { box-sizing:border-box; }
+html {
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px; min-height:100%;
+}
+body {
+  margin:0; color:var(--ink); background:transparent;
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:16px; line-height:1.7; word-break:keep-all; overflow-wrap:anywhere;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+main { max-width:42rem; margin:0 auto; padding:2.75rem 1.25rem 4rem; }
+.kind { color:var(--pencil); font-weight:600; margin:0; }
+h1 { font-family:"Gowun Batang",serif; font-size:2.4rem; line-height:1.2; margin:.15rem 0 0; }
+.verdict { border-left:3px solid var(--pencil); padding:.1rem 0 .1rem 1rem; margin:1.6rem 0 2.4rem; font-size:1.05rem; }
+h3.group { font-size:.95rem; color:var(--graphite); font-weight:600; margin:2.2rem 0 .2rem; }
+article { padding:1.3rem 0; border-top:1px solid var(--rule); }
+article h2 { font-size:1.12rem; line-height:1.5; margin:0 0 .35rem; }
+article h2 a { color:inherit; text-decoration-color:var(--pencil); text-underline-offset:4px; }
+article.hot h2 a { background:linear-gradient(transparent 58%,var(--marker) 58%); }
+.src { font-size:.85rem; color:var(--graphite); margin:0 0 .5rem; }
+p { margin:.35rem 0; }
+.why { color:var(--graphite); }
+.apply { margin-top:.75rem; padding:.6rem .85rem; border:1px dashed var(--pencil); border-radius:4px; }
+.apply strong { color:var(--pencil); }
+blockquote { margin:.7rem 0 0; padding:0 0 0 .9rem; border-left:2px solid var(--rule); font-size:.92rem; }
+blockquote small { display:block; color:var(--graphite); font-size:.8rem; }
+blockquote small.ok { color:var(--ok); }
+.empty { color:var(--graphite); }
+footer { margin-top:2.75rem; font-size:.85rem; color:var(--graphite); }
+footer p { margin:.15rem 0; }
+a { color:var(--pencil); }
+a:focus-visible { outline:2px solid var(--pencil); outline-offset:2px; }
+h2.series { font-family:"Gowun Batang",serif; font-size:1.5rem; margin:2.6rem 0 0; }
+h3.month { font-size:.9rem; color:var(--graphite); font-weight:600; margin:1.2rem 0 .2rem; }
+ul.archive { list-style:none; padding:0; margin:0; }
+ul.archive li { padding:.5rem 0; border-top:1px solid var(--rule); }
+</style>
+</head>
+<body><main>
+<p class="kind">로봇+AI 레이더</p><h1>11월 11일 수요일</h1><p class="verdict">NVIDIA가 CoRL에서 Isaac Lab 3.0·GR00T 2로 시뮬레이션 기반 학습 스택을 갱신했고, Google DeepMind는 Gemini Robotics 2.5를 내놓아 로봇 파운데이션 모델 경쟁이 시뮬레이션 학습과 현장 시연 양쪽에서 이어졌다.</p><h3 class="group">꼭 볼 것</h3>
+<article class="hot">
+<h2><a href="https://www.therobotreport.com/nvidia-launches-gr00t-2-isaac-lab-3-0-corl/" target="_blank" rel="noopener">Isaac Lab 3.0: Newton 물리엔진 통합과 강화학습 후처리 라이브러리</a></h2>
+<p class="src">시뮬레이션 / The Robot Report / 2026-11-09</p>
+<p>NVIDIA가 CoRL 2026(11/9)에서 오픈소스 로봇 학습 프레임워크 Isaac Lab 3.0을 소개했다. PhysX와 Newton 솔버를 바꿔 쓸 수 있고, 케이블·천 같은 변형체와 다관절 로봇 손을 다루며, GR00T 같은 파운데이션 모델용 강화 후학습(post-training) 라이브러리가 들어갔다.</p>
+<p class="why">솔버·렌더러를 교체할 수 있고 변형체까지 다루게 되어 접촉이 많은 조작 과제를 시뮬레이션에서 더 넓게 학습할 수 있다. 보도된 처리량은 시각 기반 정교 조작 벤치마크에서 Isaac Lab 2.3(PhysX) 대비 최대 2.5배다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>가상환경 구축 단계에서 Newton 솔버로 케이블·천 같은 변형체 과제를 시뮬레이션에서 학습시킬 수 있는지 시험해 볼 만하다. 이를 &#x27;로봇 자율 학습 과제&#x27;와 &#x27;사람 시연이 필요한 과제&#x27;를 가르는 기준 실험의 기반으로 쓸 수 있다.</div>
+<blockquote>“switch between NVIDIA PhysX and Newton physics solvers”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<h3 class="group">그 밖에</h3>
+<article>
+<h2><a href="https://cryptobriefing.com/nvidia-gr00t-2-isaac-lab-3-corl/" target="_blank" rel="noopener">NVIDIA GR00T 2: 오픈 월드 액션 모델 공개</a></h2>
+<p class="src">로봇모델 / Crypto Briefing / 2026-11-09</p>
+<p>NVIDIA가 CoRL에서 휴머노이드용 오픈 프런티어 월드 액션 모델의 갱신판 GR00T 2를 발표했다(11/9). Isaac Lab 3.0과 새 오픈 벤치마크가 함께 나왔다.</p>
+<p class="why">VLA 계열 정책을 월드 모델 쪽으로 확장한 모델을, 강화 후학습 도구를 갖춘 시뮬레이션 프레임워크와 묶어 내놓았다는 점이 의미 있다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>과제 학습 단계에서 GR00T 2를 시연 데이터로 미세조정한 뒤 Isaac Lab 3.0의 강화 후학습으로 보강하는 구성을 비교 실험할 수 있다. 가중치와 코드의 공개 범위는 확인하지 못했으므로 NVIDIA 연구 페이지에서 먼저 확인해야 한다.</div>
+<blockquote>“a new robot foundation model, an upgraded simulation framework”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://cellcog.ai/blog/nvidia-groot-2-isaac-lab-3-corl/" target="_blank" rel="noopener">AlphaNIST: Isaac Lab에서 NIST 조립 과제 20개를 단일 정책으로 학습</a></h2>
+<p class="src">시뮬레이션 / CellCog (NVIDIA 발표 정리) / 2026-11-09</p>
+<p>NVIDIA 발표를 인용한 2차 보도에 따르면, NIST 조립 과제판의 20개 과제를 하나의 정책으로 학습해 훈련 성공률 98% 이상을 얻었다. 과제별 정책은 81%였고 GPU 시간은 약 39배 적었다. 함께 Isaac Lab-Arena 0.4(개발자 프리뷰) 등 새 오픈 벤치마크도 소개됐다.</p>
+<p class="why">다과제 단일 정책이 과제별 정책보다 시뮬레이션 학습 효율이 높다는 수치 근거다. 다만 훈련 성공률 기준이고 NVIDIA 자체 수치이며, 인용한 곳이 2차 블로그다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>사람/로봇 역할 분담 실험에서 &#x27;과제별 정책&#x27;과 &#x27;다과제 단일 정책&#x27;의 시뮬레이션 성공률·GPU 비용을 비교하는 기준선으로 쓸 수 있다. Isaac Lab-Arena는 정식 릴리스 전 단계라 평가 프로토콜 참고용으로 보는 편이 안전하다.</div>
+<blockquote>“A single policy trained in Isaac Lab on all 20 NIST Assembly Task Board”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/" target="_blank" rel="noopener">Gemini Robotics 2.5: 최신 VLA와 시뮬레이션 엔진으로 쓴 Gemini 4 Argon</a></h2>
+<p class="src">로봇모델 / Google DeepMind Blog / 2026-11-10</p>
+<p>Google DeepMind가 가장 강력한 VLA라는 Gemini Robotics 2.5를 발표했고(11/10), 현재 로보틱스 파트너에게 순차 제공 중이다. 메르세데스-벤츠 공장 개념검증에서 Apollo 2 휴머노이드가 96% 성공률을 보였다는 보도가 있고, 로봇 대상 탈옥 안전 벤치마크 ASIMOV-Jailbreak도 함께 공개됐다.</p>
+<p class="why">DeepMind는 Gemini 4 Argon이 시뮬레이션 엔진 역할을 해 개발을 앞당겼다고 밝혔다. 대규모 물리 데이터 부족을 생성형 시뮬레이션으로 메우는 방향이다. 성공률 수치는 벤더 보고이며 독립 검증은 없다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>시연 데이터 수집 비용을 줄이기 위해 생성형 모델로 시뮬레이션 데이터를 보강하는 전략의 사례로 참고할 만하다. 다만 파트너 대상 제공이라 직접 사용은 어렵고, 시연 수집 대비 보강 비율을 설계할 때 참고하는 정도다.</div>
+</article>
+<article>
+<h2><a href="https://interestingengineering.com/ai-robotics/wheeled-humanoid-robot-for-factory-tasks" target="_blank" rel="noopener">Embodied AI의 양팔 이동 로봇 AIR: 원격조작으로 배우고 약 한 달 내 자율 전환 주장</a></h2>
+<p class="src">로봇모델 / Interesting Engineering / 2026-11-09</p>
+<p>스위스 스타트업 Embodied AI가 Humanoid Europe 2026(뮌헨)에서 안전 케이지 없이 사람과 함께 일하는 건식 구동 양팔 이동 로봇 AIR를 공개했다(11/9). 원격조작으로 공장 과제를 배워 약 한 달 안에 자율 운영으로 넘어가며 95% 성공률을 낸다고 보도됐다.</p>
+<p class="why">원격조작 시연에서 자율로 넘어가는 운영 모델을 상용 제품이 내세운 사례다. 다만 성공률과 기간은 회사 주장이고 과제 조건이 공개되지 않았다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>사람/로봇 역할 분담 연구에서 &#x27;초기에는 원격조작으로 시연을 모으고 이후 자율로 전환하는&#x27; 현장 사례로 참고할 수 있다. 어떤 과제가 한 달 내 자율화되는지 보여 주는 지표는 아직 없다.</div>
+<blockquote>“The robot learns factory tasks through remote operation”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article><footer><p>이번 실행 비용 약 $0.57, 이번 달 누적 약 $7.83</p><p><a href="../index.html">지난 리포트 모아보기</a></p></footer>
+</main></body></html>
