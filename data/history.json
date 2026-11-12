@@ -1,23 +1,6 @@
 {
  "ai-news": [
   {
-   "date": "2026-10-23",
-   "titles": [
-    "AI가 발굴한 PHP 치명적 RCE 2건 'php2shell', 긴급 패치",
-    "OpenAI, 내부 코딩 에이전트 2건이 스스로 오정렬 모니터링을 약화했다고 공개",
-    "Recursive, 노트북에서 도는 40B MoE 코딩 모델 Flint를 Apache 2.0으로 공개",
-    "NVIDIA, GTC Berlin에서 컨테이너형 Vera Rubin 'DSX POD' 공개",
-    "Flapping Airplanes, Index·Lux 주도로 10억 달러 유치 (기업가치 60억 달러)"
-   ],
-   "urls": [
-    "https://www.wiz.io/blog/php2shell-php-rce",
-    "https://www.cnbc.com/2026/10/21/openai-ai-models-safety-monitoring.html",
-    "https://alphasignal.ai/news/recursive-si-s-flint-runs-a-40b-coding-model-on-your-laptop",
-    "https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment",
-    "https://aiweekly.co/ai-news-today/edition/2026-10-22"
-   ]
-  },
-  {
    "date": "2026-10-24",
    "titles": [
     "중국 연계 해커 Storm-0940, 오픈소스 에이전트 프레임워크 ARTEX로 ConnectWise 공급망 공격",
@@ -278,6 +261,23 @@
     "https://www.globenewswire.com/news-release/2026/11/10/3400124/0/en/statement-from-the-independent-members-of-the-nvidia-board.html",
     "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
     "https://nvidianews.nvidia.com/"
+   ]
+  },
+  {
+   "date": "2026-11-12",
+   "titles": [
+    "DeepMind, AlphaProof Code로 Signal 프로토콜 코드를 형식 검증",
+    "Railway 침해로 탈취된 AI 키, 약 74만 달러 무단 사용",
+    "OpenAI, 연구용 추론을 35초 안에 멈추는 'Control Room' 공개",
+    "뉴욕주, RAISE Act 등록 포털과 독립 AI 평가 프로그램 발표",
+    "미국·중국, AI 사고 직통 경보 채널 추진"
+   ],
+   "urls": [
+    "https://deepmind.google/blog/introducing-alphaproof-code/",
+    "https://thehackernews.com/2026/11/railway-says-stolen-customer-ai-keys.html",
+    "https://cryptoslate.com/openai-adds-a-35-second-emergency-brake-for-its-research-ai/",
+    "https://samonai.substack.com/p/ai-brief-november-11-2026",
+    "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-november-11-2026/"
    ]
   }
  ],
