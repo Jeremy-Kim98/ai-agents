@@ -1,23 +1,6 @@
 {
  "ai-news": [
   {
-   "date": "2026-10-24",
-   "titles": [
-    "중국 연계 해커 Storm-0940, 오픈소스 에이전트 프레임워크 ARTEX로 ConnectWise 공급망 공격",
-    "Anthropic, Claude로 오픈소스 라이브러리 123개를 대규모 형식 검증",
-    "Microsoft, 멀티에이전트 진단 시스템 MAI-DxO 결과를 Science에 발표",
-    "Tesla, Fremont에서 Optimus 양산 라인 가동 시작",
-    "OpenAI, ChatGPT 광고를 26개국 더 확대해 총 89개국으로"
-   ],
-   "urls": [
-    "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/",
-    "https://x.com/AnthropicAI/status/2113390212911083894",
-    "https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/",
-    "https://techcrunch.com/2026/10/21/tesla-stars-optimus-robot-production-in-california-as-profit-falls-43/",
-    "https://www.securities.io/openai-expands-chatgpt-ads-to-26-more-countries-and-89-total/"
-   ]
-  },
-  {
    "date": "2026-10-25",
    "titles": [],
    "urls": []
@@ -278,6 +261,23 @@
     "https://cryptoslate.com/openai-adds-a-35-second-emergency-brake-for-its-research-ai/",
     "https://samonai.substack.com/p/ai-brief-november-11-2026",
     "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-november-11-2026/"
+   ]
+  },
+  {
+   "date": "2026-11-13",
+   "titles": [
+    "Anthropic, 11월 18일 공모가 확정·19일 'ANT'로 거래 시작",
+    "OpenAI, $1.25조 가치로 150억 달러 조달 (CNBC 소식통)",
+    "TSMC 이사회, OpenAI·Anthropic에 각 5억 달러씩 최대 10억 달러 투자 승인",
+    "Anthropic, Claude Meetings·Sheets·Whiteboards 공개… 사무 도구 시장 진출",
+    "Fable 5.2, Artificial Analysis 지수 1위… Meta는 초저가 Muse Ember 공개"
+   ],
+   "urls": [
+    "https://finance.yahoo.com/technology/article/anthropic-ipo-claude-maker-to-begin-trading-on-thursday-nov-19-173550865.html",
+    "https://cnbc.com/2026/11/12/nvidia-jensen-huang-ceo-live-updates.html",
+    "https://aiweekly.co/ai-news-today/edition/2026-11-12",
+    "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/",
+    "https://www.pymnts.com/news/artificial-intelligence/2026/anthropics-claude-tops-ai-rankings-as-openai-limits-cyber-model/"
    ]
   }
  ],
