@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>로봇+AI 레이더 2026-11-14</title>
+<meta property="og:title" content="로봇+AI 레이더 2026-11-14">
+<meta property="og:description" content="CoRL 2026 주간에 월드 액션 모델 중심의 계획자/실행자 분리 논의와 함께, 원격조작·촉각 장갑·손 모션캡처 같은 사람 시연 수집 도구들이 오픈소스로 쏟아졌다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:#F8FAFB; --ink:#1D2B3A; --pencil:#2F5D8C; --graphite:#5E6873;
+  --rule:#DCE3E9; --marker:#FFE36E; --ok:#2E7D4F; --grid:rgba(47,93,140,.07); color-scheme:light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#121A22; --ink:#E4EAF0; --pencil:#8DB6E2; --graphite:#9AA6B2;
+          --rule:#2A3644; --marker:#6B5A12; --ok:#7CC79A; --grid:rgba(141,182,226,.06); color-scheme:dark; }
+}
+* { box-sizing:border-box; }
+html {
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px; min-height:100%;
+}
+body {
+  margin:0; color:var(--ink); background:transparent;
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:16px; line-height:1.7; word-break:keep-all; overflow-wrap:anywhere;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+main { max-width:42rem; margin:0 auto; padding:2.75rem 1.25rem 4rem; }
+.kind { color:var(--pencil); font-weight:600; margin:0; }
+h1 { font-family:"Gowun Batang",serif; font-size:2.4rem; line-height:1.2; margin:.15rem 0 0; }
+.verdict { border-left:3px solid var(--pencil); padding:.1rem 0 .1rem 1rem; margin:1.6rem 0 2.4rem; font-size:1.05rem; }
+h3.group { font-size:.95rem; color:var(--graphite); font-weight:600; margin:2.2rem 0 .2rem; }
+article { padding:1.3rem 0; border-top:1px solid var(--rule); }
+article h2 { font-size:1.12rem; line-height:1.5; margin:0 0 .35rem; }
+article h2 a { color:inherit; text-decoration-color:var(--pencil); text-underline-offset:4px; }
+article.hot h2 a { background:linear-gradient(transparent 58%,var(--marker) 58%); }
+.src { font-size:.85rem; color:var(--graphite); margin:0 0 .5rem; }
+p { margin:.35rem 0; }
+.why { color:var(--graphite); }
+.apply { margin-top:.75rem; padding:.6rem .85rem; border:1px dashed var(--pencil); border-radius:4px; }
+.apply strong { color:var(--pencil); }
+blockquote { margin:.7rem 0 0; padding:0 0 0 .9rem; border-left:2px solid var(--rule); font-size:.92rem; }
+blockquote small { display:block; color:var(--graphite); font-size:.8rem; }
+blockquote small.ok { color:var(--ok); }
+.empty { color:var(--graphite); }
+footer { margin-top:2.75rem; font-size:.85rem; color:var(--graphite); }
+footer p { margin:.15rem 0; }
+a { color:var(--pencil); }
+a:focus-visible { outline:2px solid var(--pencil); outline-offset:2px; }
+h2.series { font-family:"Gowun Batang",serif; font-size:1.5rem; margin:2.6rem 0 0; }
+h3.month { font-size:.9rem; color:var(--graphite); font-weight:600; margin:1.2rem 0 .2rem; }
+ul.archive { list-style:none; padding:0; margin:0; }
+ul.archive li { padding:.5rem 0; border-top:1px solid var(--rule); }
+</style>
+</head>
+<body><main>
+<p class="kind">로봇+AI 레이더</p><h1>11월 14일 토요일</h1><p class="verdict">CoRL 2026 주간에 월드 액션 모델 중심의 계획자/실행자 분리 논의와 함께, 원격조작·촉각 장갑·손 모션캡처 같은 사람 시연 수집 도구들이 오픈소스로 쏟아졌다.</p><h3 class="group">꼭 볼 것</h3>
+<article class="hot">
+<h2><a href="https://discourse.openrobotics.org/t/ros-news-for-the-week-of-november-9th-2026/59767" target="_blank" rel="noopener">MABEL: 원격조작·학습용 오픈소스 이동형 양팔 로봇 (ROS 2 커뮤니티 공유)</a></h2>
+<p class="src">오픈소스 / Open Robotics Discourse / 2026-11-13</p>
+<p>ROS Discourse 11월 9일 주 소식에 원격조작과 학습을 목적으로 한 오픈소스 이동형 양팔 로봇 MABEL이 소개됐다. 같은 주 소식에는 CoRL 2026 관련 오픈소스 촉각 도구도 함께 올라왔다.</p>
+<p class="why">양팔 이동 조작 하드웨어·소프트웨어가 원격조작 시연 수집과 정책 학습을 한 번에 겨냥해 공개되는 사례다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>시연 데이터 수집용 실물 플랫폼 후보로 볼 수 있고, 시뮬레이션 모델(URDF 등) 제공 여부를 확인하면 실물 시연과 시뮬레이션 학습의 대응 환경을 만들 수 있다.</div>
+<blockquote>“MABEL — Open-Source Mobile Bimanual Robot for Teleoperation and Learning”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<h3 class="group">그 밖에</h3>
+<article>
+<h2><a href="https://read.corematter.com/p/corl-2026-recap" target="_blank" rel="noopener">CoRL 2026 총정리: 로봇 AI 스택이 &#x27;계획자&#x27;와 &#x27;실행자&#x27;로 갈라진다</a></h2>
+<p class="src">로봇모델 / Core Matter (CoRL 2026 Recap) / 2026-11-13</p>
+<p>CoRL 2026 요약 뉴스레터가 월드 액션 모델(WAM)이 올해 System 1(저수준 실행) 영역으로 들어왔다고 정리했다. VLA는 이미지와 지시로 다음 모터 명령을 내고, WAM은 비디오 생성 모델에서 출발해 향후 몇 초의 영상과 모터 명령을 함께 예측한다고 설명한다.</p>
+<p class="why">상위 추론(VLM 계획)과 하위 실행(WAM/VLA)을 분리하는 구조가 업계 표준 틀로 자리 잡는 흐름을 보여준다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>사람/로봇 역할 분담 설계에서 상위 계획은 모델에 맡기고, 시연 데이터는 하위 실행 정책(System 1) 학습용 접촉·조작 구간에 집중 수집하는 구조를 검토할 수 있다.</div>
+<blockquote>“World action models moved into System 1 this year”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://www.globenewswire.com/news-release/2026/11/09/3398459/0/en/noitom-robotics-releases-hiphi-hand-precision-hand-capture-data-used-to-train-nvidia-egohand-and-demonstrates-real-time-hand-reconstruction-at-corl-2026.html" target="_blank" rel="noopener">Noitom, 손-물체 조작 모캡 데이터셋 HiPHI-Hand 공개 예정 (NVIDIA EgoHand 학습용)</a></h2>
+<p class="src">로봇모델 / GlobeNewswire (Noitom Robotics) / 2026-11-09</p>
+<p>Noitom Robotics가 NVIDIA EgoHand 학습에 쓴 11시간 분량의 정밀 손 모션캡처 데이터 HiPHI-Hand를 Hugging Face에 공개한다고 발표했다. 광학 모캡과 동기화된 1인칭 영상으로 구성되며, EgoHand는 단일 1인칭 카메라에서 3D 손 자세와 형상을 복원한다.</p>
+<p class="why">로봇 없이 사람 손만으로 모은 시연·손 자세 데이터의 정답(ground truth) 품질을 끌어올리는 공개 자원이다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>VR·원격조작 대신 사람 손 영상으로 시연을 모으는 경로를 검토할 때, 손 자세 추정기 학습과 검증용 기준 데이터로 쓸 수 있다. 발표일이 11월 9일이라 이번 기간 경계에 있고, 공개 예정이라 실제 배포 여부는 확인이 필요하다.</div>
+<blockquote>“EgoHand reconstructs 3D hand pose and shape from a single first-person camera.”<small class="">사이트 접근 제한으로 자동 확인을 못 했습니다. 링크에서 직접 확인하세요</small></blockquote>
+</article>
+<article>
+<h2><a href="https://gizmodo.com/at-corl-2026-gento-unveils-a-21-dof-hand-as-nvidia-introduces-gr00t-2-with-tianji-marvin-pro-2000833526" target="_blank" rel="noopener">GENTO 21자유도 로봇 손과 CoRL 현장 원격조작 데모, GR00T 2 시연의 외골격 손 데이터 전이</a></h2>
+<p class="src">로봇모델 / Gizmodo / 2026-11-12</p>
+<p>GENTO가 CoRL 2026에서 21자유도 손을 공개했고, 방문객 동작을 로봇이 실시간으로 따라 하는 원격조작 데모를 진행했다. NVIDIA의 GR00T 2 시연에서는 웨어러블 외골격으로 기록한 사람 손 동작을 양손 로봇에 전이해 과제를 수행했다고 한다.</p>
+<p class="why">고자유도 손으로 갈수록 원격조작·외골격 기반 시연이 필수 데이터 수집 수단이 된다는 점을 보여주는 현장 사례다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>손 자유도가 높은 조작 과제는 시뮬레이션 강화학습만으로 풀기 어려우므로 시연이 필요한 과제군으로 분류하고, 외골격 기반 수집 방식을 데이터 수집 후보에 추가할 수 있다. 기사 게재일은 &#x27;2일 전&#x27; 표기로 추정했다.</div>
+<blockquote>“In one demonstration, researchers recorded human hand movements with a wearable exoskeleton”<small class="">사이트 접근 제한으로 자동 확인을 못 했습니다. 링크에서 직접 확인하세요</small></blockquote>
+</article>
+<article>
+<h2><a href="https://robocloud-dashboard.vercel.app/learn/blog/gr00t-world-action-models-2026" target="_blank" rel="noopener">GR00T 2는 백서만 공개, 실제로 돌려볼 수 있는 공개 가중치는 GR00T N1.7 GA</a></h2>
+<p class="src">로봇모델 / RoboCloud 블로그 (2차 출처) / 2026-11-10</p>
+<p>한 분석 사이트는 GR00T 2 백서에 가중치·라이선스·출시일이 없어 지금 실행할 수 있는 모델은 N1.7이라고 정리했다. NVIDIA GitHub의 Isaac-GR00T 저장소는 N1.7이 GA(정식) 릴리스이며 VLM 백본을 Cosmos-Reason2-2B로 바꿨다고 밝힌다. GR00T 2 가중치 미공개는 2차 출처 주장이므로 NVIDIA 공식 확인이 필요하다.</p>
+<p class="why">발표와 재현 가능한 공개 모델 사이의 간극을 구분해야 연구 계획에 반영할 수 있다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>배포·추론과 과제 학습 단계의 베이스라인으로는 당장 파인튜닝할 수 있는 GR00T N1.7을 쓰고, GR00T 2는 가중치 공개 여부를 추적하는 편이 안전하다.</div>
+<blockquote>“the Nov 2026 whitepaper gives no weights, license or release date”<small class="">사이트 접근 제한으로 자동 확인을 못 했습니다. 링크에서 직접 확인하세요</small></blockquote>
+</article><footer><p>이번 실행 비용 약 $0.59, 이번 달 누적 약 $10.13</p><p><a href="../index.html">지난 리포트 모아보기</a></p></footer>
+</main></body></html>

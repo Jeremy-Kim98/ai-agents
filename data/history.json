@@ -390,6 +390,23 @@
     "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
     "https://interestingengineering.com/ai-robotics/wheeled-humanoid-robot-for-factory-tasks"
    ]
+  },
+  {
+   "date": "2026-11-14",
+   "titles": [
+    "MABEL: 원격조작·학습용 오픈소스 이동형 양팔 로봇 (ROS 2 커뮤니티 공유)",
+    "CoRL 2026 총정리: 로봇 AI 스택이 '계획자'와 '실행자'로 갈라진다",
+    "Noitom, 손-물체 조작 모캡 데이터셋 HiPHI-Hand 공개 예정 (NVIDIA EgoHand 학습용)",
+    "GENTO 21자유도 로봇 손과 CoRL 현장 원격조작 데모, GR00T 2 시연의 외골격 손 데이터 전이",
+    "GR00T 2는 백서만 공개, 실제로 돌려볼 수 있는 공개 가중치는 GR00T N1.7 GA"
+   ],
+   "urls": [
+    "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-november-9th-2026/59767",
+    "https://read.corematter.com/p/corl-2026-recap",
+    "https://www.globenewswire.com/news-release/2026/11/09/3398459/0/en/noitom-robotics-releases-hiphi-hand-precision-hand-capture-data-used-to-train-nvidia-egohand-and-demonstrates-real-time-hand-reconstruction-at-corl-2026.html",
+    "https://gizmodo.com/at-corl-2026-gento-unveils-a-21-dof-hand-as-nvidia-introduces-gr00t-2-with-tianji-marvin-pro-2000833526",
+    "https://robocloud-dashboard.vercel.app/learn/blog/gr00t-world-action-models-2026"
+   ]
   }
  ]
 }
