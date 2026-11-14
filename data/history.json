@@ -1,11 +1,6 @@
 {
  "ai-news": [
   {
-   "date": "2026-10-25",
-   "titles": [],
-   "urls": []
-  },
-  {
    "date": "2026-10-26",
    "titles": [
     "Moonshot, 2.8T 파라미터 Kimi K3.1 Pro 공개… 가중치는 11월 4일까지 공개 예정",
@@ -278,6 +273,19 @@
     "https://aiweekly.co/ai-news-today/edition/2026-11-12",
     "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/",
     "https://www.pymnts.com/news/artificial-intelligence/2026/anthropics-claude-tops-ai-rankings-as-openai-limits-cyber-model/"
+   ]
+  },
+  {
+   "date": "2026-11-14",
+   "titles": [
+    "Google, Gemini 4 Hydrogen 전면 출시… 검색·앱·API 전 티어에 배포",
+    "OpenAI, 'ChatGPT Wallet' 공개… dots 에이전트가 대신 결제",
+    "OpenAI, 'Businesses in ChatGPT' 베타 발표… 기업용 허브·채팅·에이전트"
+   ],
+   "urls": [
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+    "https://openai.com/index/introducing-chatgpt-wallet/",
+    "https://www.forbes.com/sites/lanceeliot/2026/11/13/openais-newest-feature-enables-business-owners-to-set-up-shop-in-chatgpt-and-connect-with-12-billion-prospective-customers/"
    ]
   }
  ],
