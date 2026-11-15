@@ -1,17 +1,6 @@
 {
  "ai-news": [
   {
-   "date": "2026-10-26",
-   "titles": [
-    "Moonshot, 2.8T 파라미터 Kimi K3.1 Pro 공개… 가중치는 11월 4일까지 공개 예정",
-    "LiteLLM 악성 1.107.0 릴리스, 5월에 유출된 마스터 키가 원인"
-   ],
-   "urls": [
-    "https://www.unite.ai/moonshot-ai-releases-kimi-k3-1-pro-first-model-in-new-k3-1-series/",
-    "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html"
-   ]
-  },
-  {
    "date": "2026-10-27",
    "titles": [
     "Anthropic, 나스닥 상장용 S-1 공개… 티커 'ANT'",
@@ -286,6 +275,21 @@
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
     "https://openai.com/index/introducing-chatgpt-wallet/",
     "https://www.forbes.com/sites/lanceeliot/2026/11/13/openais-newest-feature-enables-business-owners-to-set-up-shop-in-chatgpt-and-connect-with-12-billion-prospective-customers/"
+   ]
+  },
+  {
+   "date": "2026-11-15",
+   "titles": [
+    "젠슨 황 사임 후폭풍: 복귀 요구 공개서한 11만 5천 명 돌파",
+    "Thinking Machines, Inkling 2 Small 가중치 Hugging Face 공개",
+    "llama.cpp·ggml, v1.0.0 안정 릴리스",
+    "LMSYS, NVIDIA·AMD·Google·Meta 등과 SGLang 컨소시엄 출범"
+   ],
+   "urls": [
+    "https://www.techpowerup.com/354840/open-letter-asking-nvidia-to-reinstate-jensen-huang-passes-115-000-signatures",
+    "https://thinkingmachines.ai/model-card/inkling-2-small/",
+    "https://tbreak.com/llama-cpp-1-0-stable-release/",
+    "https://www.lmsys.org/blog/2026-11-12-sglang-consortium"
    ]
   }
  ],
