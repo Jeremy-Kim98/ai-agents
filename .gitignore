@@ -5,3 +5,4 @@ __pycache__/
 preview/
 .DS_Store
 site/
+_HANDOFF_*.md
