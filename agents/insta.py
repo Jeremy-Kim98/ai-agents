@@ -32,7 +32,7 @@ MAX_COST = float(os.getenv("INSTA_MAX_COST") or 0.3)  # 1회 실행 비용 상�
 LIMITS = {"card_line": 70, "card_take": 110}  # 영어 기준 글자 수
 COVER_Q_MAX = 50
 READER_Q_MAX = 90
-BRAND = "Daily Diff"
+BRAND = "three shot."
 NUM = re.compile(r"\d+(?:\.\d+)?")
 # 편집본 금지 표현(영어 계정이지만 한국어도 남겨 둔다). 카드 문구(card_line·card_take·cover_q) 전체에 적용
 BANNED = {

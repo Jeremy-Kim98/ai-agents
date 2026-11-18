@@ -1,4 +1,4 @@
-"""Daily Diff 출처 페이지: docs/insta/*/4_post.json → site/index.html (영어, 이름·비용·모델 정보 없음).
+"""three shot. 출처 페이지: docs/insta/*/4_post.json → site/index.html (영어, 이름·비용·모델 정보 없음).
 
 실행: python -m agents.sources_site            (결과: site/index.html)
 인스타 프로필 링크가 가리킬 페이지. 본인 이름이 드러나지 않는 주소에 배포한다(배포는 워크플로).
