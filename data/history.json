@@ -1,15 +1,6 @@
 {
  "ai-news": [
   {
-   "date": "2026-10-29",
-   "titles": [
-    "트럼프, 정부 차원에서 'AI'라는 용어를 쓰지 않겠다고 발언"
-   ],
-   "urls": [
-    "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-october-28-2026/"
-   ]
-  },
-  {
    "date": "2026-10-30",
    "titles": [
     "Google, 사이버보안 특화 Gemini 4 Carbon 공개",
@@ -284,6 +275,23 @@
     "https://www.cnbc.com/2026/11/16/trump-lutnick-nvidia-national-security-jensen-huant.html",
     "https://openai.com/index/expanding-chatgpt-for-academic-researchers/",
     "https://techcrunch.com/2026/11/16/openai-releases-a-new-image-classifier-and-chatgpt-warnings-to-combat-csam/"
+   ]
+  },
+  {
+   "date": "2026-11-18",
+   "titles": [
+    "OpenAI, GPT-6.2 Astra·Sol 출시",
+    "미국, AI 칩 '원격 접속'까지 수출통제 확대",
+    "AMD, World Labs 인수 완료… 페이페이 리가 수석과학자로",
+    "Anthropic \"Claude Mythos가 AMD GPU 포팅을 3일 만에 끝냈다\"",
+    "Hugging Face Inference Providers, 언어모델 라우팅을 OpenRouter로 전환"
+   ],
+   "urls": [
+    "https://9to5google.com/2026/11/17/openai-releases-gpt-6-2-astra-and-sol-for-complex-projects-a-week-after-claude-5-2",
+    "https://techcrunch.com/2026/11/16/us-tightens-ai-chip-export-controls-to-deter-chinese-companies-from-accessing-compute-remotely/",
+    "https://newsroom.amd.com/news/amd-completes-acquisition-world-labs",
+    "https://finance.biggo.com/news/0f5cd7ec-2345-48df-ad2a-ca39a57cb3e9",
+    "https://samonai.substack.com/p/ai-brief-november-17-2026"
    ]
   }
  ],
