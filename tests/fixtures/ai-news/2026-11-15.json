@@ -1,0 +1,50 @@
+{
+ "date": "2026-11-15",
+ "headline": "젠슨 황 사임 파문이 '복귀 청원'으로 번진 가운데, 오픈소스 진영은 llama.cpp 1.0·SGLang 컨소시엄·Inkling 2 Small 가중치 공개로 정비에 들어갔다.",
+ "items": [
+  {
+   "title": "젠슨 황 사임 후폭풍: 복귀 요구 공개서한 11만 5천 명 돌파",
+   "url": "https://www.techpowerup.com/354840/open-letter-asking-nvidia-to-reinstate-jensen-huang-passes-115-000-signatures",
+   "category": "빅테크",
+   "source": "TechPowerUp",
+   "date": "2026-11-14",
+   "summary": "젠슨 황이 11월 12일(현지) 엔비디아 CEO에서 물러나 CFO 콜레트 크레스가 임시 CEO를 맡았다. 이후 복귀를 요구하는 공개서한 서명이 11만 5천 명을 넘었고, 일론 머스크도 서명에 참여했다고 보도됐다.",
+   "why": "AI 인프라 공급의 중심 기업에서 경영 공백이 길어지면 GPU 수급과 대중 칩 판매 정책에 불확실성이 커진다.",
+   "importance": 3,
+   "quote_status": "unknown"
+  },
+  {
+   "title": "Thinking Machines, Inkling 2 Small 가중치 Hugging Face 공개",
+   "url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+   "category": "오픈소스",
+   "source": "Thinking Machines Lab",
+   "date": "2026-11-12",
+   "summary": "Thinking Machines Lab이 594B 파라미터 모델 Inkling 2 Small의 가중치를 11월 12일 Apache 2.0 라이선스로 풀었다. 일주일간의 호스팅 전용 기간이 끝났고, 중국 밖 오픈웨이트 모델 중 최상위권으로 평가된다.",
+   "why": "미국 랩이 상위권 오픈웨이트 모델을 허용적 라이선스로 내놓아 파인튜닝과 자체 호스팅 연구에 쓸 수 있는 선택지가 늘었다.",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "llama.cpp·ggml, v1.0.0 안정 릴리스",
+   "url": "https://tbreak.com/llama-cpp-1-0-stable-release/",
+   "category": "오픈소스",
+   "source": "TBreak",
+   "date": "2026-11-13",
+   "summary": "ggml-org가 11월 13일 llama.cpp와 ggml을 v1.0.0으로 냈다. 공개 C API·ABI가 깨질 때는 메이저 버전을 올리는 방식으로 바뀌었고, 폐기된 함수 35개가 제거됐다.",
+   "why": "로컬 추론 스택을 얹어 쓰는 도구들이 API 변경을 예측할 수 있게 됐다. 다만 이번 릴리스는 breaking change를 포함한다.",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "LMSYS, NVIDIA·AMD·Google·Meta 등과 SGLang 컨소시엄 출범",
+   "url": "https://www.lmsys.org/blog/2026-11-12-sglang-consortium",
+   "category": "오픈소스",
+   "source": "LMSYS Org",
+   "date": "2026-11-12",
+   "summary": "LMSYS Org가 11월 12일 SGLang 컨소시엄을 발족했다. 창립 멤버는 NVIDIA, AMD, Intel, Google, Meta, Cloudflare, Modal, RadixArk 8곳이다.",
+   "why": "경쟁 하드웨어 업체들이 한 오픈 추론 엔진에 함께 참여해, 추론 서빙의 사실상 표준 경쟁에서 SGLang의 위상이 커진다.",
+   "importance": 2,
+   "quote_status": "ok"
+  }
+ ]
+}

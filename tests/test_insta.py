@@ -30,6 +30,14 @@ def run():
     assert any("card_take" in p for p in insta.code_check(src, too_long)), "글자 수 초과를 못 잡음"
     fake = {**good, "card_take": "직접 써봤는데 꽤 빨라요."}
     assert any("경험" in p for p in insta.code_check(src, fake)), "지어낸 사용 경험을 못 잡음"
+
+    # 금지 표현: 각 분류가 잡히고, 비슷하지만 정상인 문장은 통과해야 한다
+    for name, take in [("과장어", "판도를 바꿀 소식이에요."), ("이모지", "가격이 내려갔어요 🔥"),
+                       ("투자 권유", "상장 전에 사도 될 것 같아요."), ("투자 권유", "주가가 더 오를 거예요."),
+                       ("농업 주제", "스마트팜에도 쓸 수 있어요."), ("과장어", "업계 판도를 바꿀 혁신이에요.")]:
+        assert any(name in p for p in insta.code_check(src, {**good, "card_take": take})), f"{name} 못 잡음: {take}"
+    for take in ["기능을 한 모델에 담아냈어요.", "회사 측 주장이라 검증을 기다려요.", "수출통제가 연구실 조달에 영향을 줘요."]:
+        assert insta.code_check(src, {**good, "card_take": take}) == [], f"정상 문장이 걸림: {take}"
     print("✓ test_insta 통과")
 
 

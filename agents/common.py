@@ -457,6 +457,10 @@ def run_agent(*, key, label, emoji, system, build_prompt, max_searches, max_item
         (out_dir / key).mkdir(parents=True, exist_ok=True)
         report = out_dir / key / f"{today:%Y-%m-%d}.html"
         report.write_text(render_report(label, today, data, items, meter.cost, month_cost), encoding="utf-8")
+        # 다음 단계(인스타 등)가 읽는 결과 파일. 단계끼리는 이 파일로만 주고받는다
+        report.with_suffix(".json").write_text(json.dumps(
+            {"date": f"{today:%Y-%m-%d}", "headline": data.get("headline", ""), "items": items},
+            ensure_ascii=False, indent=1), encoding="utf-8")
         write_index(out_dir)
         base = os.getenv("PAGES_BASE_URL", "").rstrip("/")
         page_url = f"{base}/{key}/{report.name}" if base and not trial else ""

@@ -4,14 +4,16 @@
 단계: (1 수집 = ai_news) → 2 편집(Claude, 도구 없음) → 3 검증(코드 검사 + 별도 Claude가 원문과 대조)
       → 4 렌더(PNG) → 5 배포(아직 없음). 단계끼리는 대화하지 않고 JSON 파일만 넘긴다.
 
-미리보기(무료, 편집 없이):  python -m agents.insta --from-report docs/ai-news/2026-11-18.html
-편집·검증까지(유료):        python -m agents.insta --from-report ... --edit
-결과는 preview/insta/ 에 생긴다.
+미리보기(무료, 편집 없이):  python -m agents.insta --from-items docs/ai-news/2026-11-19.json
+편집·검증까지(유료):        python -m agents.insta --from-items ... --edit
+운영(Actions):              ... --edit --out docs/insta/<날짜> --record-cost
+규칙과 강제 여부는 HARNESS.md.
 """
 import argparse
 import datetime as dt
 import html as _html
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -21,13 +23,22 @@ from pathlib import Path
 import requests
 
 from agents import config
-from agents.common import E, WEEKDAYS, Meter, _client, extract_json
+from agents.common import E, WEEKDAYS, Meter, _client, extract_json, record_cost
 
 W, H = 1080, 1350
 DAILY_MAX = 3      # 하루에 싣는 뉴스 수
 EDIT_POOL = 9      # 편집에 넘기는 후보 수 (검증에서 빠질 것을 감안)
+MAX_COST = float(os.getenv("INSTA_MAX_COST") or 0.3)  # 1회 실행 비용 상한(달러). 넘으면 검증을 멈춘다
 LIMITS = {"card_line": 36, "card_take": 50}
 NUM = re.compile(r"\d+(?:\.\d+)?")
+# 편집본 금지 표현. 이름 → 정규식. 카드 문구(card_line·card_take·cover_q) 전체에 적용
+BANNED = {
+    "과장어": re.compile(r"혁신|혁명|충격|미쳤|역대급|대박|게임\s?체인저|판도를\s?바꿀"),
+    "이모지": re.compile("[\U0001F300-\U0001FAFF☀-➿⭐⬆↔-⇿]"),
+    "투자 권유": re.compile(r"매수|매도|사세요|사야\s?(해|할|하)|사도\s?될|팔아야|주가.{0,6}(오를|뛸|갈|오르)"
+                         r"|수익률|투자\s?(하세요|추천|해야|해도)"),
+    "농업 주제": re.compile(r"농업|농작물|농가|스마트팜|제초|정밀농업|트랙터|작물"),
+}
 
 CSS = """
 *{margin:0;padding:0;box-sizing:border-box}
@@ -108,6 +119,8 @@ def code_check(item, ed):
     probs += [f"원문 요약에 없는 수치 {n}" for n in sorted(set(NUM.findall(edited)) - set(NUM.findall(source)))]
     if EXPERIENCE.search(ed.get("card_take", "")):
         probs.append("지어낸 사용 경험 표현")
+    text = " ".join(str(ed.get(k, "")) for k in (*LIMITS, "cover_q"))
+    probs += [f"금지 표현({name}): {m.group(0)}" for name, rx in BANNED.items() if (m := rx.search(text))]
     return probs
 
 
@@ -130,6 +143,8 @@ VERIFY_SYSTEM = """너는 사실 검증자다. 원문 기사 본문과 카드 �
   한 줄 카드라서 생략·축약(직함 일부 생략, 고유명사 한글 표기 등)은 뜻이 바뀌지 않으면 문제가 아니다.
 - card_take: 의견이라 원문에 그대로 없어도 되지만, 원문 사실과 모순되거나 원문에 없는 사실을 전제하면 문제다.
   직접 사용해 본 것처럼 쓴 경험담도 문제다.
+  정치·정책에 대한 찬반 판단("잘한 결정", "잘못된 규제" 등)과 투자 권유(사라·팔아라·주가 전망)도 문제다.
+  정책이 누구에게 어떤 영향을 주는지 설명하는 것은 문제가 아니다.
 ```json 블록 하나만: {"ok": true|false, "problems": ["..."]}"""
 
 
@@ -158,6 +173,9 @@ def edit_and_verify(data, items, meter, out_dir):
     passed, report, tags = [], [], list(edited.get("common_tags", []))
     for k, it in enumerate(items):
         if len(passed) >= DAILY_MAX:
+            break
+        if meter.cost > MAX_COST:
+            report.append({"idx": k, "title": it["title"], "ok": False, "problems": [f"비용 상한 ${MAX_COST} 초과로 중단"]})
             break
         ed = by_idx.get(k, {})
         probs = code_check(it, ed)
@@ -227,37 +245,25 @@ def render_png(cards, out_dir):
         subprocess.run([chrome, "--headless=new", "--hide-scrollbars", f"--window-size={W},{H}",
                         f"--screenshot={png.resolve()}", src.resolve().as_uri()],
                        check=True, capture_output=True, timeout=60)
+        src.unlink()
         paths.append(png)
     return paths
 
 
-def items_from_report(path):
-    """보관된 HTML 리포트에서 항목을 되살린다.
-    shortcut: render_report 마크업에 묶인 정규식 파싱, 미리보기 전용. 실제 운영은 run_agent의 items를 직접 넘긴다."""
-    text = Path(path).read_text(encoding="utf-8")
-    un = lambda s: _html.unescape(re.sub(r"<[^>]+>", "", s)).strip()
-    head = re.search(r'<p class="verdict">(.*?)</p>', text, re.S)
-    items = []
-    for art in re.findall(r"<article( class=\"hot\")?>(.*?)</article>", text, re.S):
-        hot, body = art
-        g = lambda pat: (m.group(1) if (m := re.search(pat, body, re.S)) else "")
-        cat, src, date = (un(g(r'<p class="src">(.*?)</p>')).split(" / ") + ["", "", ""])[:3]
-        items.append({"title": un(g(r"<h2>(.*?)</h2>")), "url": _html.unescape(g(r'<h2><a href="([^"]+)"')),
-                      "category": cat, "source": src, "date": date,
-                      "summary": un(g(r"<p>(.*?)</p>")), "why": un(g(r'<p class="why">(.*?)</p>')),
-                      "importance": 3 if hot else 2,
-                      "quote_status": "ok" if '<small class="ok">' in body else "unknown"})
-    m = re.search(r"(\d{4}-\d{2}-\d{2})", Path(path).name)
-    return dt.date.fromisoformat(m.group(1)), {"headline": un(head.group(1)) if head else ""}, items
+def load_items(path):
+    """1단계(수집)가 남긴 결과 파일: {"date", "headline", "items"}."""
+    d = json.loads(Path(path).read_text(encoding="utf-8"))
+    return dt.date.fromisoformat(d["date"]), {"headline": d.get("headline", "")}, d.get("items", [])
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--from-report", required=True)
+    ap.add_argument("--from-items", required=True, help="수집 단계 결과 JSON (docs/ai-news/<날짜>.json)")
     ap.add_argument("--out", default="preview/insta")
     ap.add_argument("--edit", action="store_true", help="2 편집·3 검증 실행 (API 사용)")
+    ap.add_argument("--record-cost", action="store_true", help="비용을 data/costs.json에 'insta'로 기록 (운영용)")
     a = ap.parse_args()
-    today, data, items = items_from_report(a.from_report)
+    today, data, items = load_items(a.from_items)
     n_all = len(items)
     if a.edit:
         meter = Meter()
@@ -265,12 +271,15 @@ if __name__ == "__main__":
         for r in report:
             print(("✓ " if r["ok"] else "✗ ") + r["title"] + ("" if r["ok"] else f"  ← {r['problems']}"))
         print(f"편집·검증 비용 약 ${meter.cost:.3f}")
+        if a.record_cost:
+            record_cost("insta", today.strftime("%Y-%m"), meter.cost)
     else:
         items = public_items(items)
     for old in Path(a.out).glob("card_*"):
         old.unlink()
-    if not items:
-        sys.exit("공개할 항목이 없어 오늘은 게시하지 않습니다")
+    if not items:  # 쉬는 날은 실패가 아니다
+        print("공개할 항목이 없어 오늘은 게시하지 않습니다")
+        sys.exit(0)
     pngs = render_png(build_cards(today, data, items), a.out)
     (Path(a.out) / "caption.txt").write_text(caption(today, data, items), encoding="utf-8")
     print(f"항목 {n_all}개 → 게시 {min(len(items), DAILY_MAX)}개, 카드 {len(pngs)}장: {a.out}")
