@@ -31,6 +31,8 @@ EDIT_POOL = 9      # 편집에 넘기는 후보 수 (검증에서 빠질 것을 
 MAX_COST = float(os.getenv("INSTA_MAX_COST") or 0.3)  # 1회 실행 비용 상한(달러). 넘으면 검증을 멈춘다
 LIMITS = {"card_line": 70, "card_take": 110}  # 영어 기준 글자 수
 COVER_Q_MAX = 50
+READER_Q_MAX = 90
+BRAND = "Daily Diff"
 NUM = re.compile(r"\d+(?:\.\d+)?")
 # 편집본 금지 표현(영어 계정이지만 한국어도 남겨 둔다). 카드 문구(card_line·card_take·cover_q) 전체에 적용
 BANNED = {
@@ -96,6 +98,8 @@ EDIT_SYSTEM = """너는 영어 인스타그램 AI 뉴스 계정의 편집자다.
 card_line (70자 이하): 무슨 일인지 사실만 한 줄. 핵심 수치가 있으면 넣는다. 헤드라인 문체(예: "OpenAI ships GPT-6.2 at $8/$40 per 1M tokens").
 card_take (110자 이하): 대학원생 화자의 한마디. 1인칭, 가볍고 똑똑한 말투. "so what for people like me/us"를 말한다.
 cover_q (50자 이하): 항목마다 하나씩, 그 소식을 표지에 걸 때 쓸 질문형 훅. 예: "Is GPT-6.2 worth switching to?"
+reader_q (90자 이하): 항목마다 하나씩, 캡션 끝에서 독자에게 댓글을 부르는 질문. 그 소식으로 독자의 의견·경험을 묻는다.
+  예: "Would you pay $40 per 1M output tokens for better evals?" 매번 같은 문장 금지.
 
 규칙:
 - 입력에 있는 사실만 쓴다. 새 사실, 새 수치를 더하지 않는다. 수치는 입력 그대로.
@@ -109,7 +113,7 @@ cover_q (50자 이하): 항목마다 하나씩, 그 소식을 표지에 걸 때 
 - 해시태그: 영어, 적게. 공통 2개 + 항목마다 그 항목에만 해당하는 1개. # 포함, 띄어쓰기 없이.
 ```json 블록 하나만 출력한다:
 {"common_tags": ["#..."],
- "items": [{"idx": 0, "card_line": "...", "card_take": "...", "cover_q": "...", "tags": ["#..."]}]}"""
+ "items": [{"idx": 0, "card_line": "...", "card_take": "...", "cover_q": "...", "reader_q": "...", "tags": ["#..."]}]}"""
 
 
 def edit_items(data, items, meter):
@@ -153,12 +157,14 @@ def code_check(item, ed):
     probs += [f"{k} 비어 있음" for k in LIMITS if not ed.get(k, "").strip()]
     if len(str(ed.get("cover_q", ""))) > COVER_Q_MAX:
         probs.append(f"cover_q {len(ed['cover_q'])}자 > {COVER_Q_MAX}자")
+    if len(str(ed.get("reader_q", ""))) > READER_Q_MAX:
+        probs.append(f"reader_q {len(ed['reader_q'])}자 > {READER_Q_MAX}자")
     source = " ".join(item.get(k, "") for k in ("title", "summary", "why"))
     edited = " ".join(ed.get(k, "") for k in LIMITS)
     probs += [f"원문 요약에 없는 수치 {n}" for n in sorted(set(NUM.findall(edited)) - _numbers(source))]
     if EXPERIENCE.search(ed.get("card_take", "")):
         probs.append("지어낸 사용 경험 표현")
-    text = " ".join(str(ed.get(k, "")) for k in (*LIMITS, "cover_q"))
+    text = " ".join(str(ed.get(k, "")) for k in (*LIMITS, "cover_q", "reader_q"))
     probs += [f"금지 표현({name}): {m.group(0)}" for name, rx in BANNED.items() if (m := rx.search(text))]
     return probs
 
@@ -223,13 +229,15 @@ def edit_and_verify(data, items, meter, out_dir):
             ok, probs = llm_check(it, ed, meter)
         report.append({"idx": k, "title": it["title"], "ok": ok, "problems": probs})
         if ok:  # 걸러진 항목의 해시태그는 싣지 않는다
-            passed.append({**it, **{f: ed[f] for f in LIMITS}, "cover_q": str(ed.get("cover_q", ""))[:COVER_Q_MAX]})
+            passed.append({**it, **{f: ed[f] for f in LIMITS}, "cover_q": str(ed.get("cover_q", ""))[:COVER_Q_MAX],
+                           "reader_q": str(ed.get("reader_q", ""))[:READER_Q_MAX]})
             tags += ed.get("tags", [])
     (out / "3_verify.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     tags = [h for h in dict.fromkeys(tags) if isinstance(h, str) and re.fullmatch(r"#\S{1,30}", h)]
     # 표지 질문은 통과한 1순위 항목의 것을 쓴다(빠진 항목의 질문이 표지에 남지 않게)
     cover_q = passed[0]["cover_q"] if passed else ""
-    return {**data, "cover_q": cover_q, "hashtags": tags[:5]}, passed, report  # 태그를 많이 달면 AI·스팸 티
+    reader_q = passed[0]["reader_q"] if passed else ""
+    return {**data, "cover_q": cover_q, "reader_q": reader_q, "hashtags": tags[:5]}, passed, report  # 태그를 많이 달면 AI·스팸 티
 
 
 # ============================================================ 4. 렌더
@@ -241,7 +249,7 @@ def build_cards(today, data, items):
     line = lambda i: i.get("card_line") or i["title"]
     lis = "".join(f"<li>{E(line(i))}</li>" for i in items)
     q = data.get("cover_q") or f"{n} AI stories today"
-    cards = [_page(f'<div class="top"><span class="brand"><b>AI Daily</b> grad notes</span><span>{day}</span></div>'
+    cards = [_page(f'<div class="top"><span class="brand"><b>{BRAND}</b></span><span>{day}</span></div>'
                    f'<div class="mid"><p class="q">{E(q)}</p><ol>{lis}</ol></div>'
                    f'<div class="foot"><span>Swipe →</span><span>Every morning</span></div>', "cover")]
     for k, it in enumerate(items, 1):
@@ -249,7 +257,7 @@ def build_cards(today, data, items):
         cat = CATEGORY_EN.get(it.get("category", ""), it.get("category", ""))
         take = (f'<p class="take"><b>Grad student take</b>{E(it["card_take"])}</p>' if it.get("card_take") else "")
         cards.append(_page(
-            f'<div class="top"><span class="brand"><b>AI Daily</b> {day}</span><span>{k} / {n}</span></div>'
+            f'<div class="top"><span class="brand"><b>{BRAND}</b> {day}</span><span>{k} / {n}</span></div>'
             f'<div class="mid"><span class="chip {chip}">{E(cat)}</span>'
             f'<p class="line">{E(line(it))}</p>{take}</div>'
             f'<div class="foot"><span>Source: {E(it.get("source", ""))} · {E(it.get("date", ""))}</span>'
@@ -259,12 +267,20 @@ def build_cards(today, data, items):
 
 def caption(today, data, items):
     items = items[:DAILY_MAX]
-    lines = [f"🗞️ AI Daily · {today:%b} {today.day}", "", data.get("cover_q") or "", ""]
+    lines = [data.get("cover_q") or f"{len(items)} AI stories today", ""]
     lines += [f"{k}. {i.get('card_line') or i['title']} ({i.get('source', '')})" for k, i in enumerate(items, 1)]
-    tags = data.get("hashtags") or ["#AI", "#AInews", "#TechNews"]
-    lines += ["", "Every summary is re-checked against the original article. Sources: link in bio.", "",
-              " ".join(tags)]
+    if data.get("reader_q"):
+        lines += ["", data["reader_q"]]
+    tags = data.get("hashtags") or ["#AI", "#AInews"]
+    lines += ["", "Sources: link in bio", " ".join(tags)]
     return "\n".join(lines)
+
+
+def post_record(today, data, items):
+    """게시 기록(4_post.json): 출처 페이지와 배포 단계가 읽는다. 운영 정보(비용·모델)는 넣지 않는다."""
+    keep = ("card_line", "card_take", "category", "source", "date", "url")
+    return {"date": f"{today:%Y-%m-%d}", "cover_q": data.get("cover_q", ""), "reader_q": data.get("reader_q", ""),
+            "items": [{k: i.get(k, "") for k in keep} for i in items[:DAILY_MAX]]}
 
 
 def _chrome():
@@ -322,4 +338,6 @@ if __name__ == "__main__":
         sys.exit(0)
     pngs = render_png(build_cards(today, data, items), a.out)
     (Path(a.out) / "caption.txt").write_text(caption(today, data, items), encoding="utf-8")
+    (Path(a.out) / "4_post.json").write_text(json.dumps(post_record(today, data, items), ensure_ascii=False, indent=1),
+                                             encoding="utf-8")
     print(f"항목 {n_all}개 → 게시 {min(len(items), DAILY_MAX)}개, 카드 {len(pngs)}장: {a.out}")

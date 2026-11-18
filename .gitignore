@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 preview/
 .DS_Store
+site/

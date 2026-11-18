@@ -58,6 +58,23 @@ def run():
                  "Here's the catch: the price only applies to Astra.", "It's not cheap, but it's fast enough for evals.",
                  "World models just got a GPU-sized backer."]:
         assert insta.code_check(src, {**good, "card_take": take}) == [], f"정상 문장이 걸림: {take}"
+    long_rq = {**good, "reader_q": "q" * 91}
+    assert any("reader_q" in p for p in insta.code_check(src, long_rq)), "독자 질문 길이 초과를 못 잡음"
+    assert any("AI 티" in p for p in insta.code_check(src, {**good, "reader_q": "Here's why it matters — thoughts?"})), \
+        "독자 질문의 AI 티를 못 잡음"
+
+    # 출처 페이지: 운영 정보·본인 이름이 새지 않고, 링크는 http(s)만
+    from agents import sources_site
+    rec = insta.post_record(DAY, {"cover_q": "Q?"}, [
+        {"card_line": "Line A", "source": "TechCrunch", "category": "빅테크", "url": "https://x.test/a",
+         "importance": 3, "quote_status": "ok", "summary": "요약", "card_take": "t"},
+        {"card_line": "Bad link", "source": "S", "category": "모델", "url": "javascript:alert(1)"}])
+    assert set(rec["items"][0]) == {"card_line", "card_take", "category", "source", "date", "url"}, "기록에 운영 정보가 섞임"
+    page = sources_site.build([rec])
+    assert "Line A" in page and "Big Tech" in page, "출처 페이지에 항목이 없음"
+    assert "javascript:" not in page, "http(s)가 아닌 링크가 출처 페이지에 들어감"
+    for leak in ("jeremy", "Jeremy", "Claude", "$", "비용", "요약"):
+        assert leak not in page, f"출처 페이지에 '{leak}'가 드러남"
     print("✓ test_insta 통과")
 
 
