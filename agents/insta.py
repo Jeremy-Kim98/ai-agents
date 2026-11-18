@@ -23,22 +23,34 @@ from pathlib import Path
 import requests
 
 from agents import config
-from agents.common import E, WEEKDAYS, Meter, _client, extract_json, record_cost
+from agents.common import E, Meter, _client, extract_json, record_cost
 
 W, H = 1080, 1350
 DAILY_MAX = 3      # 하루에 싣는 뉴스 수
 EDIT_POOL = 9      # 편집에 넘기는 후보 수 (검증에서 빠질 것을 감안)
 MAX_COST = float(os.getenv("INSTA_MAX_COST") or 0.3)  # 1회 실행 비용 상한(달러). 넘으면 검증을 멈춘다
-LIMITS = {"card_line": 36, "card_take": 50}
+LIMITS = {"card_line": 70, "card_take": 110}  # 영어 기준 글자 수
+COVER_Q_MAX = 50
 NUM = re.compile(r"\d+(?:\.\d+)?")
-# 편집본 금지 표현. 이름 → 정규식. 카드 문구(card_line·card_take·cover_q) 전체에 적용
+# 편집본 금지 표현(영어 계정이지만 한국어도 남겨 둔다). 카드 문구(card_line·card_take·cover_q) 전체에 적용
 BANNED = {
-    "과장어": re.compile(r"혁신|혁명|충격|미쳤|역대급|대박|게임\s?체인저|판도를\s?바꿀"),
+    "과장어": re.compile(r"혁신|혁명|충격|미쳤|역대급|대박|게임\s?체인저|판도를\s?바꿀"
+                      r"|game[- ]?chang|revolutionar|mind[- ]?blow|insane|groundbreaking|jaw[- ]?drop|insanely", re.I),
     "이모지": re.compile("[\U0001F300-\U0001FAFF☀-➿⭐⬆↔-⇿]"),
     "투자 권유": re.compile(r"매수|매도|사세요|사야\s?(해|할|하)|사도\s?될|팔아야|주가.{0,6}(오를|뛸|갈|오르)"
-                         r"|수익률|투자\s?(하세요|추천|해야|해도)"),
-    "농업 주제": re.compile(r"농업|농작물|농가|스마트팜|제초|정밀농업|트랙터|작물"),
+                         r"|수익률|투자\s?(하세요|추천|해야|해도)"
+                         r"|\b(should|time to|go) (buy|sell)\b|\bbuy the (dip|stock)|\bprice target|\bstock (will|is going to)"
+                         r"|\bto the moon\b|\binvest (now|in it)\b|\bnot financial advice\b", re.I),
+    # AI가 쓴 티가 나는 상투 표현 (사람 말투로 보이게)
+    "AI 티": re.compile(r"[—–]|\bdelv(e|es|ing)\b|\blandscape\b|\bnavigat(e|ing) the\b|\bhere'?s (why|the thing|what)\b"
+                        r"|\bit'?s not (?:[\w-]+ ){0,3}[\w-]+, it'?s\b|\bnot just (?:[\w-]+ ){0,3}[\w-]+, but\b|\blet that sink in\b|\bbuckle up\b|\bin a world where\b"
+                        r"|\btestament to\b|\bseamless(ly)?\b|\bleverag(e|es|ing)\b|\bpivotal\b|\brealm\b|\btapestry\b"
+                        r"|\bunlock(s|ing)? (the|new)\b|\bthe future of\b", re.I),
+    "농업 주제": re.compile(r"농업|농작물|농가|스마트팜|제초|정밀농업|트랙터|작물"
+                         r"|agricultur|\bfarming\b|\bfarmers?\b|\bweeding\b|\btractors?\b|smart ?farm|crop yield", re.I),
 }
+CATEGORY_EN = {"모델": "Models", "인물": "People", "빅테크": "Big Tech", "보안": "Security",
+               "오픈소스": "Open Source", "국내": "Korea"}
 
 CSS = """
 *{margin:0;padding:0;box-sizing:border-box}
@@ -51,13 +63,13 @@ body{background:#F6F4EF;color:#16161A;font-family:'Apple SD Gothic Neo','Noto Sa
 .chip{display:inline-block;padding:10px 22px;border-radius:999px;background:#16161A;color:#F6F4EF;
   font-size:28px;font-weight:700;align-self:flex-start}
 .hot{background:#D9480F}
-.line{font-size:76px;line-height:1.25;font-weight:800;margin-top:40px;word-break:keep-all}
+.line{font-size:68px;line-height:1.2;font-weight:800;margin-top:40px;word-break:keep-all}
 .take{margin-top:72px;padding-top:40px;border-top:3px solid #16161A;font-size:40px;line-height:1.5;
   color:#2B2B30;word-break:keep-all}
 .take b{display:block;font-size:28px;color:#D9480F;margin-bottom:14px}
 .foot{display:flex;justify-content:space-between;font-size:27px;color:#6B6A66}
 .ok{color:#2F7D4F;font-weight:700}
-.q{font-size:92px;line-height:1.2;font-weight:800;word-break:keep-all}
+.q{font-size:84px;line-height:1.12;font-weight:800;word-break:keep-all}
 .cover ol{margin-top:80px;list-style:none;counter-reset:n}
 .cover li{counter-increment:n;font-size:36px;line-height:1.4;padding:22px 0;border-top:2px solid #DDD8CC;
   word-break:keep-all;display:flex;gap:22px}
@@ -77,19 +89,24 @@ def public_items(items):
 
 
 # ============================================================ 2. 편집
-EDIT_SYSTEM = """너는 인스타그램 AI 뉴스 계정의 편집자다. 계정의 화자는 'AI와 기술 트렌드에 관심이 아주 많은 대학원생'이다.
-입력은 이미 검증된 뉴스 항목이고, 너는 카드 문구만 쓴다. 카드 한 장 = 굵은 한 줄 + 대학원생 한마디.
+EDIT_SYSTEM = """너는 영어 인스타그램 AI 뉴스 계정의 편집자다. 계정의 화자는 'AI와 기술 트렌드에 푹 빠진 대학원생(a grad student obsessed with AI)'이다.
+입력은 이미 검증된 뉴스 항목(한국어 요약)이고, 너는 영어 카드 문구만 쓴다. 카드 한 장 = 굵은 한 줄 + 대학원생 한마디.
+출력 문구는 전부 자연스러운 영어로 쓴다(번역투 금지). 고유명사·수치는 입력 그대로.
 
-card_line (36자 이하): 무슨 일인지 사실만 한 줄. 핵심 수치가 있으면 넣는다. 평서·명사형 종결("~출시", "~확대").
-card_take (50자 이하): 대학원생 화자의 한마디. 해요체. "그래서 나/우리 같은 사람에게 뭐가 달라지나"를 말한다.
-cover_q (22자 이하): 항목마다 하나씩, 그 소식을 표지에 걸 때 쓸 질문형 훅. 예: "GPT-6.2, 갈아탈 만할까?"
+card_line (70자 이하): 무슨 일인지 사실만 한 줄. 핵심 수치가 있으면 넣는다. 헤드라인 문체(예: "OpenAI ships GPT-6.2 at $8/$40 per 1M tokens").
+card_take (110자 이하): 대학원생 화자의 한마디. 1인칭, 가볍고 똑똑한 말투. "so what for people like me/us"를 말한다.
+cover_q (50자 이하): 항목마다 하나씩, 그 소식을 표지에 걸 때 쓸 질문형 훅. 예: "Is GPT-6.2 worth switching to?"
 
 규칙:
 - 입력에 있는 사실만 쓴다. 새 사실, 새 수치를 더하지 않는다. 수치는 입력 그대로.
-- 회사 측 주장·미검증이라는 단서가 입력에 있으면 card_line이나 card_take에 남긴다("회사 측 주장").
-- card_take는 의견·의미만 말한다. "직접 써봤는데", "제가 해보니" 같은 경험담은 절대 쓰지 않는다(실제로 써보지 않았다).
-- 과장·감탄사·이모지 금지. "혁신", "충격", "미쳤다" 금지.
-- 해시태그: 공통 3개 + 항목마다 그 항목에만 해당하는 1~2개. # 포함, 띄어쓰기 없이.
+- 회사 측 주장·미검증이라는 단서가 입력에 있으면 남긴다("company claims", "not independently verified").
+- card_take는 의견·의미만 말한다. "I tried", "I tested", "I've been using" 같은 경험담은 절대 쓰지 않는다(실제로 써보지 않았다).
+- 과장·감탄사·이모지 금지. "game-changer", "insane", "mind-blowing", "revolutionary" 금지. 투자 조언 금지.
+- AI가 쓴 티를 내지 않는다: 줄표(—) 금지, "Here's why", "It's not X, it's Y", "delve", "landscape", "seamless",
+  "leverage", "the future of" 같은 상투 표현 금지, 셋씩 나열하는 문장 금지.
+  대학원생이 단톡방에서 친구한테 말하듯 짧고 구체적으로. card_take의 문장 구조를 카드마다 다르게
+  (짧은 단언 / 질문 / 비교 / 걱정 / 기대 등 섞기). 매번 "If true, ..." 같은 같은 시작 금지.
+- 해시태그: 영어, 적게. 공통 2개 + 항목마다 그 항목에만 해당하는 1개. # 포함, 띄어쓰기 없이.
 ```json 블록 하나만 출력한다:
 {"common_tags": ["#..."],
  "items": [{"idx": 0, "card_line": "...", "card_take": "...", "cover_q": "...", "tags": ["#..."]}]}"""
@@ -107,16 +124,38 @@ def edit_items(data, items, meter):
 
 
 # ============================================================ 3. 검증
-EXPERIENCE = re.compile(r"써\s?봤|써\s?보니|해\s?봤|해\s?보니|사용해\s?보|돌려\s?봤|돌려\s?보니")
+EXPERIENCE = re.compile(r"써\s?봤|써\s?보니|해\s?봤|해\s?보니|사용해\s?보|돌려\s?봤|돌려\s?보니"
+                        r"|\bI(?:'ve| have)? (?:been )?(?:tried|tested|used|ran|using|testing|played with)\b"
+                        r"|\bin my (?:testing|experience|tests)\b|\bwhen I (?:tried|used|ran|tested)\b|\bhands-on\b", re.I)
+
+
+# 한국어 복합 수: "8억 2500만", "1조 2000억", "100만" (쉼표는 미리 지운다)
+KO_NUM = re.compile(r"(?:(\d+(?:\.\d+)?)\s?조\s?)?(?:(\d+(?:\.\d+)?)\s?억\s?)?(?:(\d+(?:\.\d+)?)\s?만)?")
+
+
+def _numbers(text):
+    """글 속 수치 집합. 한국어 단위(100만·8억 2,500만)는 영어 표기(1M·825M)로 바꾼 값도 넣는다.
+    shortcut: 숫자만 비교하고 단위는 안 본다(원문에 2조가 있으면 2M도 통과). 단위 오류는 3단계 Claude 검증이 잡는다."""
+    text = re.sub(r"(?<=\d),(?=\d{3})", "", text)
+    nums = set(NUM.findall(text))
+    for m in KO_NUM.finditer(text):
+        jo, eok, man = (float(g) if g else 0 for g in m.groups())
+        v = jo * 1e12 + eok * 1e8 + man * 1e4
+        for div in (1e3, 1e6, 1e9, 1e12):  # K, M, B, T
+            if v >= div:
+                nums.add(f"{v / div:g}")
+    return nums
 
 
 def code_check(item, ed):
     """편집본의 기계 검사. 문제 목록을 돌려준다(빈 목록 = 통과)."""
     probs = [f"{k} {len(ed.get(k, ''))}자 > {n}자" for k, n in LIMITS.items() if len(ed.get(k, "")) > n]
     probs += [f"{k} 비어 있음" for k in LIMITS if not ed.get(k, "").strip()]
+    if len(str(ed.get("cover_q", ""))) > COVER_Q_MAX:
+        probs.append(f"cover_q {len(ed['cover_q'])}자 > {COVER_Q_MAX}자")
     source = " ".join(item.get(k, "") for k in ("title", "summary", "why"))
     edited = " ".join(ed.get(k, "") for k in LIMITS)
-    probs += [f"원문 요약에 없는 수치 {n}" for n in sorted(set(NUM.findall(edited)) - set(NUM.findall(source)))]
+    probs += [f"원문 요약에 없는 수치 {n}" for n in sorted(set(NUM.findall(edited)) - _numbers(source))]
     if EXPERIENCE.search(ed.get("card_take", "")):
         probs.append("지어낸 사용 경험 표현")
     text = " ".join(str(ed.get(k, "")) for k in (*LIMITS, "cover_q"))
@@ -138,7 +177,7 @@ def page_text(url):
         return ""
 
 
-VERIFY_SYSTEM = """너는 사실 검증자다. 원문 기사 본문과 카드 문구를 받는다. 카드 문구를 쓴 사람의 의도는 모른다.
+VERIFY_SYSTEM = """너는 사실 검증자다. 원문 기사 본문과 (영어) 카드 문구를 받는다. 카드 문구를 쓴 사람의 의도는 모른다.
 - card_line: 모든 사실·수치가 원문 본문에 근거가 있어야 한다. 원문보다 강한 단정(주장→사실, 계획→완료)은 문제다.
   한 줄 카드라서 생략·축약(직함 일부 생략, 고유명사 한글 표기 등)은 뜻이 바뀌지 않으면 문제가 아니다.
 - card_take: 의견이라 원문에 그대로 없어도 되지만, 원문 사실과 모순되거나 원문에 없는 사실을 전제하면 문제다.
@@ -184,45 +223,46 @@ def edit_and_verify(data, items, meter, out_dir):
             ok, probs = llm_check(it, ed, meter)
         report.append({"idx": k, "title": it["title"], "ok": ok, "problems": probs})
         if ok:  # 걸러진 항목의 해시태그는 싣지 않는다
-            passed.append({**it, **{f: ed[f] for f in LIMITS}, "cover_q": str(ed.get("cover_q", ""))[:30]})
+            passed.append({**it, **{f: ed[f] for f in LIMITS}, "cover_q": str(ed.get("cover_q", ""))[:COVER_Q_MAX]})
             tags += ed.get("tags", [])
     (out / "3_verify.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     tags = [h for h in dict.fromkeys(tags) if isinstance(h, str) and re.fullmatch(r"#\S{1,30}", h)]
     # 표지 질문은 통과한 1순위 항목의 것을 쓴다(빠진 항목의 질문이 표지에 남지 않게)
     cover_q = passed[0]["cover_q"] if passed else ""
-    return {**data, "cover_q": cover_q, "hashtags": tags[:10]}, passed, report
+    return {**data, "cover_q": cover_q, "hashtags": tags[:5]}, passed, report  # 태그를 많이 달면 AI·스팸 티
 
 
 # ============================================================ 4. 렌더
 def build_cards(today, data, items):
     items = items[:DAILY_MAX]
-    day = f"{today.month}.{today.day} ({WEEKDAYS[today.weekday()]})"
+    day = today.strftime("%b %-d · %a")  # 예: Nov 18 · Wed
     n = len(items)
+    # 편집 전 미리보기에는 card_line이 없어 한국어 제목이 나온다 (--edit을 써야 영어)
     line = lambda i: i.get("card_line") or i["title"]
     lis = "".join(f"<li>{E(line(i))}</li>" for i in items)
-    q = data.get("cover_q") or f"오늘의 AI 뉴스 {n}"
-    cards = [_page(f'<div class="top"><span class="brand"><b>AI 뉴스</b> 대학원생 노트</span><span>{day}</span></div>'
+    q = data.get("cover_q") or f"{n} AI stories today"
+    cards = [_page(f'<div class="top"><span class="brand"><b>AI Daily</b> grad notes</span><span>{day}</span></div>'
                    f'<div class="mid"><p class="q">{E(q)}</p><ol>{lis}</ol></div>'
-                   f'<div class="foot"><span>넘겨서 보기 →</span><span>매일 아침</span></div>', "cover")]
+                   f'<div class="foot"><span>Swipe →</span><span>Every morning</span></div>', "cover")]
     for k, it in enumerate(items, 1):
         chip = "hot" if it.get("importance", 0) >= 3 else ""
-        take = (f'<p class="take"><b>대학원생 한마디</b>{E(it["card_take"])}</p>' if it.get("card_take") else "")
+        cat = CATEGORY_EN.get(it.get("category", ""), it.get("category", ""))
+        take = (f'<p class="take"><b>Grad student take</b>{E(it["card_take"])}</p>' if it.get("card_take") else "")
         cards.append(_page(
-            f'<div class="top"><span class="brand"><b>AI 뉴스</b> {day}</span><span>{k} / {n}</span></div>'
-            f'<div class="mid"><span class="chip {chip}">{E(it.get("category", ""))}</span>'
+            f'<div class="top"><span class="brand"><b>AI Daily</b> {day}</span><span>{k} / {n}</span></div>'
+            f'<div class="mid"><span class="chip {chip}">{E(cat)}</span>'
             f'<p class="line">{E(line(it))}</p>{take}</div>'
-            f'<div class="foot"><span>출처 {E(it.get("source", ""))} · {E(it.get("date", ""))}</span>'
-            f'<span class="ok">✓ 원문 대조</span></div>'))
+            f'<div class="foot"><span>Source: {E(it.get("source", ""))} · {E(it.get("date", ""))}</span>'
+            f'<span class="ok">✓ Checked against source</span></div>'))
     return cards
 
 
 def caption(today, data, items):
     items = items[:DAILY_MAX]
-    lines = [f"🗞️ {today.month}월 {today.day}일 ({WEEKDAYS[today.weekday()]}) AI 뉴스", "",
-             data.get("cover_q") or data.get("headline", ""), ""]
+    lines = [f"🗞️ AI Daily · {today:%b} {today.day}", "", data.get("cover_q") or "", ""]
     lines += [f"{k}. {i.get('card_line') or i['title']} ({i.get('source', '')})" for k, i in enumerate(items, 1)]
-    tags = data.get("hashtags") or ["#AI뉴스", "#인공지능", "#AI트렌드"]
-    lines += ["", "AI 요약은 매일 원문과 다시 대조합니다. 원문 링크는 프로필의 전체 리포트에서.", "",
+    tags = data.get("hashtags") or ["#AI", "#AInews", "#TechNews"]
+    lines += ["", "Every summary is re-checked against the original article. Sources: link in bio.", "",
               " ".join(tags)]
     return "\n".join(lines)
 
