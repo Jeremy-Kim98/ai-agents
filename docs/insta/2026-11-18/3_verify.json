@@ -1,0 +1,29 @@
+[
+  {
+    "idx": 0,
+    "title": "OpenAI, GPT-6.2 Astra·Sol 출시",
+    "ok": false,
+    "problems": [
+      "card_take가 '초기 테스터 평가가 냉담했다'는 사실을 전제하는데, 원문 어디에도 초기 테스터 평가나 냉담한 반응에 대한 언급이 없다.",
+      "원문은 오히려 OpenAI가 Claude 최신 모델과 비슷한 성능을 훨씬 낮은 비용으로 낸다고 소개하므로, 근거 없는 부정적 반응을 전제한 의견은 원문과 맞지 않는다."
+    ]
+  },
+  {
+    "idx": 1,
+    "title": "미국, AI 칩 '원격 접속'까지 수출통제 확대",
+    "ok": true,
+    "problems": []
+  },
+  {
+    "idx": 2,
+    "title": "AMD, World Labs 인수 완료… 페이페이 리가 수석과학자로",
+    "ok": true,
+    "problems": []
+  },
+  {
+    "idx": 3,
+    "title": "Anthropic \"Claude Mythos가 AMD GPU 포팅을 3일 만에 끝냈다\"",
+    "ok": true,
+    "problems": []
+  }
+]

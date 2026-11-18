@@ -1,0 +1,11 @@
+🗞️ 11월 18일 (수) AI 뉴스
+
+해외 컴퓨트 임대, 괜찮을까?
+
+1. 미 상무부, AI 칩 원격 접속도 수출통제 확대 (TechCrunch)
+2. AMD, World Labs 인수 완료…페이페이 리 합류 (AMD Newsroom)
+3. Mythos, AMD GPU 포팅 약 3일(회사 측 주장) (BigGo Finance)
+
+AI 요약은 매일 원문과 다시 대조합니다. 원문 링크는 프로필의 전체 리포트에서.
+
+#AI뉴스 #인공지능 #AI트렌드 #수출통제 #AI칩 #AMD #월드모델 #ClaudeMythos #CUDA

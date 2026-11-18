@@ -1,0 +1,49 @@
+{
+  "common_tags": [
+    "#AI뉴스",
+    "#인공지능",
+    "#AI트렌드"
+  ],
+  "items": [
+    {
+      "idx": 0,
+      "card_line": "OpenAI, GPT-6.2 Astra·Sol 출시",
+      "card_take": "초기 테스터 평가가 냉담했다니, 갈아타기는 더 지켜볼래요.",
+      "cover_q": "GPT-6.2, 갈아탈 만할까?",
+      "tags": [
+        "#GPT62",
+        "#OpenAI"
+      ]
+    },
+    {
+      "idx": 1,
+      "card_line": "미 상무부, AI 칩 원격 접속도 수출통제 확대",
+      "card_take": "해외 데이터센터 쓰는 연구·스타트업은 컴퓨트 조달 점검이 필요해요.",
+      "cover_q": "해외 컴퓨트 임대, 괜찮을까?",
+      "tags": [
+        "#수출통제",
+        "#AI칩"
+      ]
+    },
+    {
+      "idx": 2,
+      "card_line": "AMD, World Labs 인수 완료…페이페이 리 합류",
+      "card_take": "GPU 회사가 월드 모델 팀을 품었어요. 하드웨어·모델 동시 최적화 흐름이에요.",
+      "cover_q": "AMD가 월드 모델을 산 이유?",
+      "tags": [
+        "#AMD",
+        "#월드모델"
+      ]
+    },
+    {
+      "idx": 3,
+      "card_line": "Mythos, AMD GPU 포팅 약 3일(회사 측 주장)",
+      "card_take": "검증 전이라 CUDA 락인 약화 얘기는 지켜봐야 해요.",
+      "cover_q": "CUDA 락인, 정말 흔들릴까?",
+      "tags": [
+        "#ClaudeMythos",
+        "#CUDA"
+      ]
+    }
+  ]
+}
