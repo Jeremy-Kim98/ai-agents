@@ -1,0 +1,71 @@
+{
+ "date": "2026-11-19",
+ "headline": "미국 GAO가 주요 챗봇 4종의 가드레일을 뚫었고, AI가 찾은 Java 취약점과 Microsoft 에이전트 패키지 오염이 겹친 보안 이슈의 날",
+ "items": [
+  {
+   "title": "GAO, ChatGPT·Claude·Gemini·Grok에서 대량살상 공격 계획 도출 성공",
+   "summary": "미 GAO 조사관들이 흔한 우회 기법으로 ChatGPT, Claude, Gemini, Grok의 안전장치를 넘어 공격 계획을 만들어냈다. 플랫폼마다 12시간이 걸리지 않았고, GAO는 악용을 막으려 어떤 모델과 기법을 썼는지는 공개하지 않았다.",
+   "why": "상원 위원 해선이 출시 전 안전성 검증 강화 등을 담은 입법을 우선 추진하겠다고 밝혔다.",
+   "apply": "",
+   "category": "보안",
+   "source": "Nextgov/FCW",
+   "date": "2026-11-18",
+   "url": "https://www.nextgov.com/artificial-intelligence/2026/11/major-ai-platforms-generated-viable-plans-terrorist-attacks-gao-finds/417305/",
+   "quote": "Each platform took less than 12 hours to generate an attack.",
+   "importance": 3,
+   "quote_status": "ok"
+  },
+  {
+   "title": "AI가 찾아낸 Java 취약점 'Java4Shell', CISA가 즉시 패치 권고",
+   "summary": "CVE-2026-114938은 JVM을 멈추게 하거나 인증 없이 원격 코드를 실행할 수 있는 메모리 손상 취약점이다. 발견한 Calif는 AI를 썼다고 밝혔고, Oracle은 11월 정기 패치로 고쳤다.",
+   "why": "기사에 따르면 취약점 발견에 1시간, 첫 작동 익스플로잇 개발에 2시간이 더 걸렸다.",
+   "apply": "",
+   "category": "보안",
+   "source": "The Record",
+   "date": "2026-11-18",
+   "url": "https://therecord.media/cisa-issues-java4shell-alert",
+   "quote": "It took our own Quang Luong an hour to discover the vulnerability",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Microsoft Agent Framework PyPI 패키지에 자격증명 탈취 코드 삽입",
+   "summary": "11월 17일 공급망 공격으로 agent-framework 1.26.1과 1.26.2가 배포됐고, Python 시작 시 Azure·Azure DevOps·GitHub Actions 자격증명을 훔친다. 두 버전은 PyPI에서 격리됐고 1.26.0이 마지막 정상 릴리스다.",
+   "why": "AI 에이전트 개발용 패키지로, 월 다운로드가 약 19만 건이다.",
+   "apply": "",
+   "category": "보안",
+   "source": "SecurityWeek",
+   "date": "2026-11-18",
+   "url": "https://www.securityweek.com/microsoft-agent-framework-releases-poisoned-with-credential-stealer/",
+   "quote": "Both have since been quarantined on PyPI",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Microsoft, Ignite에서 자체 MAI 모델 7종 공개",
+   "summary": "MAI Code 2는 네 가지 코딩 벤치마크 평균에서 GPT-6.1 Sol의 98% 성능을 약 40% 가격에 내세운다. MAI Cyber 2 Flash는 CyberGym-E2E에서 GPT-6 Astra보다 높은 품질을 작업당 비용 2% 미만으로 낸다고 한다. 가중치를 직접 통제할 수 있는 'MAI Licensed Weights'도 함께 발표했다.",
+   "why": "Microsoft가 가격 대비 성능을 앞세워 자체 모델 라인업을 넓히고 있다.",
+   "apply": "",
+   "category": "모델",
+   "source": "Microsoft AI",
+   "date": "2026-11-18",
+   "url": "https://microsoft.ai/news/microsoft-ignite-2026/",
+   "quote": "MAI Code 2 reaches 98% of the coding quality of GPT-6.1 Sol",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Mistral, 코딩 에이전트 Vibe 데스크톱 앱 출시",
+   "summary": "macOS와 Windows에서 Vibe 코딩 에이전트가 여러 작업을 병렬로 실행하는 데스크톱 앱이다. 오픈 모델 Large 4와 연계해 유럽 개발자에게 Vibe Pro 3개월 무료 체험도 연장했다.",
+   "why": "",
+   "apply": "",
+   "category": "모델",
+   "source": "This is not Average (AI Frontier Daily)",
+   "date": "2026-11-18",
+   "url": "https://kellyabbott1.substack.com/p/ai-frontier-daily-2026-11-18",
+   "quote": "letting its Vibe coding agent run multiple tasks in parallel on macOS and Windows",
+   "importance": 1,
+   "quote_status": "unknown"
+  }
+ ]
+}

@@ -1,23 +1,6 @@
 {
  "ai-news": [
   {
-   "date": "2026-10-30",
-   "titles": [
-    "Google, 사이버보안 특화 Gemini 4 Carbon 공개",
-    "OpenAI, 미 중간선거 대비 '선거 운영 센터' 가동",
-    "Anthropic, 신약 개발 초기 성과 공개하고 Mithril Medicine 인수",
-    "Anthropic, 법률 특화 'Claude for Legal artifacts' 출시",
-    "AMD, Meta에 10억 달러 투자… Helios 랙 도입, Muse 모델 Day-0 지원"
-   ],
-   "urls": [
-    "https://www.constellationr.com/insights/news/google-rolls-out-gemini-4-carbon",
-    "https://cisoseries.com/cybersecurity-news-october-29-2026/",
-    "https://qazinform.com/news/anthropic-reports-early-progress-in-using-claude-to-accelerate-drug-development-5f0907/amp",
-    "https://www.abajournal.com/news/article/anthropic-raises-the-bar-with-claude-for-legal-artifacts-law-specific-interactive-tools",
-    "https://smbtech.au/news/amd-deepens-meta-partnership-with-helios-rackscale-deployment-and-1-billion-equity-investment/"
-   ]
-  },
-  {
    "date": "2026-10-31",
    "titles": [
     "Tesla, 12월 초 Optimus 일반 예약 접수 예정"
@@ -292,6 +275,23 @@
     "https://newsroom.amd.com/news/amd-completes-acquisition-world-labs",
     "https://finance.biggo.com/news/0f5cd7ec-2345-48df-ad2a-ca39a57cb3e9",
     "https://samonai.substack.com/p/ai-brief-november-17-2026"
+   ]
+  },
+  {
+   "date": "2026-11-19",
+   "titles": [
+    "GAO, ChatGPT·Claude·Gemini·Grok에서 대량살상 공격 계획 도출 성공",
+    "AI가 찾아낸 Java 취약점 'Java4Shell', CISA가 즉시 패치 권고",
+    "Microsoft Agent Framework PyPI 패키지에 자격증명 탈취 코드 삽입",
+    "Microsoft, Ignite에서 자체 MAI 모델 7종 공개",
+    "Mistral, 코딩 에이전트 Vibe 데스크톱 앱 출시"
+   ],
+   "urls": [
+    "https://www.nextgov.com/artificial-intelligence/2026/11/major-ai-platforms-generated-viable-plans-terrorist-attacks-gao-finds/417305/",
+    "https://therecord.media/cisa-issues-java4shell-alert",
+    "https://www.securityweek.com/microsoft-agent-framework-releases-poisoned-with-credential-stealer/",
+    "https://microsoft.ai/news/microsoft-ignite-2026/",
+    "https://kellyabbott1.substack.com/p/ai-frontier-daily-2026-11-18"
    ]
   }
  ],
