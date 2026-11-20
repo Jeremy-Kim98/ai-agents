@@ -1,0 +1,32 @@
+{
+ "date": "2026-11-20",
+ "headline": "Google은 Gemini 4 Neon으로 출시 속도를 이어갔고, 엔비디아는 중국향 H200 출하 중단을 공식화했다.",
+ "items": [
+  {
+   "title": "엔비디아, 중국向 H200 등 라이선스 Hopper 출하 중단",
+   "summary": "엔비디아 임시 CEO 크레스는 가이던스에 라이선스 Hopper 데이터센터 제품이 포함돼 있지 않고 중국 출하도 멈췄다고 밝혔다. 미국은 1월 H200 수출 심사를 개별 검토로 완화했고, 이 과정에서 25% 관세가 붙는 구조였다.",
+   "why": "미국·중국이 협상한 H200 수출 라이선스 체계의 향방이 불투명해졌다.",
+   "apply": "",
+   "category": "빅테크",
+   "source": "BusinessDay (Reuters 기사 전재)",
+   "date": "2026-11-18",
+   "url": "https://www.businessday.co.za/companies/2026-11-18-nvidia-stops-shipping-us-approved-ai-chips-to-china/",
+   "quote": "we are no longer shipping licensed Hopper data centre products to China",
+   "importance": 3,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Google, Gemini 4 Neon 출시… Carbon급 성능을 더 빠르고 싸게",
+   "summary": "Neon은 Gemini 4 계열에서 Hydrogen과 Carbon 사이에 놓이는 모델이다. 컨텍스트는 100만 토큰이고 추론 단계는 4단계다. Gemini 앱에서 AI Pro·Ultra 구독자에게 제공되며, 가격은 입력 $3, 출력 $15(100만 토큰당)다. Terminal-Bench Science 70.5%, HLE-Diamond 71.3%로 최고 성능이라고 소개됐다.",
+   "why": "Carbon과 Hydrogen 출시 일주일 만에 나온 네 번째 Gemini 4 모델로, 중간 가격대 경쟁이 빨라졌다.",
+   "apply": "",
+   "category": "모델",
+   "source": "9to5Google",
+   "date": "2026-11-18",
+   "url": "https://9to5google.com/2026/11/18/gemini-4-neon-announcement/",
+   "quote": "Google today is rolling out Gemini 4 Neon",
+   "importance": 2,
+   "quote_status": "ok"
+  }
+ ]
+}

@@ -1,15 +1,6 @@
 {
  "ai-news": [
   {
-   "date": "2026-10-31",
-   "titles": [
-    "Tesla, 12월 초 Optimus 일반 예약 접수 예정"
-   ],
-   "urls": [
-    "https://sfstandard.com/2026/10/30/tesla-optimus-robot-waitlist"
-   ]
-  },
-  {
    "date": "2026-11-01",
    "titles": [
     "OpenAI, 투자 유치 목표를 300억→200억 달러로 하향",
@@ -292,6 +283,17 @@
     "https://www.securityweek.com/microsoft-agent-framework-releases-poisoned-with-credential-stealer/",
     "https://microsoft.ai/news/microsoft-ignite-2026/",
     "https://kellyabbott1.substack.com/p/ai-frontier-daily-2026-11-18"
+   ]
+  },
+  {
+   "date": "2026-11-20",
+   "titles": [
+    "엔비디아, 중국向 H200 등 라이선스 Hopper 출하 중단",
+    "Google, Gemini 4 Neon 출시… Carbon급 성능을 더 빠르고 싸게"
+   ],
+   "urls": [
+    "https://www.businessday.co.za/companies/2026-11-18-nvidia-stops-shipping-us-approved-ai-chips-to-china/",
+    "https://9to5google.com/2026/11/18/gemini-4-neon-announcement/"
    ]
   }
  ],
