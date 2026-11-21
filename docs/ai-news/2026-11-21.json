@@ -1,0 +1,71 @@
+{
+ "date": "2026-11-21",
+ "headline": "Anthropic이 나스닥에 상장해 AI 업계 사상 최대급 IPO를 치렀고, 에이전트 보안 문제가 같은 날 잇따라 불거졌다.",
+ "items": [
+  {
+   "title": "Anthropic, 나스닥 상장… 공모가 $83, 시초가 $111.50",
+   "summary": "Anthropic이 11월 19일 티커 ANT로 거래를 시작했고 시초가는 공모가보다 약 34% 높은 $111.50이었다. 종가는 $97.17로 공모가 대비 약 17% 높았으며, 공모 규모는 $81.34B이다.",
+   "why": "AP가 역대 최대 규모의 공모라고 보도한 상장이며, 프런티어 랩이 공개시장의 평가를 받는 국면에 들어섰다.",
+   "apply": "",
+   "category": "빅테크",
+   "source": "TechRepublic",
+   "date": "2026-11-19",
+   "url": "https://www.techrepublic.com/article/news-anthropic-ipo-nasdaq-trading-debut/",
+   "quote": "Anthropic opened at $111.50 in its Nasdaq debut after pricing its IPO at $83",
+   "importance": 3,
+   "quote_status": "unknown"
+  },
+  {
+   "title": "유럽연합 집행위, AI 침투테스트 도구 ARTEX 의심 사이버공격으로 10일 넘게 마비",
+   "summary": "급여, 휴가 신청, 의료비 환급 등 집행위 내부 시스템이 10일 넘게 중단됐다. EU 사이버보안팀 CERT-EU는 AI 기반 침투테스트 도구 ARTEX를 공격에 쓰인 가능성이 있는 도구로 지목했고, 직원 데이터 접근 여부는 아직 확인되지 않았다.",
+   "why": "정상적인 보안 점검용 AI 에이전트 도구가 공격에 악용됐을 수 있다는 사례다.",
+   "apply": "",
+   "category": "보안",
+   "source": "Security Affairs",
+   "date": "2026-11-20",
+   "url": "https://securityaffairs.com/203483/hacking/european-commission-cyberattack-artex-ai-tool-suspected-in-prolonged-disruption.html",
+   "quote": "A cyberattack has disrupted internal European Commission systems for more than ten days",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Meta 에이전트 'Muse', 사내에서 타인 데이터 혼입 의혹 제기",
+   "summary": "Reuters가 Muse의 의도하지 않은 동작을 다룬 사내 게시글 20여 건을 검토했다. 직원들은 계정 간 대화가 섞여 사용자의 개인 정보가 노출될 수 있다고 우려했다. Reuters는 타인의 은행 잔액이 실제로 제공된 것인지, 모델이 지어낸 것인지는 확인하지 못했다.",
+   "why": "다운로드 1,000만 건을 넘긴 상용 에이전트에서 권한과 데이터 격리 문제가 드러났다.",
+   "apply": "",
+   "category": "빅테크",
+   "source": "BNN Bloomberg (Reuters)",
+   "date": "2026-11-18",
+   "url": "https://www.bnnbloomberg.ca/business/company-news/2026/11/18/as-meta-bets-big-on-muse-ai-agent-early-safety-mishaps-surface/",
+   "quote": "more than 10 million downloads since its September launch",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Apple, 컴퓨터를 직접 쓰는 자체 AI 에이전트 개발자 채용",
+   "summary": "Bloomberg가 Apple의 시니어 엔지니어링 매니저 채용 공고를 발견했다. 웹 브라우징, 앱 간 작업, 명령 실행, 코드 작성·디버깅을 하는 에이전트를 만드는 자리다.",
+   "why": "Apple도 computer-use 에이전트를 직접 만들려 한다는 신호지만, 채용 공고에 근거한 내용이다.",
+   "apply": "",
+   "category": "빅테크",
+   "source": "Sam on AI",
+   "date": "2026-11-20",
+   "url": "https://samonai.substack.com/p/ai-brief-november-20-2026",
+   "quote": "AI agent that can use a computer",
+   "importance": 1,
+   "quote_status": "unknown"
+  },
+  {
+   "title": "xAI, Grok 영상 생성기를 미국 사용자에게 무료 개방",
+   "summary": "Grok Imagine의 텍스트 기반 영상·이미지 생성이 미국 사용자에게 무료로 열렸다. 일론 머스크의 게시글을 근거로 한 보도다.",
+   "why": "영상 생성 기능의 무료 제공 경쟁이 이어지고 있다. 다만 무료 범위는 미국 사용자로 한정된다.",
+   "apply": "",
+   "category": "모델",
+   "source": "This is not Average (Kelly Abbott)",
+   "date": "2026-11-20",
+   "url": "https://kellyabbott1.substack.com/p/ai-frontier-daily-2026-11-20",
+   "quote": "xAI makes Grok's video generator free for US users",
+   "importance": 1,
+   "quote_status": "unknown"
+  }
+ ]
+}
