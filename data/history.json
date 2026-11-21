@@ -424,6 +424,21 @@
    "urls": [
     "https://www.globenewswire.com/news-release/2026/11/16/3403762/28124/en/2026-embodied-ai-robot-large-models-and-vision-language-action-vla-research-report-world-models-and-oem-investment-accelerate-commercialization-and-mass-production.html"
    ]
+  },
+  {
+   "date": "2026-11-21",
+   "titles": [
+    "Mind2Act World: 판단·실행·결합을 분리 진단하는 시뮬레이션 조작 벤치마크",
+    "앤트그룹 로비앤트, 촉각 파운데이션 모델 LingBot-Touch 오픈소스 공개",
+    "MOCAP4ROS2 2.0.0 공개: 상용 모캡 시스템용 벤더 중립 ROS 2 인터페이스",
+    "슈퍼브에이아이, NAIRL 세미나에서 산업용 비전 파운데이션 모델 발표 정리"
+   ],
+   "urls": [
+    "https://arxiv.org/pdf/2611.26444",
+    "https://www.theguru.co.kr/news/article.html?no=109840",
+    "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-november-16th-2026/60053",
+    "https://blog-ko.superb-ai.com/vision-intelligence-physical-world-nairl-2026/"
+   ]
   }
  ]
 }

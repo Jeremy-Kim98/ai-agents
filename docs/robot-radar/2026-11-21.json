@@ -1,0 +1,60 @@
+{
+ "date": "2026-11-21",
+ "headline": "대형 모델 발표는 확인되지 않았고, 촉각 파운데이션 모델·시뮬레이션 진단 벤치마크·ROS 2 모캡 인터페이스 같은 시연 데이터와 평가 쪽 도구가 이번 기간의 중심이었다.",
+ "items": [
+  {
+   "title": "Mind2Act World: 판단·실행·결합을 분리 진단하는 시뮬레이션 조작 벤치마크",
+   "summary": "11/18자 arXiv 논문이 양팔 ARX X5 플랫폼의 시뮬레이션 조작 과제 30개로 구성된 진단 벤치마크를 제안했다. 실패가 잘못된 추론, 부정확한 실행, 둘의 결합 불량 중 어디서 오는지를 3가지 관점으로 나눠 평가한다.",
+   "why": "성공률 하나로 평가하지 않고 실패 원인을 '판단'과 '실행'으로 나눈다는 점에서, 계획자/실행자 분리 설계를 검증하는 평가 틀로 쓸 수 있다.",
+   "apply": "사람/로봇 역할 분담: 과제별 실패가 판단 때문인지 정밀 제어 때문인지 구분하는 기준으로 쓰면, 강화학습으로 충분한 과제와 시연이 필요한 과제를 가르는 분석에 직접 연결된다. 가상환경 구축: 30개 과제의 구성 방식을 자체 과제 세트 설계에 참고할 수 있다. 수치와 세부 구현은 논문 확인이 필요하다.",
+   "category": "시뮬레이션",
+   "source": "arXiv",
+   "date": "2026-11-18",
+   "url": "https://arxiv.org/pdf/2611.26444",
+   "quote": "",
+   "importance": 3,
+   "quote_status": "removed",
+   "linear_id": "KIM-16",
+   "linear_url": "https://linear.app/kimjuseung/issue/KIM-16/레이더-mind2act-world-판단실행결합을-분리-진단하는-시뮬레이션-조작-벤치마크"
+  },
+  {
+   "title": "앤트그룹 로비앤트, 촉각 파운데이션 모델 LingBot-Touch 오픈소스 공개",
+   "summary": "로비앤트가 약 11/10 촉각 기반 로봇 파운데이션 모델 LingBot-Touch를 Apache-2.0으로 공개했고, 가중치·추론 코드·특징 추출 유틸리티가 GitHub, Hugging Face, ModelScope에 올라와 있다. 사람이 촉각 장갑으로 조작한 기록과 원격조작 로봇 데이터 등 총 4983시간의 실제 데이터로 사전학습했다.",
+   "why": "자기식·압저항식·시각 기반 센서 신호를 공통 표현으로 통합해, 센서 종류가 달라도 같은 모델을 쓸 수 있다.",
+   "apply": "시연 데이터 수집: 사람 장갑 데이터와 원격조작 데이터를 섞어 촉각 표현을 사전학습한 구조는, VR·원격조작 시연에 촉각 채널을 붙일 때 참고할 수 있다. 사람/로봇 역할 분담: 접촉이 많은 과제는 사람 시연이 필요하다는 판단 근거를 촉각 유무로 실험해 볼 수 있다. 시뮬레이션에서 촉각을 재현하기는 어려워 보인다.",
+   "category": "로봇모델",
+   "source": "더구루(THE GURU)",
+   "date": "2026-11-17",
+   "url": "https://www.theguru.co.kr/news/article.html?no=109840",
+   "quote": "총 4983시간 분량 실제 데이터가 투입됐다",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "MOCAP4ROS2 2.0.0 공개: 상용 모캡 시스템용 벤더 중립 ROS 2 인터페이스",
+   "summary": "ROS 주간 소식에 따르면 URJC(Rey Juan Carlos University) 팀이 MOCAP4ROS2 2.0을 공개했다. 프로젝트 게시글의 제목은 OptiTrack, Vicon, Qualisys, Gazebo를 하나의 인터페이스로 묶고 새 도구와 웹사이트를 추가했다는 내용이다.",
+   "why": "모캡 장비마다 달랐던 ROS 2 연동을 하나로 통일해, 데이터 수집 파이프라인이 특정 장비에 묶이는 문제를 줄여 준다.",
+   "apply": "시연 데이터 수집: 모캡 기반 손·물체 추적 데이터를 ROS 2 토픽으로 받아 원격조작·시연 로그와 한 시간축에 기록하는 구성에 쓸 수 있다. 장비를 바꿔도 수집 코드를 유지하기 쉽다.",
+   "category": "오픈소스",
+   "source": "Open Robotics Discourse (ROS News)",
+   "date": "2026-11-15",
+   "url": "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-november-16th-2026/60053",
+   "quote": "a vendor neutral ROS 2 interface for most commercial MoCap systems",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "슈퍼브에이아이, NAIRL 세미나에서 산업용 비전 파운데이션 모델 발표 정리",
+   "summary": "슈퍼브에이아이 CRO가 11/10 서울 AI 허브의 국가AI연구거점(NAIRL) 월례 석학세미나에서 산업 현장 AI의 장벽과 비전 파운데이션 모델을 발표했고, 11/20 블로그에 정리 글이 올라왔다. 검색으로 확인된 본문 정보는 제목과 개요 수준이다.",
+   "why": "산업 현장 비전 파운데이션 모델의 사업화 방향을 보여 주는 국내 사례지만, 새 모델이나 벤치마크 수치는 확인하지 못했다.",
+   "apply": "직접 연관 낮음. 조작 학습 파이프라인에 바로 쓸 기술적 내용은 확인하지 못했고, 객체 인식 모듈을 산업용으로 확장하는 국내 동향을 참고하는 정도다.",
+   "category": "검출",
+   "source": "Superb AI 블로그",
+   "date": "2026-11-20",
+   "url": "https://blog-ko.superb-ai.com/vision-intelligence-physical-world-nairl-2026/",
+   "quote": "Vision Intelligence for the Physical World",
+   "importance": 1,
+   "quote_status": "ok"
+  }
+ ]
+}

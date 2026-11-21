@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>로봇+AI 레이더 2026-11-21</title>
+<meta property="og:title" content="로봇+AI 레이더 2026-11-21">
+<meta property="og:description" content="대형 모델 발표는 확인되지 않았고, 촉각 파운데이션 모델·시뮬레이션 진단 벤치마크·ROS 2 모캡 인터페이스 같은 시연 데이터와 평가 쪽 도구가 이번 기간의 중심이었다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:#F8FAFB; --ink:#1D2B3A; --pencil:#2F5D8C; --graphite:#5E6873;
+  --rule:#DCE3E9; --marker:#FFE36E; --ok:#2E7D4F; --grid:rgba(47,93,140,.07); color-scheme:light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#121A22; --ink:#E4EAF0; --pencil:#8DB6E2; --graphite:#9AA6B2;
+          --rule:#2A3644; --marker:#6B5A12; --ok:#7CC79A; --grid:rgba(141,182,226,.06); color-scheme:dark; }
+}
+* { box-sizing:border-box; }
+html {
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px; min-height:100%;
+}
+body {
+  margin:0; color:var(--ink); background:transparent;
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:16px; line-height:1.7; word-break:keep-all; overflow-wrap:anywhere;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+main { max-width:42rem; margin:0 auto; padding:2.75rem 1.25rem 4rem; }
+.kind { color:var(--pencil); font-weight:600; margin:0; }
+h1 { font-family:"Gowun Batang",serif; font-size:2.4rem; line-height:1.2; margin:.15rem 0 0; }
+.verdict { border-left:3px solid var(--pencil); padding:.1rem 0 .1rem 1rem; margin:1.6rem 0 2.4rem; font-size:1.05rem; }
+h3.group { font-size:.95rem; color:var(--graphite); font-weight:600; margin:2.2rem 0 .2rem; }
+article { padding:1.3rem 0; border-top:1px solid var(--rule); }
+article h2 { font-size:1.12rem; line-height:1.5; margin:0 0 .35rem; }
+article h2 a { color:inherit; text-decoration-color:var(--pencil); text-underline-offset:4px; }
+article.hot h2 a { background:linear-gradient(transparent 58%,var(--marker) 58%); }
+.src { font-size:.85rem; color:var(--graphite); margin:0 0 .5rem; }
+p { margin:.35rem 0; }
+.why { color:var(--graphite); }
+.apply { margin-top:.75rem; padding:.6rem .85rem; border:1px dashed var(--pencil); border-radius:4px; }
+.apply strong { color:var(--pencil); }
+blockquote { margin:.7rem 0 0; padding:0 0 0 .9rem; border-left:2px solid var(--rule); font-size:.92rem; }
+blockquote small { display:block; color:var(--graphite); font-size:.8rem; }
+blockquote small.ok { color:var(--ok); }
+.empty { color:var(--graphite); }
+footer { margin-top:2.75rem; font-size:.85rem; color:var(--graphite); }
+footer p { margin:.15rem 0; }
+a { color:var(--pencil); }
+a:focus-visible { outline:2px solid var(--pencil); outline-offset:2px; }
+h2.series { font-family:"Gowun Batang",serif; font-size:1.5rem; margin:2.6rem 0 0; }
+h3.month { font-size:.9rem; color:var(--graphite); font-weight:600; margin:1.2rem 0 .2rem; }
+ul.archive { list-style:none; padding:0; margin:0; }
+ul.archive li { padding:.5rem 0; border-top:1px solid var(--rule); }
+</style>
+</head>
+<body><main>
+<p class="kind">로봇+AI 레이더</p><h1>11월 21일 토요일</h1><p class="verdict">대형 모델 발표는 확인되지 않았고, 촉각 파운데이션 모델·시뮬레이션 진단 벤치마크·ROS 2 모캡 인터페이스 같은 시연 데이터와 평가 쪽 도구가 이번 기간의 중심이었다.</p><h3 class="group">꼭 볼 것</h3>
+<article class="hot">
+<h2><a href="https://arxiv.org/pdf/2611.26444" target="_blank" rel="noopener">Mind2Act World: 판단·실행·결합을 분리 진단하는 시뮬레이션 조작 벤치마크</a></h2>
+<p class="src">시뮬레이션 / arXiv / 2026-11-18</p>
+<p>11/18자 arXiv 논문이 양팔 ARX X5 플랫폼의 시뮬레이션 조작 과제 30개로 구성된 진단 벤치마크를 제안했다. 실패가 잘못된 추론, 부정확한 실행, 둘의 결합 불량 중 어디서 오는지를 3가지 관점으로 나눠 평가한다.</p>
+<p class="why">성공률 하나로 평가하지 않고 실패 원인을 &#x27;판단&#x27;과 &#x27;실행&#x27;으로 나눈다는 점에서, 계획자/실행자 분리 설계를 검증하는 평가 틀로 쓸 수 있다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>사람/로봇 역할 분담: 과제별 실패가 판단 때문인지 정밀 제어 때문인지 구분하는 기준으로 쓰면, 강화학습으로 충분한 과제와 시연이 필요한 과제를 가르는 분석에 직접 연결된다. 가상환경 구축: 30개 과제의 구성 방식을 자체 과제 세트 설계에 참고할 수 있다. 수치와 세부 구현은 논문 확인이 필요하다.</div>
+</article>
+<h3 class="group">그 밖에</h3>
+<article>
+<h2><a href="https://www.theguru.co.kr/news/article.html?no=109840" target="_blank" rel="noopener">앤트그룹 로비앤트, 촉각 파운데이션 모델 LingBot-Touch 오픈소스 공개</a></h2>
+<p class="src">로봇모델 / 더구루(THE GURU) / 2026-11-17</p>
+<p>로비앤트가 약 11/10 촉각 기반 로봇 파운데이션 모델 LingBot-Touch를 Apache-2.0으로 공개했고, 가중치·추론 코드·특징 추출 유틸리티가 GitHub, Hugging Face, ModelScope에 올라와 있다. 사람이 촉각 장갑으로 조작한 기록과 원격조작 로봇 데이터 등 총 4983시간의 실제 데이터로 사전학습했다.</p>
+<p class="why">자기식·압저항식·시각 기반 센서 신호를 공통 표현으로 통합해, 센서 종류가 달라도 같은 모델을 쓸 수 있다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>시연 데이터 수집: 사람 장갑 데이터와 원격조작 데이터를 섞어 촉각 표현을 사전학습한 구조는, VR·원격조작 시연에 촉각 채널을 붙일 때 참고할 수 있다. 사람/로봇 역할 분담: 접촉이 많은 과제는 사람 시연이 필요하다는 판단 근거를 촉각 유무로 실험해 볼 수 있다. 시뮬레이션에서 촉각을 재현하기는 어려워 보인다.</div>
+<blockquote>“총 4983시간 분량 실제 데이터가 투입됐다”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://discourse.openrobotics.org/t/ros-news-for-the-week-of-november-16th-2026/60053" target="_blank" rel="noopener">MOCAP4ROS2 2.0.0 공개: 상용 모캡 시스템용 벤더 중립 ROS 2 인터페이스</a></h2>
+<p class="src">오픈소스 / Open Robotics Discourse (ROS News) / 2026-11-15</p>
+<p>ROS 주간 소식에 따르면 URJC(Rey Juan Carlos University) 팀이 MOCAP4ROS2 2.0을 공개했다. 프로젝트 게시글의 제목은 OptiTrack, Vicon, Qualisys, Gazebo를 하나의 인터페이스로 묶고 새 도구와 웹사이트를 추가했다는 내용이다.</p>
+<p class="why">모캡 장비마다 달랐던 ROS 2 연동을 하나로 통일해, 데이터 수집 파이프라인이 특정 장비에 묶이는 문제를 줄여 준다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>시연 데이터 수집: 모캡 기반 손·물체 추적 데이터를 ROS 2 토픽으로 받아 원격조작·시연 로그와 한 시간축에 기록하는 구성에 쓸 수 있다. 장비를 바꿔도 수집 코드를 유지하기 쉽다.</div>
+<blockquote>“a vendor neutral ROS 2 interface for most commercial MoCap systems”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article>
+<article>
+<h2><a href="https://blog-ko.superb-ai.com/vision-intelligence-physical-world-nairl-2026/" target="_blank" rel="noopener">슈퍼브에이아이, NAIRL 세미나에서 산업용 비전 파운데이션 모델 발표 정리</a></h2>
+<p class="src">검출 / Superb AI 블로그 / 2026-11-20</p>
+<p>슈퍼브에이아이 CRO가 11/10 서울 AI 허브의 국가AI연구거점(NAIRL) 월례 석학세미나에서 산업 현장 AI의 장벽과 비전 파운데이션 모델을 발표했고, 11/20 블로그에 정리 글이 올라왔다. 검색으로 확인된 본문 정보는 제목과 개요 수준이다.</p>
+<p class="why">산업 현장 비전 파운데이션 모델의 사업화 방향을 보여 주는 국내 사례지만, 새 모델이나 벤치마크 수치는 확인하지 못했다.</p>
+<div class="apply"><strong>내 연구에 적용하면</strong><br>직접 연관 낮음. 조작 학습 파이프라인에 바로 쓸 기술적 내용은 확인하지 못했고, 객체 인식 모듈을 산업용으로 확장하는 국내 동향을 참고하는 정도다.</div>
+<blockquote>“Vision Intelligence for the Physical World”<small class="ok">원문에서 같은 문구를 자동으로 확인했습니다</small></blockquote>
+</article><footer><p>이번 실행 비용 약 $0.52, 이번 달 누적 약 $14.75</p><p><a href="../index.html">지난 리포트 모아보기</a></p></footer>
+</main></body></html>
