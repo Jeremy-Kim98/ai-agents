@@ -1,0 +1,71 @@
+{
+ "date": "2026-11-22",
+ "headline": "Claude의 리만 증명 주장과 Tesla FSD v15 롤아웃이 화제였고, 노트북용 오픈웨이트와 AI 제공사 보안 이슈가 뒤를 이었다.",
+ "items": [
+  {
+   "title": "Claude가 리만 증명을 했다는 주장, 몇 시간 뒤 인간 증명 제안 등장",
+   "summary": "Claude가 리만을 증명했다는 주장이 나왔다. 몇 시간 뒤 미국수학회 회장 Ravi Vakil이 Alessandro Masullo의 일반형 인간 증명 제안을 '긴급 공지'로 올렸다.",
+   "why": "AI의 증명 주장이 검증 단계에 들어갔고, 인간 증명 제안이 동시에 나와 결과 확인이 필요하다.",
+   "apply": "",
+   "category": "모델",
+   "source": "Artificially Intimidating",
+   "date": "2026-11-21",
+   "url": "https://artificiallyintimidating.com/p/ai-brief-november-21-2026",
+   "quote": "Claude Says It Proved Riemann. Now Comes the Checking.",
+   "importance": 3,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Tesla, FSD v15 첫 고객 배포 시작… 비전 인코더를 Optimus와 공유",
+   "summary": "Tesla가 21일 X에서 FSD v15가 롤아웃을 시작했다고 밝히며 안전 위험 상황 처리가 25배 좋아졌다고 주장했다. 릴리스 노트에는 FSD·Robotaxi·Optimus가 공유하는 업그레이드된 비전 인코더가 적혀 있다.",
+   "why": "자율주행과 휴머노이드가 같은 비전 백본을 쓴다는 점을 공식 노트에서 확인할 수 있다.",
+   "apply": "",
+   "category": "빅테크",
+   "source": "FourWeekMBA",
+   "date": "2026-11-21",
+   "url": "https://fourweekmba.com/ai-tesla-starts-fsd-v15-rollout-claims-25x-safety-gain/",
+   "quote": "Upgraded vision encoder shared between FSD, Robotaxi, and Optimus.",
+   "importance": 3,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Dragos의 HD Moore, 카나리 프롬프트 200만 개로 AI 제공사 3곳 침해 확인",
+   "summary": "Dragos의 HD Moore가 카나리 프롬프트 200만 개를 심어, AI 제공사 세 곳이 침해됐고 ZDR 플래그가 무시된 사실을 찾아냈다는 보도가 나왔다. 헤드라인 외의 세부 내용은 확인하지 못했다.",
+   "why": "데이터 비보존(ZDR) 설정이 실제로 지켜지는지 외부에서 검증한 사례라는 점에서 눈여겨볼 만하다.",
+   "apply": "",
+   "category": "보안",
+   "source": "AI Weekly",
+   "date": "2026-11-21",
+   "url": "https://aiweekly.co/ai-news-today",
+   "quote": "",
+   "importance": 2,
+   "quote_status": "removed"
+  },
+  {
+   "title": "Google, AI 구독자에게 Mac용 Gemini 컴퓨터 사용 기능 배포",
+   "summary": "Google이 AI 구독자를 대상으로 Mac에서 Gemini가 컴퓨터를 직접 쓰는 기능을 내놓았다.",
+   "why": "Apple이 자체 에이전트를 준비한다는 소식과 겹쳐, Mac의 컴퓨터 사용 에이전트 경쟁이 시작되는 모습이다.",
+   "apply": "",
+   "category": "모델",
+   "source": "ai.info",
+   "date": "2026-11-21",
+   "url": "https://ai.info/daily/2026-11-21",
+   "quote": "Google rolls out Gemini computer use on Mac for AI subscribers",
+   "importance": 1,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Apple, 단안 메트릭 깊이 모델 Depth Pro 2 오픈웨이트 공개",
+   "summary": "Apple의 Depth Pro 2 논문(arXiv:2611.26603)은 11월 19일 제출됐고, 코드와 가중치가 GitHub와 Hugging Face에 올라왔다. 저자들은 최대 모델 Depth Pro 2-H+가 제로샷 비디오 메트릭 깊이와 경계 선명도, 지터 지표에서 가장 좋다고 보고한다.",
+   "why": "일반 카메라 한 대로 미터 단위 깊이를 얻는 모델이라 로봇 인식 연구에 바로 쓸 수 있다.",
+   "apply": "",
+   "category": "오픈소스",
+   "source": "AI Daily Digest (GitHub)",
+   "date": "2026-11-21",
+   "url": "https://github.com/diclogic/ai-daily-digest/issues/220",
+   "quote": "with code and weights on GitHub and Hugging Face",
+   "importance": 1,
+   "quote_status": "ok"
+  }
+ ]
+}
