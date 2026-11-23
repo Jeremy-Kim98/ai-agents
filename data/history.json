@@ -1,17 +1,6 @@
 {
  "ai-news": [
   {
-   "date": "2026-11-03",
-   "titles": [
-    "VicOne, AI 보조 연구로 Google·NVIDIA·Meta 로봇 SW에서 제로데이 28건 발견",
-    "SemiAnalysis, 에이전트 벤치마크 GDPx 공개… 1위 Claude Opus 5.5도 12%"
-   ],
-   "urls": [
-    "https://www.therobotreport.com/28-zero-day-findings-in-less-than-two-days-what-ai-speed-discovery-means-for-robotics/",
-    "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities"
-   ]
-  },
-  {
    "date": "2026-11-04",
    "titles": [
     "한국 2027년 예산안, 주권 AI 모델에 4.7조 원 배정",
@@ -298,6 +287,15 @@
     "https://aiweekly.co/ai-news-today",
     "https://ai.info/daily/2026-11-21",
     "https://github.com/diclogic/ai-daily-digest/issues/220"
+   ]
+  },
+  {
+   "date": "2026-11-23",
+   "titles": [
+    "아마존, AI 스타트업 Decart를 75억 달러에 인수 임박"
+   ],
+   "urls": [
+    "https://riorundown.substack.com/p/ai-news-nov-22-2026-autonomous-systems"
    ]
   }
  ],
