@@ -1,0 +1,71 @@
+{
+ "date": "2026-11-24",
+ "headline": "Anthropic과 DeepMind가 에이전트의 실작업 투입 사례를 내놓은 날: 코드 리뷰 자동화와 양자 알고리즘 탐색",
+ "items": [
+  {
+   "title": "Anthropic, PR 리뷰·수정·승인을 맡는 'Claude Ship' 공개",
+   "summary": "Claude가 GitHub 풀 리퀘스트를 검토하고 수정까지 처리하며, 팀이 정한 승인 정책을 적용한다.",
+   "why": "코드 생성에 이어 리뷰·승인 단계까지 에이전트에 넘기는 흐름이다.",
+   "apply": "",
+   "category": "모델",
+   "source": "Claude (Anthropic)",
+   "date": "2026-11-23",
+   "url": "https://claude.com/product/claude-ship",
+   "quote": "Claude can now review pull requests, handle fixes, and apply your team’s approval policy.",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "DeepMind, Gemini 4 에이전트가 찾은 양자 알고리즘 검증 프레임워크 오픈소스화",
+   "summary": "Google DeepMind가 Gemini 4 에이전트가 개발한 양자 알고리즘을 검증하는 데 쓴 Lean 4 프레임워크를 공개했다. 이 중 한 알고리즘은 추정 계산 비용을 290배 줄였다.",
+   "why": "에이전트가 낸 결과를 기계 검증 가능한 증명으로 확인할 수 있게 한 점이 핵심이다.",
+   "apply": "",
+   "category": "오픈소스",
+   "source": "The New Stack",
+   "date": "2026-11-23",
+   "url": "https://thenewstack.io/deepmind-lean-quantum-verification/",
+   "quote": "Google DeepMind has open-sourced the Lean 4 framework",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Google, 검색 AI 모드 'Personal Intelligence'에 Drive·Wallet 연동 확대",
+   "summary": "Google이 검색 AI 모드의 Personal Intelligence에 Google Drive, Google Wallet, Gemini 앱 연동을 추가한다고 발표했다.",
+   "why": "개인 데이터를 검색 답변에 연결하는 방향이 한 걸음 더 나갔다.",
+   "apply": "",
+   "category": "빅테크",
+   "source": "TechCrunch",
+   "date": "2026-11-23",
+   "url": "https://techcrunch.com/2026/11/23/google-searchs-ai-mode-can-now-tap-into-drive-and-wallet-for-more-personalized-responses",
+   "quote": "expanding Personal Intelligence in Search’s AI Mode with integrations for Google Drive, Google Wallet",
+   "importance": 1,
+   "quote_status": "ok"
+  },
+  {
+   "title": "OpenAI, 소상공인 AI 도입을 돕는 'OpenWorks' 시작",
+   "summary": "OpenAI가 지역 AI 전문가에게 보수를 지급해 소상공인의 AI 활용을 무료로 돕는 프로그램 OpenWorks를 공개했다.",
+   "why": "모델 출시가 아니라 현장 인력을 통한 AI 보급 전략이다.",
+   "apply": "",
+   "category": "빅테크",
+   "source": "OpenAI (X)",
+   "date": "2026-11-23",
+   "url": "https://x.com/OpenAI/status/2124922133545714160",
+   "quote": "we fund local AI experts to help small businesses develop the tools and skills",
+   "importance": 1,
+   "quote_status": "ok"
+  },
+  {
+   "title": "에이전트 워크플로 엔진 Flyto2 Core, CVSS 10.0 취약점 공개",
+   "summary": "Flyto2 Core 2.26.8 이전 버전에서 CVE-2026-77312(CVSS 10.0)가 확인됐다. 이 엔진은 대규모 자동화 에이전트 환경의 워크플로 실행을 맡는다.",
+   "why": "에이전트 실행 기반 소프트웨어가 최고 심각도 취약점의 대상이 됐다.",
+   "apply": "",
+   "category": "보안",
+   "source": "The Hacker Wire",
+   "date": "2026-11-23",
+   "url": "https://thehackerwire.com/weekly-vulnerability-roundup-nov-23-2026-apex-cves-ai-breakout-cisa-kev",
+   "quote": "affects Flyto2 Core (prior to version 2.26.8)",
+   "importance": 1,
+   "quote_status": "ok"
+  }
+ ]
+}
