@@ -1,0 +1,45 @@
+{
+ "date": "2026-11-26",
+ "headline": "AI 에이전트가 모델 연구와 코드 작성, 침투 공격까지 맡기 시작했다는 소식이 이어진 하루",
+ "items": [
+  {
+   "title": "AI 방어 도구 Artex, CIA·FinCEN 침해에 공격용으로 쓰였다는 의혹",
+   "summary": "미 재무부 금융범죄단속망(FinCEN)이 무단 접근 이후 시스템을 오프라인으로 전환했다. 수사관들은 CIA, NGA, ODNI 침입에서 오픈소스 AI 방어 도구 Artex가 공격용으로 전용된 것으로 의심한다.",
+   "why": "방어용 오픈소스 AI 도구가 공격에 전용됐을 가능성이 제기됐지만, 아직 수사관의 의심 단계다.",
+   "apply": "",
+   "category": "보안",
+   "source": "DEV Community (Dev News Digest)",
+   "date": "2026-11-25",
+   "url": "https://dev.to/magnus_ferm/dev-news-digest-25-nov-2026-1800-4ddi",
+   "quote": "an open-source AI defense tool repurposed for offense",
+   "importance": 3,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Anthropic, Claude 아티팩트를 데스크톱 앱으로 설치하는 'Install as App' 베타 공개",
+   "summary": "Claude 아티팩트로 만든 데스크톱 앱을 만들고 실행하고 공유할 수 있다. Windows와 macOS에서 베타로 제공되며, 앱은 알림 전송과 Claude·서드파티 커넥터 사용이 가능하다.",
+   "why": "앱 안에서 에이전트가 자율적으로 상호작용할 수 있어, 프롬프트로 만든 앱이 에이전트 연동 단위가 될 수 있다.",
+   "apply": "",
+   "category": "모델",
+   "source": "SiliconANGLE",
+   "date": "2026-11-24",
+   "url": "https://siliconangle.com/2026/11/24/anthropic-is-trying-to-kill-traditional-desktop-apps-with-claude-generated-desktop-apps/",
+   "quote": "available in beta now on Windows and macOS",
+   "importance": 2,
+   "quote_status": "ok"
+  },
+  {
+   "title": "OpenAI, GPT-6의 단백질 설계 능력 시연",
+   "summary": "The Neuron 요약에 따르면 OpenAI가 GPT-6의 단백질 설계 능력을 시연했다. 페이지에는 세부 성능 수치가 없다.",
+   "why": "생명과학 분야에서 GPT-6의 쓰임새를 보여주는 시연이다. 구체적 성능은 원문 확인이 필요하다.",
+   "apply": "",
+   "category": "모델",
+   "source": "The Neuron",
+   "date": "2026-11-25",
+   "url": "https://theneuron.ai/digest/everything-that-happened-in-ai-today-november-26-2026",
+   "quote": "OpenAI demonstrated GPT-6's protein-design capabilities",
+   "importance": 2,
+   "quote_status": "unknown"
+  }
+ ]
+}
