@@ -1,21 +1,6 @@
 {
  "ai-news": [
   {
-   "date": "2026-11-07",
-   "titles": [
-    "AI 규제 우려에 나스닥 5%대 급락, 시총 2조 달러 증발",
-    "OpenAI, 보안 특화 모델 GPT-6 Cyber 공개… 제한된 고객에게 우선 제공",
-    "METR, Anthropic의 AI R&D 속도가 이전보다 약 2배 빨라졌다고 추정",
-    "Google, Gemini Omni 1.2 Flash 정식 출시… 클립 15초, 가격 30% 인하"
-   ],
-   "urls": [
-    "https://www.npr.org/2026/11/05/nx-s1-6031987/stock-markets-ai-midterm-elections",
-    "https://openai.com/index/introducing-gpt-6-cyber/",
-    "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-friday-november-6-2026/",
-    "https://samonai.substack.com/p/ai-brief-november-6-2026"
-   ]
-  },
-  {
    "date": "2026-11-08",
    "titles": [
     "DeepMind, AI 에이전트로 레거시 RSA-1024의 약점 두 가지 발견",
@@ -280,6 +265,17 @@
     "https://dev.to/magnus_ferm/dev-news-digest-25-nov-2026-1800-4ddi",
     "https://siliconangle.com/2026/11/24/anthropic-is-trying-to-kill-traditional-desktop-apps-with-claude-generated-desktop-apps/",
     "https://theneuron.ai/digest/everything-that-happened-in-ai-today-november-26-2026"
+   ]
+  },
+  {
+   "date": "2026-11-27",
+   "titles": [
+    "FCC, SpaceX의 100만 기 궤도 데이터센터 위성 승인",
+    "Amazon·Meta, AI 쇼핑 에이전트 'Muse' 차단 해제 협상 중"
+   ],
+   "urls": [
+    "https://www.geekwire.com/2026/fcc-clears-spacex-million-satellites-starmind-data-center/",
+    "https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/"
    ]
   }
  ],

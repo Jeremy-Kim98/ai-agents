@@ -1,0 +1,32 @@
+{
+ "date": "2026-11-27",
+ "headline": "AI 컴퓨팅이 우주로 향하는 허가가 처음 떨어졌고, 에이전트 쇼핑을 둘러싼 Meta와 Amazon의 협상도 시작됐다",
+ "items": [
+  {
+   "title": "FCC, SpaceX의 100만 기 궤도 데이터센터 위성 승인",
+   "summary": "FCC가 SpaceX의 Starmind 데이터 처리 네트워크용 위성을 최대 100만 기까지 배치하도록 승인했다. 발사는 2033년까지 시작해야 하며, FCC는 다른 궤도 데이터센터 제안도 계속 심사한다고 밝혔다.",
+   "why": "우주 기반 AI 컴퓨팅이 규제 승인을 받은 첫 사례로, 다른 업체 신청의 심사 기준이 될 수 있다.",
+   "apply": "",
+   "category": "빅테크",
+   "source": "GeekWire",
+   "date": "2026-11-25",
+   "url": "https://www.geekwire.com/2026/fcc-clears-spacex-million-satellites-starmind-data-center/",
+   "quote": "authorized SpaceX to send up to a million satellites into orbit",
+   "importance": 3,
+   "quote_status": "ok"
+  },
+  {
+   "title": "Amazon·Meta, AI 쇼핑 에이전트 'Muse' 차단 해제 협상 중",
+   "summary": "Fortune 보도에 따르면 Amazon과 Meta가 두 달간 이어진 Muse 차단을 풀기 위해 여러 차례 협상했다. 검색 결과를 어떻게 보여줄지와 광고를 어떻게 처리할지가 쟁점으로 남아 있다.",
+   "why": "외부 쇼핑 에이전트를 대형 마켓플레이스가 어디까지 허용할지 정하는 선례가 될 수 있다.",
+   "apply": "",
+   "category": "빅테크",
+   "source": "TechCrunch",
+   "date": "2026-11-25",
+   "url": "https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/",
+   "quote": "",
+   "importance": 2,
+   "quote_status": "removed"
+  }
+ ]
+}
